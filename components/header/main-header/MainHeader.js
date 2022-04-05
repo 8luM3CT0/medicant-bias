@@ -11,6 +11,8 @@ import {
 import { useState } from 'react'
 
 function MainHeader () {
+  const [showRoutes, setShowRoutes] = useState(false)
+
   return (
     <>
       <div
@@ -27,6 +29,7 @@ function MainHeader () {
         {/**left */}
         <div className='flex items-center space-x-4'>
           <Button
+            onClick={e => setShowRoutes(true)}
             color='blue'
             buttonType='link'
             size='lg'
@@ -122,6 +125,38 @@ function MainHeader () {
           <h2 className='contact'>Contact</h2>
         </Button>
       </div>
+      <Modal active={showRoutes} size='lg' toggler={() => setShowRoutes(false)}>
+        <ModalHeader toggler={() => setShowRoutes(false)}>
+          Modal Title
+        </ModalHeader>
+        <ModalBody>
+          <p className='text-base leading-relaxed text-gray-600 font-normal'>
+            I always felt like I could do anything. That’s the main thing people
+            are controlled by! Thoughts- their perception of themselves! They're
+            slowed down by their perception of themselves. If you're taught you
+            can’t do anything, you won’t do anything. I was taught I could do
+            everything.
+          </p>
+        </ModalBody>
+        <ModalFooter>
+          <Button
+            color='red'
+            buttonType='link'
+            onClick={e => setShowRoutes(false)}
+            ripple='dark'
+          >
+            Close
+          </Button>
+
+          <Button
+            color='green'
+            onClick={e => setShowRoutes(false)}
+            ripple='light'
+          >
+            Save Changes
+          </Button>
+        </ModalFooter>
+      </Modal>
     </>
   )
 }
