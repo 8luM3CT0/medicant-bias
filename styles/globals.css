@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+    .appName{
+      @apply
+      xl:text-2xl
+      lg:text-xl
+      md:text-[18px]
+      md:inline-flex
+      hidden
+  }
+  
+.contact{
+    @apply 
+    font-google-sans 
+    lg:text-xl 
+    text-base
+    font-normal
+}
+
+  .routesDiv{
+      @apply
+      flex
+      items-center
+      space-x-4
+      lg:inline-flex
+      hidden
+  }
+}
