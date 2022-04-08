@@ -53,7 +53,7 @@ export default function Home () {
         max-w-6xl 
         rounded-xl 
         mx-auto 
-        -mt-40 
+        -mt-72 
         opacity-100'
           />
           <div

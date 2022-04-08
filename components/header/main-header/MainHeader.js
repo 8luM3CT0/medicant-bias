@@ -97,6 +97,19 @@ function MainHeader () {
             <Icon name='vaccines' />
             <h2 className='text-xl'>Medicines</h2>
           </Button>
+          <Button
+            color='blue'
+            buttonType='link'
+            size='regular'
+            rounded={false}
+            iconOnly={false}
+            block={false}
+            ripple='light'
+            className='grid font-google-sans font-normal capitalize'
+          >
+            <Icon name='science' />
+            <h2 className='text-xl'>Genes</h2>
+          </Button>
         </div>
         {/**right */}
         <Button
@@ -172,6 +185,17 @@ function MainHeader () {
             >
               <Icon name='vaccines' />
               <h2 className='text-xl'>Medicines</h2>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <Icon name='science' />
+              <h2 className='text-xl'>Genes</h2>
             </Button>
           </div>
         </ModalBody>
