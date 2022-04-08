@@ -41,10 +41,21 @@ export default function Home () {
       bg-gray-300
       opacity-90 
       mx-auto
-      px-4
       py-3
       '
         >
+          <img
+            src='https://media.istockphoto.com/videos/mathematics-pattern-physics-background-funky-biology-wallpaper-video-id904582334?s=640x640'
+            alt=''
+            className='
+        md:col-span-full
+        w-full
+        max-w-6xl 
+        rounded-xl 
+        mx-auto 
+        -mt-40 
+        opacity-100'
+          />
           <div
             className='
           h-screen 

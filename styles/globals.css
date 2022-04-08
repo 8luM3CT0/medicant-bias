@@ -16,8 +16,9 @@
 .contact{
     @apply 
     font-google-sans 
-    lg:text-xl 
-    text-base
+    text-xl
+    lg:inline-flex
+    hidden
     font-normal
 }
 

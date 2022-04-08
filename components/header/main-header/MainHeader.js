@@ -81,8 +81,8 @@ function MainHeader () {
             ripple='light'
             className='grid font-google-sans font-normal capitalize'
           >
-            <Icon name='info' />
-            <h2 className='text-xl'>About</h2>
+            <Icon name='coronavirus' />
+            <h2 className='text-xl'>Diseases</h2>
           </Button>
           <Button
             color='blue'
@@ -94,21 +94,8 @@ function MainHeader () {
             ripple='light'
             className='grid font-google-sans font-normal capitalize'
           >
-            <Icon name='info' />
-            <h2 className='text-xl'>About</h2>
-          </Button>
-          <Button
-            color='blue'
-            buttonType='link'
-            size='regular'
-            rounded={false}
-            iconOnly={false}
-            block={false}
-            ripple='light'
-            className='grid font-google-sans font-normal capitalize'
-          >
-            <Icon name='info' />
-            <h2 className='text-xl'>About</h2>
+            <Icon name='vaccines' />
+            <h2 className='text-xl'>Medicines</h2>
           </Button>
         </div>
         {/**right */}
@@ -127,16 +114,66 @@ function MainHeader () {
       </div>
       <Modal active={showRoutes} size='lg' toggler={() => setShowRoutes(false)}>
         <ModalHeader toggler={() => setShowRoutes(false)}>
-          Modal Title
+          <h2
+            className='
+          font-mono 
+          font-semibold 
+          text-blue-600 
+          text-base
+          shadow-lg
+          shadow-gray-700
+          '
+          >
+            Routes to other pages
+          </h2>
         </ModalHeader>
         <ModalBody>
-          <p className='text-base leading-relaxed text-gray-600 font-normal'>
-            I always felt like I could do anything. That’s the main thing people
-            are controlled by! Thoughts- their perception of themselves! They're
-            slowed down by their perception of themselves. If you're taught you
-            can’t do anything, you won’t do anything. I was taught I could do
-            everything.
-          </p>
+          <div
+            className='
+          grid 
+          place-items-center
+          space-y-4 
+          p-[56px] 
+          shadow-md 
+          shadow-sky-500'
+          >
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+              className='capitalize font-google-sans font-normal space-x-4'
+            >
+              <Icon name='info' />
+              <h2 className='text-xl'>About</h2>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+              className='capitalize font-google-sans font-normal space-x-4'
+            >
+              <Icon name='coronavirus' />
+              <h2 className='text-xl'>Diseases</h2>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+              className='capitalize font-google-sans font-normal space-x-4'
+            >
+              <Icon name='vaccines' />
+              <h2 className='text-xl'>Medicines</h2>
+            </Button>
+          </div>
         </ModalBody>
         <ModalFooter>
           <Button
@@ -144,16 +181,9 @@ function MainHeader () {
             buttonType='link'
             onClick={e => setShowRoutes(false)}
             ripple='dark'
+            className='capitalize'
           >
             Close
-          </Button>
-
-          <Button
-            color='green'
-            onClick={e => setShowRoutes(false)}
-            ripple='light'
-          >
-            Save Changes
           </Button>
         </ModalFooter>
       </Modal>
