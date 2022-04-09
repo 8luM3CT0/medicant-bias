@@ -39,7 +39,11 @@ function HomeInfo ({ id, name, description }) {
     ease-in-out
     '
       ></div>
-      <Modal size='lg' active={showMore} toggler={() => setShowMore(false)}>
+      <Modal
+        size='regular'
+        active={showMore}
+        toggler={() => setShowMore(false)}
+      >
         <ModalHeader toggler={() => setShowMore(false)}>
           <h2
             className='
