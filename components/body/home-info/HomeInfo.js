@@ -51,7 +51,6 @@ function HomeInfo ({ id, name, description }) {
           font-robot-slab 
           font-normal 
           text-sky-600
-          p-7
           '
           >
             Info of the day
