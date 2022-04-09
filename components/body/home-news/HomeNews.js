@@ -20,7 +20,8 @@ function HomeNews ({ id, newsName, newsAuthor, newsDate }) {
     h-[380px] 
     max-h-[440px] 
     space-y-4
-    w-[510px]
+    lg:w-[510px]
+    w-[390px]
     max-w-lg
     px-3
     bg-gradient-to-t

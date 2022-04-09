@@ -24,7 +24,8 @@ function HomeInfo ({ id, name, description }) {
     rounded-lg
     h-[380px] 
     max-h-[540px]
-    w-[380px]
+    lg:w-[380px]
+    w-[290px]
     max-w-sm 
     grid 
     place-items-center 
