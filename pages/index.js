@@ -39,11 +39,16 @@ export default function Home () {
         <main
           className='
       max-w-6xl 
-      h-screen 
+      h-screen
+      place-items-center
+      space-y-4
       bg-gray-300
       opacity-90 
       mx-auto
       py-3
+      overflow-y-scroll
+      scrollbar-hide
+      pb-48
       '
         >
           <img
@@ -60,34 +65,19 @@ export default function Home () {
           />
           <div
             className='
-          h-screen 
-          overflow-y-scroll 
-      scrollbar-hide
-          grid 
-          justify-center
-          space-y-4
-          py-3 
-          mx-auto 
-          max-w-full
-          opacity-100
-          pb-48
-          '
-          >
-            <div
-              className='
             w-full
             max-w-full
             justify-evenly
             mx-auto 
             px-4 
-            py-3
-            grid 
-            lg:grid-cols-2 
-            grid-cols-1'
-            >
-              <HomeInfo />
-              <HomeNews />
-            </div>
+            py-3 
+            lg:flex 
+            lg:items-center
+            grid
+            '
+          >
+            <HomeInfo />
+            <HomeNews />
           </div>
         </main>
 
