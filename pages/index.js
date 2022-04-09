@@ -52,15 +52,16 @@ export default function Home () {
       '
         >
           <img
-            src='https://media.istockphoto.com/videos/mathematics-pattern-physics-background-funky-biology-wallpaper-video-id904582334?s=640x640'
+            src='https://i2.wp.com/www.ayoungdoctorsjourney.com//wp-content/uploads/2019/06/Screen-Shot-2019-06-07-at-6.47.44-PM-1024x766.png?resize=1024%2C766'
             alt=''
             className='
         md:col-span-full
         w-full
         max-w-6xl 
         rounded-xl 
-        mx-auto 
-        -mt-60 
+        mx-auto
+        max-h-[560px] 
+        -mt-60
         opacity-100'
           />
           <div
@@ -74,6 +75,8 @@ export default function Home () {
             lg:flex 
             lg:items-center
             grid
+            lg:space-y-0
+            space-y-4
             '
           >
             <HomeInfo />
