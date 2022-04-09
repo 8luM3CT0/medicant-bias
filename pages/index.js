@@ -2,6 +2,8 @@
 import Head from 'next/head'
 import {
   Header,
+  HomeInfo,
+  HomeNews,
   Button,
   Icon,
   Modal,
@@ -62,13 +64,29 @@ export default function Home () {
           overflow-y-scroll 
       scrollbar-hide
           grid 
-          place-items-center 
+          space-y-4
+          py-3 
           mx-auto 
-          max-w-2xl 
+          max-w-full 
           opacity-100
           pb-48
           '
-          ></div>
+          >
+            <div
+              className='
+            w-full 
+            px-4 
+            py-3
+            justify-between
+            grid
+            grid-flow-row-dense 
+            lg:grid-cols-2 
+            grid-cols-1'
+            >
+              <HomeInfo />
+              <HomeNews />
+            </div>
+          </div>
         </main>
 
         <footer className='z-50 bottom-0 sticky bg-gray-600 px-8 py-4'>
