@@ -23,7 +23,8 @@ function HomeInfo ({ id, name, description }) {
     to-blue-700
     rounded-lg
     h-[380px] 
-    max-h-[540px] 
+    max-h-[540px]
+    w-[380px]
     max-w-sm 
     grid 
     place-items-center 

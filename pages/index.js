@@ -64,20 +64,22 @@ export default function Home () {
           overflow-y-scroll 
       scrollbar-hide
           grid 
+          justify-center
           space-y-4
           py-3 
           mx-auto 
-          max-w-full 
+          max-w-full
           opacity-100
           pb-48
           '
           >
             <div
               className='
-            w-full 
+            w-full
+            max-w-full
+            mx-auto 
             px-4 
             py-3
-            justify-between
             grid
             grid-flow-row-dense 
             lg:grid-cols-2 

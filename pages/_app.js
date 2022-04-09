@@ -5,6 +5,8 @@ import ProgressBar from '@badrap/bar-of-progress'
 //back-end
 import Router from 'next/router'
 
+import { useEffect, useState } from 'react'
+
 const progress = new ProgressBar({
   size: 4,
   color: 'blue',
@@ -17,6 +19,13 @@ Router.events.on('routeChangeComplete', progress.finish)
 Router.events.on('routeChangeError', progress.finish)
 
 function MyApp ({ Component, pageProps }) {
+  const [showChild, setShowChild] = useState(false)
+  useEffect(() => {
+    setShowChild(true)
+  }, [])
+  if (!showChild) {
+    return null
+  }
   return (
     <>
       <link
