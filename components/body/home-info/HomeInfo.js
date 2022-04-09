@@ -23,7 +23,7 @@ function HomeInfo ({ id, name, description }) {
     to-blue-700
     rounded-lg
     h-[380px] 
-    max-h-[540px]
+    max-h-[440px]
     lg:w-[380px]
     w-[290px]
     max-w-sm 

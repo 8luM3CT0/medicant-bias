@@ -81,8 +81,7 @@ export default function Home () {
             mx-auto 
             px-4 
             py-3
-            grid
-            grid-flow-row-dense 
+            grid 
             lg:grid-cols-2 
             grid-cols-1'
             >
