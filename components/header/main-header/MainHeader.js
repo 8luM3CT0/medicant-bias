@@ -81,8 +81,8 @@ function MainHeader () {
             ripple='light'
             className='grid font-google-sans font-normal capitalize'
           >
-            <Icon name='coronavirus' />
-            <h2 className='text-xl'>Diseases</h2>
+            <Icon name='book_online' />
+            <h2 className='text-xl'>Info</h2>
           </Button>
           <Button
             color='blue'
@@ -94,21 +94,8 @@ function MainHeader () {
             ripple='light'
             className='grid font-google-sans font-normal capitalize'
           >
-            <Icon name='vaccines' />
-            <h2 className='text-xl'>Medicines</h2>
-          </Button>
-          <Button
-            color='blue'
-            buttonType='link'
-            size='regular'
-            rounded={false}
-            iconOnly={false}
-            block={false}
-            ripple='light'
-            className='grid font-google-sans font-normal capitalize'
-          >
-            <Icon name='science' />
-            <h2 className='text-xl'>Genes</h2>
+            <Icon name='newspaper' />
+            <h2 className='text-xl'>News</h2>
           </Button>
         </div>
         {/**right */}
@@ -146,7 +133,7 @@ function MainHeader () {
           grid 
           place-items-center
           space-y-4 
-          p-[56px] 
+          p-[80px] 
           shadow-md 
           shadow-sky-500'
           >
@@ -157,7 +144,12 @@ function MainHeader () {
               block={false}
               rounded={false}
               ripple='light'
-              className='capitalize font-google-sans font-normal space-x-4'
+              className='
+              capitalize 
+              font-google-sans 
+              font-normal 
+              space-x-3
+              hover:font-semibold'
             >
               <Icon name='info' />
               <h2 className='text-xl'>About</h2>
@@ -169,10 +161,15 @@ function MainHeader () {
               block={false}
               rounded={false}
               ripple='light'
-              className='capitalize font-google-sans font-normal space-x-4'
+              className='
+              capitalize 
+              font-google-sans 
+              font-normal 
+              space-x-3
+              hover:font-semibold'
             >
-              <Icon name='coronavirus' />
-              <h2 className='text-xl'>Diseases</h2>
+              <Icon name='book_online' />
+              <h2 className='text-xl'>Info</h2>
             </Button>
             <Button
               color='blue'
@@ -181,21 +178,15 @@ function MainHeader () {
               block={false}
               rounded={false}
               ripple='light'
-              className='capitalize font-google-sans font-normal space-x-4'
+              className='
+              capitalize 
+              font-google-sans 
+              font-normal 
+              space-x-3
+              hover:font-semibold'
             >
-              <Icon name='vaccines' />
-              <h2 className='text-xl'>Medicines</h2>
-            </Button>
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <Icon name='science' />
-              <h2 className='text-xl'>Genes</h2>
+              <Icon name='newspaper' />
+              <h2 className='text-xl'>News</h2>
             </Button>
           </div>
         </ModalBody>
