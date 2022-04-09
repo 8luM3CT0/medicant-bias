@@ -55,7 +55,7 @@ export default function Home () {
         max-w-6xl 
         rounded-xl 
         mx-auto 
-        -mt-72 
+        -mt-60 
         opacity-100'
           />
           <div
@@ -77,6 +77,7 @@ export default function Home () {
               className='
             w-full
             max-w-full
+            justify-evenly
             mx-auto 
             px-4 
             py-3

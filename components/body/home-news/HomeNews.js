@@ -23,7 +23,7 @@ function HomeNews ({ id, newsName, newsAuthor, newsDate }) {
     lg:w-[510px]
     w-[390px]
     max-w-lg
-    px-3
+    p-3
     bg-gradient-to-t
     from-blue-900
     to-gray-700
