@@ -36,15 +36,26 @@ function HomeNews ({ healthNews }) {
     '
       >
         {healthNews &&
-          healthNews.map(({ id, newsName, newsAuthor, newsDate }) => (
-            <News
-              key={id}
-              id={id}
-              newsName={newsName}
-              newsAuthor={newsAuthor}
-              newsDate={newsDate}
-            />
-          ))}
+          healthNews.map(
+            ({
+              id,
+              title,
+              creator,
+              pubDate,
+              full_description,
+              description
+            }) => (
+              <News
+                key={id}
+                id={id}
+                newsName={title}
+                newsAuthor={creator}
+                newsDate={pubDate}
+                newsDescription={full_description}
+                shortDescription={description}
+              />
+            )
+          )}
       </div>
     </>
   )

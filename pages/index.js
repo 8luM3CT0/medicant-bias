@@ -16,8 +16,8 @@ import {
 import { useState } from 'react'
 import { news } from './api/news/news'
 
-export default function Home () {
-  console.log(news)
+export default function Home ({ healthNews }) {
+  console.log(healthNews?.results)
 
   return (
     <>
@@ -83,7 +83,7 @@ export default function Home () {
             '
           >
             <HomeInfo />
-            <HomeNews healthNews={news} />
+            <HomeNews healthNews={healthNews?.results} />
           </div>
         </main>
 
@@ -95,4 +95,16 @@ export default function Home () {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps () {
+  const UsHealth = await fetch(
+    'https://newsdata.io/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&country=us&category=health'
+  ).then(res => res.json())
+
+  return {
+    props: {
+      healthNews: UsHealth
+    }
+  }
 }

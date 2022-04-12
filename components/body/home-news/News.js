@@ -10,7 +10,14 @@ import {
 //back-end
 import { useState } from 'react'
 
-function News ({ id, newsName, newsAuthor }) {
+function News ({
+  id,
+  newsName,
+  newsAuthor,
+  newsDescription,
+  shortDescription,
+  category
+}) {
   const [showNews, setShowNews] = useState(false)
 
   return (
@@ -47,9 +54,7 @@ cursor-pointer
             place-items-start 
             space-y-5  
             h-[290px] 
-            max-h-[320px] 
-            overflow-y-scroll 
-            scrollbar-hide'
+            max-h-[320px]'
             >
               <h1
                 className='
@@ -61,13 +66,41 @@ cursor-pointer
                 {' '}
                 By {''} {newsAuthor}{' '}
               </h1>
-              <p className='text-base leading-relaxed text-gray-600 font-normal'>
-                I always felt like I could do anything. That’s the main thing
-                people are controlled by! Thoughts- their perception of
-                themselves! They're slowed down by their perception of
-                themselves. If you're taught you can’t do anything, you won’t do
-                anything. I was taught I could do everything.
-              </p>
+              <div
+                className='
+              h-[210px] 
+              px-3
+              max-h-[230px] 
+              overflow-y-scroll
+               scrollbar-hide 
+               bg-gray-600'
+              >
+                {newsDescription ? (
+                  <p
+                    className='
+              text-base 
+              leading-relaxed 
+              text-blue-100 
+              font-robot-slab
+              font-normal'
+                  >
+                    {newsDescription}
+                  </p>
+                ) : shortDescription ? (
+                  <p
+                    className='
+              text-base 
+              leading-relaxed 
+              text-blue-100 
+              font-robot-slab
+              font-normal'
+                  >
+                    {shortDescription}
+                  </p>
+                ) : (
+                  ' '
+                )}
+              </div>
             </div>
           </ModalBody>
           <ModalFooter>
