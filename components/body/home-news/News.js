@@ -25,7 +25,9 @@ function News ({
       <div
         onClick={e => setShowNews(true)}
         className=' 
-space-x-4 
+flex 
+items-center
+space-x-3 
 font-robot-slab
 text-xl
 hover:underline
@@ -38,6 +40,7 @@ text-blue-400
 cursor-pointer
 '
       >
+        <Icon name='article' />
         <h1>{newsName}</h1>
       </div>
       <Modal toggler={() => setShowNews(false)} active={showNews} size='lg'>

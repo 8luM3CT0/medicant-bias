@@ -26,11 +26,12 @@ function HomeInfo ({ id, name, description }) {
     max-h-[440px]
     lg:w-[380px]
     w-[360px]
-    max-w-sm 
-    grid 
-    place-items-center 
-    space-y-4 
+    max-w-sm
+    flex
+    flex-col
+    justify-center
     p-7
+    space-y-4
     cursor-pointer
     hover:opacity-80
     transform
@@ -38,7 +39,14 @@ function HomeInfo ({ id, name, description }) {
     duration-300
     ease-in-out
     '
-      ></div>
+      >
+        <p className='text-base font-robot-slab text-blue-300 font-normal'>
+          Word of the day:
+        </p>
+        <h1 className='text-xl font-mono text-blue-100 font-semibold'>
+          {name}
+        </h1>
+      </div>
       <Modal
         size='regular'
         active={showMore}

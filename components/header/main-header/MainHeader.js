@@ -68,19 +68,6 @@ function MainHeader () {
             ripple='light'
             className='grid font-google-sans font-normal capitalize'
           >
-            <Icon name='info' />
-            <h2 className='text-xl'>About</h2>
-          </Button>
-          <Button
-            color='blue'
-            buttonType='link'
-            size='regular'
-            rounded={false}
-            iconOnly={false}
-            block={false}
-            ripple='light'
-            className='grid font-google-sans font-normal capitalize'
-          >
             <Icon name='book_online' />
             <h2 className='text-xl'>Info</h2>
           </Button>
@@ -137,23 +124,6 @@ function MainHeader () {
           shadow-md 
           shadow-sky-500'
           >
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-              className='
-              capitalize 
-              font-google-sans 
-              font-normal 
-              space-x-3
-              hover:font-semibold'
-            >
-              <Icon name='info' />
-              <h2 className='text-xl'>About</h2>
-            </Button>
             <Button
               color='blue'
               buttonType='link'
