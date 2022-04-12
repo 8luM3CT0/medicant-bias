@@ -14,8 +14,11 @@ import {
 } from '../components'
 //back-end
 import { useState } from 'react'
+import { news } from './api/news/news'
 
 export default function Home () {
+  console.log(news)
+
   return (
     <>
       <div
@@ -80,7 +83,7 @@ export default function Home () {
             '
           >
             <HomeInfo />
-            <HomeNews />
+            <HomeNews healthNews={news} />
           </div>
         </main>
 
