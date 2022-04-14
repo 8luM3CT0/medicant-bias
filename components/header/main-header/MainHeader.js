@@ -84,6 +84,19 @@ function MainHeader () {
             <Icon name='newspaper' />
             <h2 className='text-xl'>News</h2>
           </Button>
+          <Button
+            color='blue'
+            buttonType='link'
+            size='regular'
+            rounded={false}
+            iconOnly={false}
+            block={false}
+            ripple='light'
+            className='grid font-google-sans font-normal capitalize'
+          >
+            <Icon name='quiz' />
+            <h2 className='text-xl'>Test</h2>
+          </Button>
         </div>
         {/**right */}
         <Button
@@ -118,7 +131,7 @@ function MainHeader () {
           <div
             className='
           grid 
-          place-items-center
+          place-items-start
           space-y-4 
           p-[80px] 
           shadow-md 
@@ -157,6 +170,24 @@ function MainHeader () {
             >
               <Icon name='newspaper' />
               <h2 className='text-xl'>News</h2>
+            </Button>
+
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+              className='
+              capitalize 
+              font-google-sans 
+              font-normal 
+              space-x-3
+              hover:font-semibold'
+            >
+              <Icon name='quiz' />
+              <h2 className='text-xl'>Test</h2>
             </Button>
           </div>
         </ModalBody>

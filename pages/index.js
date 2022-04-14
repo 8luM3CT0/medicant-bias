@@ -14,10 +14,12 @@ import {
 } from '../components'
 //back-end
 import { useState } from 'react'
+import { sample_data } from '../data/sample_data'
 import { news } from './api/news/news'
 
 export default function Home ({ healthNews, testData }) {
-  console.log(testData)
+  //console.log(testData?.['text-list'])
+  console.log(sample_data)
 
   return (
     <>
@@ -82,8 +84,11 @@ export default function Home ({ healthNews, testData }) {
             space-y-4
             '
           >
-            <HomeInfo name={testData?.name} />
-            <HomeNews healthNews={healthNews?.results} />
+            {sample_data &&
+              sample_data.map(doc => (
+                <HomeInfo name={doc.name} description={doc.descripition} />
+              ))}
+            {news && <HomeNews healthNews={news} />}
           </div>
         </main>
 
@@ -97,7 +102,7 @@ export default function Home ({ healthNews, testData }) {
   )
 }
 
-export async function getServerSideProps () {
+/*export async function getServerSideProps () {
   const UsHealth = await fetch(
     'https://newsdata.io/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&country=us&category=health'
   ).then(res => res.json())
@@ -113,3 +118,4 @@ export async function getServerSideProps () {
     }
   }
 }
+*/

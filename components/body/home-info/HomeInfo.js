@@ -41,7 +41,7 @@ function HomeInfo ({ id, name, description }) {
     '
       >
         <p className='text-base font-robot-slab text-blue-300 font-normal'>
-          Word of the day:
+          Term of the day:
         </p>
         <h1 className='text-xl font-mono text-blue-100 font-semibold'>
           {name}
@@ -61,18 +61,45 @@ function HomeInfo ({ id, name, description }) {
           text-sky-600
           '
           >
-            Info of the day
+            Term of the day
           </h2>
         </ModalHeader>
         <ModalBody>
-          <div className='p-[70px] grid place-items-center max-w-md'>
-            <p className='text-base leading-relaxed text-gray-600 font-normal'>
-              I always felt like I could do anything. That’s the main thing
-              people are controlled by! Thoughts- their perception of
-              themselves! They're slowed down by their perception of themselves.
-              If you're taught you can’t do anything, you won’t do anything. I
-              was taught I could do everything.
-            </p>
+          <div className='p-[70px] grid place-items-center space-y-4 max-w-md'>
+            <img
+              src='https://www.sfn.org/-/media/Brainfacts2/Archives/Article-Images/Alzheimers-Brain.jpg'
+              alt=''
+              className='
+          relative 
+          h-[190px] 
+          max-h-[210px] 
+          rounded-lg 
+          opactiy-95'
+            />
+            <h1 className='text-xl font-semibold font-google-sans text-blue-300 '>
+              {name}
+            </h1>
+            <div
+              className='
+            h-[190px] 
+            px-4
+            py-3
+            max-h-[210px] 
+            overflow-y-scroll 
+            scrollbar-hide 
+            bg-gray-600'
+            >
+              <p
+                className='
+              text-base 
+              font-google-sans 
+              leading-relaxed 
+              text-blue-300 
+              font-semibold'
+              >
+                {description}
+              </p>
+            </div>
           </div>
         </ModalBody>
         <ModalFooter>
