@@ -20,7 +20,7 @@ function About () {
       max-w-full
       lg:w-full
       px-2 
-     lg:max-h-[690px]
+     lg:max-h-[890px]
       bg-cyan-600 
       space-x-4
       p-4
@@ -86,8 +86,6 @@ function About () {
         lg:w-[512px]
         max-w-lg 
         mx-auto
-        overflow-y-scroll 
-        scrollbar-hide
         h-[260px]
         max-h-96
         text-blue-100
@@ -110,7 +108,7 @@ function About () {
       max-w-full
       lg:w-full 
       px-2
-     lg:max-h-[690px]
+     lg:max-h-[890px]
       bg-sky-600 
       p-4
       rounded-lg'
@@ -132,7 +130,9 @@ function About () {
         rounded-lg
         max-w-lg 
         overflow-y-scroll 
-        scrollbar-hide
+        scrollbar-thin
+        scrollbar-thumb-slate-500
+        scrollbar-track-slate-300
         max-h-96
         h-[260px]
         place-self-center
@@ -177,7 +177,9 @@ function About () {
         rounded-lg
         max-w-lg 
         overflow-y-scroll 
-        scrollbar-hide
+        scrollbar-thin
+        scrollbar-thumb-slate-500
+        scrollbar-track-slate-300
         max-h-96
         h-[260px]
         place-self-center
