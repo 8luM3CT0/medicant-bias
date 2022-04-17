@@ -107,7 +107,7 @@ function About () {
       space-y-6 
       max-w-full
       lg:w-full 
-      px-2
+      px-8
       bg-sky-600 
       p-4
       rounded-lg'
@@ -153,6 +153,18 @@ function About () {
             and the like).
           </h2>
         </div>
+      </div>
+      <div
+        className='
+      grid 
+      space-y-6 
+      max-w-full
+      lg:w-full 
+      px-8
+      bg-sky-600 
+      p-4
+      rounded-lg'
+      >
         <h1
           className='
       text-2xl 

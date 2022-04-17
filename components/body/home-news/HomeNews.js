@@ -11,7 +11,7 @@ import {
 //back-end
 import { useState } from 'react'
 
-function HomeNews ({ healthNews }) {
+function HomeNews ({ news }) {
   return (
     <>
       <div
@@ -25,7 +25,7 @@ function HomeNews ({ healthNews }) {
     lg:w-[510px]
     w-[390px]
     max-w-lg
-    py-5
+    py-7
     px-4
     place-text-center
     bg-gradient-to-t
@@ -35,8 +35,8 @@ function HomeNews ({ healthNews }) {
     scrollbar-hide
     '
       >
-        {healthNews &&
-          healthNews.map(
+        {news &&
+          news.map(
             ({
               id,
               title,

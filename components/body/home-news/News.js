@@ -71,11 +71,13 @@ cursor-pointer
               </h1>
               <div
                 className='
-              h-[210px] 
+              h-[230px] 
               px-3
-              max-h-[230px] 
+              max-h-[260px] 
               overflow-y-scroll
-               scrollbar-hide 
+               scrollbar-thin
+               scrollbar-thumb-sky-600
+               scrollbar-track-sky-400
                bg-gray-600'
               >
                 {newsDescription ? (

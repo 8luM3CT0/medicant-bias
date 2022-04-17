@@ -20,7 +20,7 @@ import { news } from './api/news/news'
 
 export default function Home ({ healthNews, testData }) {
   //console.log(testData?.['text-list'])
-  console.log(sample_data)
+  console.log(healthNews?.results)
 
   return (
     <>
@@ -89,24 +89,52 @@ export default function Home ({ healthNews, testData }) {
               sample_data.map(doc => (
                 <HomeInfo name={doc.name} description={doc.descripition} />
               ))}
-            {news && <HomeNews healthNews={news} />}
+            {healthNews?.results && <HomeNews news={healthNews?.results} />}
           </div>
           <div className='pb-56'>
             <AboutDiv />
           </div>
         </main>
 
-        <footer className='z-50 bottom-0 sticky bg-gray-600 px-8 py-4'>
-          <h1 className='font-robot-slab text-blue-400 text-xl'>
-            Footer component
-          </h1>
+        <footer className='z-50 bottom-0 sticky bg-gray-600 px-8 py-4 justify-between  flex items-center'>
+          <Button
+            color='lightBlue'
+            buttonType='link'
+            iconOnly={false}
+            block={false}
+            rounded={false}
+            className='
+          capitalize
+          hover:underline 
+          font-google-sans 
+          font-normal'
+          >
+            <h1 className='text-xl '>Looking for services ? Click here.</h1>
+          </Button>
+          <Button
+            color='lightBlue'
+            buttonType='link'
+            iconOnly={false}
+            block={false}
+            rounded={false}
+            className='
+            flex
+            items-center
+            space-x-4
+          capitalize
+          font-google-sans 
+          font-normal'
+          >
+            <Icon name='terminal' />
+            <h1 className='developerTitle'>Developer</h1>
+          </Button>
         </footer>
       </div>
     </>
   )
 }
 
-/*export async function getServerSideProps () {
+export async function getServerSideProps () {
   const UsHealth = await fetch(
     'https://newsdata.io/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&country=us&category=health'
   ).then(res => res.json())
@@ -122,4 +150,3 @@ export default function Home ({ healthNews, testData }) {
     }
   }
 }
-*/

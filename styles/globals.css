@@ -24,10 +24,17 @@
 
   .routesDiv{
       @apply
-      flex
+      lg:flex
       items-center
       space-x-4
-      lg:inline-flex
       hidden
   }
+
+  .developerTitle{
+    @apply
+    lg:inline-flex
+    hidden
+    text-xl
+  }
+
 }
