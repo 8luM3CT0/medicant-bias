@@ -4,6 +4,7 @@ import {
   Header,
   HomeInfo,
   HomeNews,
+  AboutDiv,
   Button,
   Icon,
   Modal,
@@ -47,7 +48,7 @@ export default function Home ({ healthNews, testData }) {
       h-screen
       place-items-center
       space-y-4
-      bg-gray-300
+      bg-neutral-200
       opacity-90 
       mx-auto
       py-3
@@ -89,6 +90,9 @@ export default function Home ({ healthNews, testData }) {
                 <HomeInfo name={doc.name} description={doc.descripition} />
               ))}
             {news && <HomeNews healthNews={news} />}
+          </div>
+          <div className='pb-56'>
+            <AboutDiv />
           </div>
         </main>
 

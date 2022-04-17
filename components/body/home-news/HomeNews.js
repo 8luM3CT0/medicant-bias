@@ -21,7 +21,7 @@ function HomeNews ({ healthNews }) {
     grid 
     h-[380px] 
     max-h-[440px] 
-    space-y-4
+    space-y-7
     lg:w-[510px]
     w-[390px]
     max-w-lg
