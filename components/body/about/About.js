@@ -108,7 +108,6 @@ function About () {
       max-w-full
       lg:w-full 
       px-2
-     lg:max-h-[890px]
       bg-sky-600 
       p-4
       rounded-lg'
@@ -129,12 +128,6 @@ function About () {
         grid 
         rounded-lg
         max-w-lg 
-        overflow-y-scroll 
-        scrollbar-thin
-        scrollbar-thumb-slate-500
-        scrollbar-track-slate-300
-        max-h-96
-        h-[260px]
         place-self-center
         px-4
         py-3
@@ -176,12 +169,6 @@ function About () {
         grid 
         rounded-lg
         max-w-lg 
-        overflow-y-scroll 
-        scrollbar-thin
-        scrollbar-thumb-slate-500
-        scrollbar-track-slate-300
-        max-h-96
-        h-[260px]
         place-self-center
         px-4
         py-3
