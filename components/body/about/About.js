@@ -31,7 +31,7 @@ function About () {
           className='
       text-2xl 
       font-normal 
-      font-mono 
+      font-google-sans 
       text-gray-200 
       underline'
         >
@@ -103,28 +103,43 @@ function About () {
       {/**Vision & mission */}
       <div
         className='
+      lg:flex 
+      lg:items-center 
       grid 
-      space-y-6 
+      lg:space-x-3 
+      lg:space-y-0
+      space-y-3 
+      max-w-6xl
+      p-4
+      rounded-lg
+      bg-sky-700
+      '
+      >
+        <div
+          className='
+      grid 
+      space-y-6
+      h-[320px] 
       max-w-full
       lg:w-full 
       px-8
       bg-sky-600 
       p-4
       rounded-lg'
-      >
-        <h1
-          className='
+        >
+          <h1
+            className='
       text-2xl 
       font-normal 
       place-self-start
-      font-mono 
+      font-google-sans
       text-gray-200 
       underline'
-        >
-          The vision
-        </h1>
-        <div
-          className='
+          >
+            The vision
+          </h1>
+          <div
+            className='
         grid 
         rounded-lg
         max-w-lg 
@@ -132,46 +147,52 @@ function About () {
         px-4
         py-3
         text-blue-100'
-        >
-          <h2
-            className='
+          >
+            <h2
+              className='
           font-robot-slab
           font-light
           italic
           text-gray-200 
           leading-8 
           text-2xl'
-          >
-            To give users access to information with no restrictions and allow
-            the ability to browse through data, unencumbered with the process of
-            subscriptions and payments.
-          </h2>
+            >
+              To give users access to information with no restrictions and allow
+              the ability to browse through data, unencumbered with the process
+              of subscriptions and payments.
+            </h2>
+          </div>
         </div>
-      </div>
-      <div
-        className='
+        <div
+          className='
       grid 
-      space-y-6 
+      space-y-6
+      h-[320px]
+      overflow-y-scroll
+      scrollbar-thin
+      scrollbar-thumb-indigo-500
+      scrollbar-track-indigo-200 
       max-w-full
       lg:w-full 
       px-8
+      py-2
       bg-sky-600 
       p-4
       rounded-lg'
-      >
-        <h1
-          className='
+        >
+          <h1
+            className='
       text-2xl 
       font-normal
       place-self-start 
-      font-mono 
+      font-google-sans 
       text-gray-200 
       underline'
-        >
-          The mission
-        </h1>
-        <div
-          className='
+          >
+            The mission
+          </h1>
+          <div
+            className='
         grid 
         rounded-lg
         max-w-lg 
@@ -179,26 +200,27 @@ function About () {
         px-4
         py-3
         text-blue-100'
-        >
-          <h2
-            className='
+          >
+            <h2
+              className='
           font-robot-slab 
           font-semibold 
           text-gray-200 
           leading-8 
           text-xl'
-          >
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
-          </h2>
+            >
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here,
+              content here', making it look like readable English. Many desktop
+              publishing packages and web page editors now use Lorem Ipsum as
+              their default model text, and a search for 'lorem ipsum' will
+              uncover many web sites still in their infancy. Various versions
+              have evolved over the years, sometimes by accident, sometimes on
+              purpose (injected humour and the like).
+            </h2>
+          </div>
         </div>
       </div>
     </div>
