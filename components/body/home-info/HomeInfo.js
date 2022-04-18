@@ -26,7 +26,7 @@ function HomeInfo ({ id, name, description }) {
     max-h-[440px]
     lg:w-[380px]
     w-[360px]
-    max-w-sm
+    max-w-lg
     flex
     flex-col
     justify-center

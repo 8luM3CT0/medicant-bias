@@ -73,7 +73,7 @@ export default function Home ({ healthNews, testData }) {
           <div
             className='
             w-full
-            max-w-full
+            max-w-6xl
             justify-evenly
             mx-auto 
             px-4 

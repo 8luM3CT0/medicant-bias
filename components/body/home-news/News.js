@@ -59,16 +59,18 @@ cursor-pointer
             h-[290px] 
             max-h-[320px]'
             >
-              <h1
-                className='
+              {newsAuthor && (
+                <h1
+                  className='
             font-google-sans 
             font-normal
             text-lg 
             text-blue-500'
-              >
-                {' '}
-                By {''} {newsAuthor}{' '}
-              </h1>
+                >
+                  {' '}
+                  By {''} {newsAuthor}{' '}
+                </h1>
+              )}
               <div
                 className='
               h-[230px] 
