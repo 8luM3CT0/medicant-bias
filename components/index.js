@@ -8,6 +8,7 @@ export {default as Icon} from '@material-tailwind/react/Icon'
 export {default as Input} from '@material-tailwind/react/Input'
 //local components
 export {default as Header} from './header/main-header/MainHeader'
+export {default as InfoHeader} from './header/info-header/InfoHeader'
 export {default as HomeInfo} from './body/home-info/HomeInfo'
 export {default as HomeNews} from './body/home-news/HomeNews'
 export {default as News} from './body/home-news/News'
