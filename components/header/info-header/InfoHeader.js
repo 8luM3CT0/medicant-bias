@@ -97,6 +97,18 @@ function InfoHeader () {
             <h2 className='text-xl'>Test</h2>
           </Button>
         </div>
+        <Button
+          color='blue'
+          buttonType='link'
+          iconOnly={false}
+          block={false}
+          rounded={false}
+          ripple='light'
+          className='capitalize grid'
+        >
+          <Icon name='contacts' />
+          <h2 className='contact'>Contact</h2>
+        </Button>
       </header>
       <Modal active={showRoutes} size='lg' toggler={() => setShowRoutes(false)}>
         <ModalHeader toggler={() => setShowRoutes(false)}>

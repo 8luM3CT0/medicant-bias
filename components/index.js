@@ -6,6 +6,12 @@ export {default as ModalFooter} from '@material-tailwind/react/ModalFooter'
 export {default as Button} from '@material-tailwind/react/Button'
 export {default as Icon} from '@material-tailwind/react/Icon'
 export {default as Input} from '@material-tailwind/react/Input'
+export {default as Tab} from '@material-tailwind/react/Tab'
+export {default as TabList} from '@material-tailwind/react/TabList'
+export {default as TabItem} from '@material-tailwind/react/TabItem'
+export {default as TabContent} from '@material-tailwind/react/TabContent'
+export {default as TabPane} from '@material-tailwind/react/TabPane'
+
 //local components
 export {default as Header} from './header/main-header/MainHeader'
 export {default as InfoHeader} from './header/info-header/InfoHeader'
