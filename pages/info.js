@@ -18,7 +18,18 @@ import {
 //back-end
 import { useState } from 'react'
 
-function Info () {
+function Info ({
+  testData,
+  secondTestData,
+  thirdTestData,
+  fourthTestData,
+  fifthTestData,
+  sixthTestData,
+  seventhTestData,
+  eigthTestData,
+  ninthTestData,
+  tenthTestData
+}) {
   const [openTab, setOpenTab] = useState(2)
 
   return (
@@ -98,8 +109,8 @@ function Info () {
               <TabPane active={openTab === 1 ? true : false}>
                 <div
                   className='
-              h-screen 
-              place-items-center
+              h-screen
+              place-items-center 
               bg-sky-100 
               overflow-y-scroll 
               scrollbar-thin 
@@ -110,14 +121,32 @@ function Info () {
               space-y-7
               '
                 >
-                  <Input
-                    type='text'
-                    color='lightBlue'
-                    size='lg'
-                    outline={false}
-                    placeholder='Search something in the human body....'
-                    className='mx-auto max-w-xl w-[290px] text-gray-600'
-                  />
+                  <div
+                    className='
+                  max-w-xl 
+                  mx-auto 
+                  px-8 
+                  py-3 
+                  bg-sky-300 
+                  rounded-3xl'
+                  >
+                    <input
+                      type='text'
+                      placeholder='Search a medicine name....'
+                      className='
+                     w-full
+                      text-white
+                      font-robot-slab
+                      px-6 
+                      bg-transparent
+                      border-0 
+                      outline-none 
+                      text-lg
+                      placeholder-gray-50
+                      py-3
+                      '
+                    />
+                  </div>
                   <p>
                     I think that’s a responsibility that I have, to push
                     possibilities, to show people, this is the level that things
@@ -137,8 +166,38 @@ function Info () {
               overflow-y-scroll 
               scrollbar-thin 
               scrollbar-track-slate-200 
-              scrollbar-thumb-slate-600'
+              scrollbar-thumb-slate-600
+              py-4
+              px-5
+              space-y-7
+              '
                 >
+                  <div
+                    className='
+                  max-w-xl 
+                  mx-auto 
+                  px-8 
+                  py-3 
+                  bg-sky-300 
+                  rounded-3xl'
+                  >
+                    <input
+                      type='text'
+                      placeholder='Search a medicine name....'
+                      className='
+                     w-full
+                      text-white
+                      font-robot-slab
+                      px-6 
+                      bg-transparent
+                      border-0 
+                      outline-none 
+                      text-lg
+                      placeholder-gray-50
+                      py-3
+                      '
+                    />
+                  </div>
                   <p>
                     I think that’s a responsibility that I have, to push
                     possibilities, to show people, this is the level that things
@@ -158,8 +217,38 @@ function Info () {
               overflow-y-scroll 
               scrollbar-thin 
               scrollbar-track-slate-200 
-              scrollbar-thumb-slate-600'
+              scrollbar-thumb-slate-600
+              py-4
+              px-5
+              space-y-7
+              '
                 >
+                  <div
+                    className='
+                  max-w-xl 
+                  mx-auto 
+                  px-8 
+                  py-3 
+                  bg-sky-300 
+                  rounded-3xl'
+                  >
+                    <input
+                      type='text'
+                      placeholder='Search a medicine name....'
+                      className='
+                     w-full
+                      text-white
+                      font-robot-slab
+                      px-6 
+                      bg-transparent
+                      border-0 
+                      outline-none 
+                      text-lg
+                      placeholder-gray-50
+                      py-3
+                      '
+                    />
+                  </div>
                   <p>
                     I think that’s a responsibility that I have, to push
                     possibilities, to show people, this is the level that things
@@ -180,3 +269,15 @@ function Info () {
 }
 
 export default Info
+
+export async function getServerSideProps () {
+  const homeInfo = await fetch(
+    'https://medlineplus.gov/download/genetics/condition/cyclic-vomiting-syndrome.json'
+  ).then(res => res.json())
+
+  return {
+    props: {
+      testData: homeInfo
+    }
+  }
+}

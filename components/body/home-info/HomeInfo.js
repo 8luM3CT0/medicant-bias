@@ -67,7 +67,7 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
         </ModalHeader>
         <ModalBody>
           <div className='p-[70px] grid place-items-center space-y-4 max-w-md'>
-            <h1 className='text-xl font-semibold font-google-sans text-blue-300 '>
+            <h1 className='text-2xl font-semibold font-google-sans text-blue-600 '>
               {name}
             </h1>
             <div
@@ -83,11 +83,10 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
             >
               <p
                 className='
-              lg:text-xl
-              text-base 
+              text-xl
               font-google-sans 
               leading-relaxed 
-              text-blue-300 
+              text-gray-50
               lg:font-light
               font-semibold'
               >

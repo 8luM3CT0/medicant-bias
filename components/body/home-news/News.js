@@ -46,7 +46,7 @@ cursor-pointer
       <Modal toggler={() => setShowNews(false)} active={showNews} size='lg'>
         <div className='max-w-[340px]'>
           <ModalHeader>
-            <h2 className='font-mono font-semibold text-blue-400 text-xl p-3'>
+            <h2 className='font-robot-slab font-semibold text-blue-400 text-xl p-3'>
               {newsName}
             </h2>
           </ModalHeader>
@@ -64,7 +64,7 @@ cursor-pointer
                   className='
             font-google-sans 
             font-normal
-            text-lg 
+            text-xl 
             text-blue-500'
                 >
                   {' '}
@@ -85,7 +85,7 @@ cursor-pointer
                 {newsDescription ? (
                   <p
                     className='
-              text-base 
+              text-xl
               leading-relaxed 
               text-blue-100 
               font-robot-slab
@@ -113,7 +113,7 @@ cursor-pointer
                   href={link}
                   className='
               cursor-pointer
-              text-xs
+              text-sm
               w-[190px]
               truncate
               overflow-ellipsis

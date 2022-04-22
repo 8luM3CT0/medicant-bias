@@ -30,7 +30,7 @@ function About () {
         <h1
           className='
       text-2xl 
-      font-normal 
+      font-semibold 
       font-google-sans 
       text-gray-200 
       underline'
@@ -69,7 +69,7 @@ function About () {
         text-blue-100
         '
           >
-            <h2 className='font-robot-slab font-semibold text-gray-200 leading-8 text-xl'>
+            <h2 className='font-robot-slab font-normal text-gray-200 leading-8 text-xl'>
               MedInfo is a website that has three functions: it is firstly an
               encylopedia filled with terminologies, facts and data regarding to
               a particular search term, a place where an individual or a group
@@ -130,7 +130,7 @@ function About () {
           <h1
             className='
       text-2xl 
-      font-normal 
+      font-semibold
       place-self-start
       font-google-sans
       text-gray-200 
@@ -183,7 +183,7 @@ function About () {
           <h1
             className='
       text-2xl 
-      font-normal
+      font-semibold
       place-self-start 
       font-google-sans 
       text-gray-200 
@@ -204,7 +204,7 @@ function About () {
             <h2
               className='
           font-robot-slab 
-          font-semibold 
+          font-normal
           text-gray-200 
           leading-8 
           text-xl'
