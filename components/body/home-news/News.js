@@ -16,7 +16,7 @@ function News ({
   newsAuthor,
   newsDescription,
   shortDescription,
-  category
+  link
 }) {
   const [showNews, setShowNews] = useState(false)
 
@@ -108,6 +108,25 @@ cursor-pointer
                   ' '
                 )}
               </div>
+              {link ? (
+                <a
+                  href={link}
+                  className='
+              cursor-pointer
+              text-xs
+              w-[190px]
+              truncate
+              overflow-ellipsis
+              leading-relaxed 
+              text-blue-500 
+              font-robot-slab
+              font-normal'
+                >
+                  {link}
+                </a>
+              ) : (
+                ''
+              )}
             </div>
           </ModalBody>
           <ModalFooter>

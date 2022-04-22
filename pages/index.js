@@ -18,9 +18,11 @@ import { useState } from 'react'
 import { sample_data } from '../data/sample_data'
 import { news } from './api/news/news'
 
-export default function Home ({ healthNews, testData }) {
-  //console.log(testData?.['text-list'])
-  console.log(healthNews?.results)
+export default function Home ({ usHealth, testData }) {
+  //console.log(usHealth?.['text-list'])
+  console.log(
+    testData?.['related-gene-list']?.[0]?.['related-gene']?.['gene-symbol']
+  )
 
   return (
     <>
@@ -85,11 +87,19 @@ export default function Home ({ healthNews, testData }) {
             space-y-4
             '
           >
-            {sample_data &&
-              sample_data.map(doc => (
-                <HomeInfo name={doc.name} description={doc.descripition} />
-              ))}
-            {healthNews?.results && <HomeNews news={healthNews?.results} />}
+            {testData && (
+              <HomeInfo
+                name={testData?.name}
+                published={testData?.published}
+                description={testData?.['text-list']?.[0]?.text?.html}
+                geneSymbol={
+                  testData?.['related-gene-list']?.[0]?.['related-gene']?.[
+                    'gene-symbol'
+                  ]
+                }
+              />
+            )}
+            {usHealth?.articles && <HomeNews news={usHealth?.articles} />}
           </div>
           <div className='pb-56'>
             <AboutDiv />
@@ -135,17 +145,17 @@ export default function Home ({ healthNews, testData }) {
 }
 
 export async function getServerSideProps () {
-  const UsHealth = await fetch(
-    'https://newsdata.io/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&country=us&category=health'
+  const healthNews = await fetch(
+    'https://newsapi.org/v2/top-headlines?country=us&apiKey=a8943ee5424143488f9fb134793be2fc&category=health'
   ).then(res => res.json())
 
   const homeInfo = await fetch(
-    'https://medlineplus.gov/download/genetics/condition/alzheimer-disease.json'
+    'https://medlineplus.gov/download/genetics/condition/cyclic-vomiting-syndrome.json'
   ).then(res => res.json())
 
   return {
     props: {
-      healthNews: UsHealth,
+      usHealth: healthNews,
       testData: homeInfo
     }
   }

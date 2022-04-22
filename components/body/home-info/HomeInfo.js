@@ -10,7 +10,7 @@ import {
 //back-end
 import { useState } from 'react'
 
-function HomeInfo ({ id, name, description }) {
+function HomeInfo ({ id, name, description, published, geneSymbol }) {
   const [showMore, setShowMore] = useState(false)
 
   return (
@@ -53,51 +53,49 @@ function HomeInfo ({ id, name, description }) {
         toggler={() => setShowMore(false)}
       >
         <ModalHeader toggler={() => setShowMore(false)}>
-          <h2
+          <h5
             className='
-          text-xl 
+          text-sm 
           font-robot-slab 
           font-normal 
           text-sky-600
+          px-6
           '
           >
-            Term of the day
-          </h2>
+            Published on: {published}
+          </h5>
         </ModalHeader>
         <ModalBody>
           <div className='p-[70px] grid place-items-center space-y-4 max-w-md'>
-            <img
-              src='https://www.sfn.org/-/media/Brainfacts2/Archives/Article-Images/Alzheimers-Brain.jpg'
-              alt=''
-              className='
-          relative 
-          h-[190px] 
-          max-h-[210px] 
-          rounded-lg 
-          opactiy-95'
-            />
             <h1 className='text-xl font-semibold font-google-sans text-blue-300 '>
               {name}
             </h1>
             <div
               className='
-            h-[190px] 
+            lg:h-[460px] 
             px-4
             py-3
-            max-h-[210px] 
+            lg:max-h-[490px]
+            max-h-[280px] 
             overflow-y-scroll 
             scrollbar-hide 
             bg-gray-600'
             >
               <p
                 className='
+              lg:text-xl
               text-base 
               font-google-sans 
               leading-relaxed 
               text-blue-300 
+              lg:font-light
               font-semibold'
               >
                 {description}
+              </p>
+
+              <p className='text-base font-normal font-robot-slab text-blue-300'>
+                Gene symbol: {geneSymbol}
               </p>
             </div>
           </div>

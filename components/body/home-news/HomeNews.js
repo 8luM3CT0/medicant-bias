@@ -37,22 +37,16 @@ function HomeNews ({ news }) {
       >
         {news &&
           news.map(
-            ({
-              id,
-              title,
-              creator,
-              pubDate,
-              full_description,
-              description
-            }) => (
+            ({ id, title, author, publishedAt, content, description, url }) => (
               <News
                 key={id}
                 id={id}
                 newsName={title}
-                newsAuthor={creator}
-                newsDate={pubDate}
-                newsDescription={full_description}
+                newsAuthor={author}
+                newsDate={publishedAt}
+                newsDescription={content}
                 shortDescription={description}
+                link={url}
               />
             )
           )}
