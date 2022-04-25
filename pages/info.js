@@ -13,10 +13,12 @@ import {
   TabItem,
   TabContent,
   TabPane,
-  InfoHeader
+  InfoHeader,
+  InfoData
 } from '../components/'
 //back-end
 import { useState } from 'react'
+import { info_data } from '../data/info_data'
 
 function Info ({
   testData,
@@ -132,7 +134,7 @@ function Info ({
                   >
                     <input
                       type='text'
-                      placeholder='Search a medicine name....'
+                      placeholder='Search something related....'
                       className='
                      w-full
                       text-white
@@ -147,15 +149,52 @@ function Info ({
                       '
                     />
                   </div>
-                  <p>
-                    I think that’s a responsibility that I have, to push
-                    possibilities, to show people, this is the level that things
-                    could be at. So when you get something that has the name
-                    Kanye West on it, it’s supposed to be pushing the furthest
-                    possibilities. I will be the leader of a company that ends
-                    up being worth billions of dollars, because I got the
-                    answers. I understand culture. I am the nucleus.
-                  </p>
+                  <span
+                    className='
+                  max-w-lg 
+                  w-full 
+                  text-center 
+                  font-google-sans 
+                  mx-auto 
+                  space-y-3 
+                  my-4'
+                  >
+                    <h1 className='text-lg font-normal text-gray-500 my-3'>
+                      Human anatomy
+                    </h1>
+                    <p className='font-light text-gray-600 max-w-lg mx-auto'>
+                      the study of the structures of the human body. An
+                      understanding of anatomy is key to the practice of
+                      medicine and other areas of health.
+                    </p>
+                  </span>
+                  <div
+                    className='
+                    bg-blue-300
+                  lg:h-[590px] 
+                  h-[410px] 
+                  overflow-y-scroll 
+                  scrollbar-thin
+                  scrollbar-track-slate-300
+                  scrollbar-thumb-slate-600
+                  place-items-center
+                  grid
+                  lg:grid-cols-3
+                  md:grid-cols-2
+                  grid-cols-1
+                  space-y-4
+                  '
+                  >
+                    {info_data &&
+                      info_data.map(gene => (
+                        <InfoData
+                          name={gene.name}
+                          description={gene.description}
+                          geneSymbol={gene.geneSymbol}
+                          published={gene.published}
+                        />
+                      ))}
+                  </div>
                 </div>
               </TabPane>
               <TabPane active={openTab === 2 ? true : false}>
@@ -183,7 +222,7 @@ function Info ({
                   >
                     <input
                       type='text'
-                      placeholder='Search a medicine name....'
+                      placeholder='Search something related....'
                       className='
                      w-full
                       text-white
@@ -198,15 +237,52 @@ function Info ({
                       '
                     />
                   </div>
-                  <p>
-                    I think that’s a responsibility that I have, to push
-                    possibilities, to show people, this is the level that things
-                    could be at. So when you get something that has the name
-                    Kanye West on it, it’s supposed to be pushing the furthest
-                    possibilities. I will be the leader of a company that ends
-                    up being worth billions of dollars, because I got the
-                    answers. I understand culture. I am the nucleus.
-                  </p>
+                  <span
+                    className='
+                  max-w-lg 
+                  w-full 
+                  text-center 
+                  font-google-sans 
+                  mx-auto 
+                  space-y-3 
+                  my-4'
+                  >
+                    <h1 className='text-lg font-normal text-gray-500 my-3'>
+                      Medicine
+                    </h1>
+                    <p className='font-light text-gray-600 max-w-lg mx-auto'>
+                      the science or practice of the diagnosis, treatment, and
+                      prevention of disease (in technical use often taken to
+                      exclude surgery).
+                    </p>
+                  </span>
+                  <div
+                    className='
+                    bg-blue-300
+                  lg:h-[590px] 
+                  h-[410px] 
+                  overflow-y-scroll
+                  scrollbar-thin
+                  scrollbar-track-sky-300
+                  scrollbar-thumb-sky-600
+                  place-items-center
+                  grid
+                  lg:grid-cols-3
+                  md:grid-cols-2
+                  grid-cols-1
+                  space-y-4
+                  '
+                  >
+                    {info_data &&
+                      info_data.map(gene => (
+                        <InfoData
+                          name={gene.name}
+                          description={gene.description}
+                          geneSymbol={gene.geneSymbol}
+                          published={gene.published}
+                        />
+                      ))}
+                  </div>
                 </div>
               </TabPane>
               <TabPane active={openTab === 3 ? true : false}>
@@ -234,7 +310,7 @@ function Info ({
                   >
                     <input
                       type='text'
-                      placeholder='Search a medicine name....'
+                      placeholder='Search something related....'
                       className='
                      w-full
                       text-white
@@ -249,15 +325,52 @@ function Info ({
                       '
                     />
                   </div>
-                  <p>
-                    I think that’s a responsibility that I have, to push
-                    possibilities, to show people, this is the level that things
-                    could be at. So when you get something that has the name
-                    Kanye West on it, it’s supposed to be pushing the furthest
-                    possibilities. I will be the leader of a company that ends
-                    up being worth billions of dollars, because I got the
-                    answers. I understand culture. I am the nucleus.
-                  </p>
+                  <span
+                    className='
+                  max-w-lg 
+                  w-full 
+                  text-center 
+                  font-google-sans 
+                  mx-auto 
+                  space-y-3 
+                  my-4'
+                  >
+                    <h1 className='text-lg font-normal text-gray-500 my-3'>
+                      Genetics
+                    </h1>
+                    <p className='font-light text-gray-600 max-w-lg mx-auto'>
+                      The scientific study of genes and heredity—of how certain
+                      qualities or traits are passed from parents to offspring
+                      as a result of changes in DNA sequence
+                    </p>
+                  </span>
+                  <div
+                    className='
+                    bg-blue-300
+                  lg:h-[590px] 
+                  h-[410px] 
+                  overflow-y-scroll 
+                  scrollbar-thin
+                  scrollbar-track-red-300
+                  scrollbar-thumb-red-600
+                  place-items-center
+                  grid
+                  lg:grid-cols-3
+                  md:grid-cols-2
+                  grid-cols-1
+                  space-y-4
+                  '
+                  >
+                    {info_data &&
+                      info_data.map(gene => (
+                        <InfoData
+                          name={gene.name}
+                          description={gene.description}
+                          geneSymbol={gene.geneSymbol}
+                          published={gene.published}
+                        />
+                      ))}
+                  </div>
                 </div>
               </TabPane>
             </TabContent>

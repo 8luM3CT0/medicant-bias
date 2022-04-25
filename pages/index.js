@@ -20,10 +20,11 @@ import { news } from './api/news/news'
 
 export default function Home ({ usHealth, testData }) {
   //console.log(usHealth?.['text-list'])
-  console.log(
+  /*console.log(
     testData?.['related-gene-list']?.[0]?.['related-gene']?.['gene-symbol']
   )
-
+*/
+  console.log(usHealth?.articles)
   return (
     <>
       <div
@@ -99,6 +100,15 @@ export default function Home ({ usHealth, testData }) {
                 }
               />
             )}
+            {/*sample_data &&
+              sample_data.map(doc => (
+                <HomeInfo
+                  name={doc.name}
+                  description={doc.description}
+                  geneSymbol={doc.geneSymbol}
+                  published={doc.published}
+                />
+              ))*/}
             {usHealth?.articles && <HomeNews news={usHealth?.articles} />}
           </div>
           <div className='pb-56'>

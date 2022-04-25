@@ -1,16 +1,9 @@
 //front-end
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Icon
-} from '../../'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Icon } from '../..'
 //back-end
 import { useState } from 'react'
 
-function HomeInfo ({ id, name, description, published, geneSymbol }) {
+function InfoData ({ id, name, description, published, geneSymbol }) {
   const [showMore, setShowMore] = useState(false)
 
   return (
@@ -18,27 +11,27 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
       <div
         onClick={e => setShowMore(true)}
         className='
-    bg-gradient-to-br
-    from-gray-800
-    to-blue-700
-    rounded-lg
-    h-[380px] 
-    max-h-[440px]
-    lg:w-[380px]
-    w-[360px]
-    max-w-lg
-    flex
-    flex-col
-    justify-center
-    p-7
-    space-y-4
-    cursor-pointer
-    hover:opacity-80
-    transform
-    transition
-    duration-300
-    ease-in-out
-    '
+      bg-gradient-to-br
+      from-sky-800
+      to-blue-700
+      rounded-lg
+      h-[280px] 
+      max-h-[340px]
+      lg:w-[280px]
+      w-[260px]
+      max-w-lg
+      flex
+      flex-col
+      justify-center
+      p-7
+      space-y-4
+      cursor-pointer
+      hover:opacity-80
+      transform
+      transition
+      duration-300
+      ease-in-out
+      '
       >
         <p className='text-base font-robot-slab text-blue-300 font-normal'>
           Term of the day:
@@ -55,12 +48,12 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
         <ModalHeader toggler={() => setShowMore(false)}>
           <h5
             className='
-          text-sm 
-          font-robot-slab 
-          font-normal 
-          text-sky-600
-          px-6
-          '
+            text-sm 
+            font-robot-slab 
+            font-normal 
+            text-sky-600
+            px-6
+            '
           >
             Published on: {published}
           </h5>
@@ -72,30 +65,32 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
             </h1>
             <div
               className='
-            lg:h-[460px] 
-            px-4
-            py-3
-            lg:max-h-[490px]
-            max-h-[280px] 
-            overflow-y-scroll 
-            scrollbar-hide 
-            bg-gray-600'
+              lg:h-[460px] 
+              px-4
+              py-3
+              lg:max-h-[490px]
+              max-h-[280px] 
+              overflow-y-scroll 
+              scrollbar-hide 
+              bg-gray-600'
             >
               <p
                 className='
-              text-xl
-              font-google-sans 
-              leading-relaxed 
-              text-gray-50
-              lg:font-light
-              font-semibold'
+                text-xl
+                font-google-sans 
+                leading-relaxed 
+                text-gray-50
+                lg:font-light
+                font-semibold'
               >
                 {description}
               </p>
             </div>
-            <p className='text-base font-normal font-robot-slab text-blue-700'>
-              Gene symbol: {geneSymbol}
-            </p>
+            {geneSymbol && (
+              <p className='text-base font-normal font-robot-slab text-blue-700'>
+                Gene symbol: {geneSymbol}
+              </p>
+            )}
           </div>
         </ModalBody>
         <ModalFooter>
@@ -118,4 +113,4 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
   )
 }
 
-export default HomeInfo
+export default InfoData
