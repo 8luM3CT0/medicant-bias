@@ -18,7 +18,8 @@ import {
 } from '../components/'
 //back-end
 import { useState } from 'react'
-import { info_data } from '../data/info_data'
+import { gene_data } from '../data/gene_data'
+import { med_data } from '../data/med_data'
 
 function Info ({
   testData,
@@ -68,7 +69,7 @@ function Info ({
         <div className='max-w-full opacity-100 bg-gray-200 h-screen overflow-hidden'>
           <Tab>
             <TabList color='lightBlue'>
-              <div className='mx-auto max-w-6xl flex items-center'>
+              <div className='mx-auto flex items-center'>
                 <TabItem
                   onClick={e => {
                     e.preventDefault()
@@ -185,8 +186,8 @@ function Info ({
                   space-y-4
                   '
                   >
-                    {info_data &&
-                      info_data.map(gene => (
+                    {gene_data &&
+                      gene_data.map(gene => (
                         <InfoData
                           name={gene.name}
                           description={gene.description}
@@ -273,13 +274,13 @@ function Info ({
                   space-y-4
                   '
                   >
-                    {info_data &&
-                      info_data.map(gene => (
+                    {med_data &&
+                      med_data.map(med => (
                         <InfoData
-                          name={gene.name}
-                          description={gene.description}
-                          geneSymbol={gene.geneSymbol}
-                          published={gene.published}
+                          name={med.name}
+                          description={med.description}
+                          drug_class={med.drug_class}
+                          published={med.published}
                         />
                       ))}
                   </div>
@@ -361,8 +362,8 @@ function Info ({
                   space-y-4
                   '
                   >
-                    {info_data &&
-                      info_data.map(gene => (
+                    {gene_data &&
+                      gene_data.map(gene => (
                         <InfoData
                           name={gene.name}
                           description={gene.description}

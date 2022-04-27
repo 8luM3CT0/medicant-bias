@@ -141,6 +141,9 @@ function About () {
           <div
             className='
         grid 
+        lg:max-h-full
+        md:max-h-[290px]
+        max-h-[210px]
         rounded-lg
         max-w-lg 
         place-self-center

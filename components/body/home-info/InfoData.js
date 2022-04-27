@@ -3,7 +3,15 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Icon } from '../..'
 //back-end
 import { useState } from 'react'
 
-function InfoData ({ id, name, description, published, geneSymbol }) {
+function InfoData ({
+  id,
+  name,
+  description,
+  published,
+  geneSymbol,
+  generic_name,
+  drug_class
+}) {
   const [showMore, setShowMore] = useState(false)
 
   return (
@@ -86,10 +94,16 @@ function InfoData ({ id, name, description, published, geneSymbol }) {
                 {description}
               </p>
             </div>
-            {geneSymbol && (
+            {geneSymbol ? (
               <p className='text-base font-normal font-robot-slab text-blue-700'>
                 Gene symbol: {geneSymbol}
               </p>
+            ) : drug_class ? (
+              <p className='text-base font-normal font-robot-slab text-blue-700'>
+                Drug class: {drug_class}
+              </p>
+            ) : (
+              ' '
             )}
           </div>
         </ModalBody>

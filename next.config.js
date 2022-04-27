@@ -1,6 +1,7 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  env: {
+    fda_api_key: 'rz1iZlvaZnlTuGArTVulLKyJmVXr6ok7OHNzaO65'
+  }
 }
 
 module.exports = nextConfig
