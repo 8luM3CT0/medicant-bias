@@ -34,9 +34,7 @@ function Info ({
 }) {
   const [openTab, setOpenTab] = useState(2)
 
-  console.log('Medicine data >>>>>>>>>', med_data)
-  console.log('Genetics data >>>>>>>>>', gene_data)
-  console.log('Anatomy data >>>>>>>>>', anat_data)
+  console.log('Second test data >>>>>>>>>>>>>>>', secondTestData)
 
   return (
     <div
@@ -389,9 +387,14 @@ export async function getServerSideProps () {
     'https://medlineplus.gov/download/genetics/condition/cyclic-vomiting-syndrome.json'
   ).then(res => res.json())
 
+  const medInfo = await fetch(
+    'https://www.dictionaryapi.com/api/v3/references/medical/json/nervous_system?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+  ).then(res => res.json())
+
   return {
     props: {
-      testData: homeInfo
+      testData: homeInfo,
+      secondTestData: medInfo
     }
   }
 }
