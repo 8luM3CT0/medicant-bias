@@ -126,6 +126,8 @@ function Info ({
                     className='
                   max-w-xl 
                   mx-auto 
+                  flex
+                  items-center
                   px-8 
                   py-3 
                   bg-sky-300 
@@ -145,8 +147,19 @@ function Info ({
                       text-lg
                       placeholder-gray-50
                       py-3
+                      flex-grow
                       '
                     />
+                    <Button
+                      color='gray'
+                      buttonType='link'
+                      iconOnly={true}
+                      rounded={true}
+                      block={false}
+                      ripple='light'
+                    >
+                      <Icon name='search' />
+                    </Button>
                   </div>
                   <span
                     className='
@@ -214,6 +227,8 @@ function Info ({
                     className='
                   max-w-xl 
                   mx-auto 
+                  flex
+                  items-center
                   px-8 
                   py-3 
                   bg-sky-300 
@@ -224,6 +239,7 @@ function Info ({
                       placeholder='Search something related....'
                       className='
                      w-full
+                     flex-grow
                       text-white
                       font-robot-slab
                       px-6 
@@ -235,6 +251,16 @@ function Info ({
                       py-3
                       '
                     />
+                    <Button
+                      color='gray'
+                      buttonType='link'
+                      iconOnly={true}
+                      rounded={true}
+                      block={false}
+                      ripple='light'
+                    >
+                      <Icon name='search' />
+                    </Button>
                   </div>
                   <span
                     className='
@@ -300,6 +326,8 @@ function Info ({
                 >
                   <div
                     className='
+                  flex
+                  items-center
                   max-w-xl 
                   mx-auto 
                   px-8 
@@ -312,6 +340,7 @@ function Info ({
                       placeholder='Search something related....'
                       className='
                      w-full
+                     flex-grow
                       text-white
                       font-robot-slab
                       px-6 
@@ -323,6 +352,16 @@ function Info ({
                       py-3
                       '
                     />
+                    <Button
+                      color='gray'
+                      buttonType='link'
+                      iconOnly={true}
+                      rounded={true}
+                      block={false}
+                      ripple='light'
+                    >
+                      <Icon name='search' />
+                    </Button>
                   </div>
                   <span
                     className='
