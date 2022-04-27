@@ -10,7 +10,8 @@ function InfoData ({
   published,
   geneSymbol,
   generic_name,
-  drug_class
+  drug_class,
+  human_system
 }) {
   const [showMore, setShowMore] = useState(false)
 
@@ -101,6 +102,10 @@ function InfoData ({
             ) : drug_class ? (
               <p className='text-base font-normal font-robot-slab text-blue-700'>
                 Drug class: {drug_class}
+              </p>
+            ) : human_system ? (
+              <p className='text-base font-normal font-robot-slab text-blue-700'>
+                Anatomy classification: {human_system}
               </p>
             ) : (
               ' '

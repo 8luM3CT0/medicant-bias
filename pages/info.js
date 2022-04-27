@@ -18,8 +18,7 @@ import {
 } from '../components/'
 //back-end
 import { useState } from 'react'
-import { gene_data } from '../data/gene_data'
-import { med_data } from '../data/med_data'
+import { med_data, gene_data, anat_data } from '../data/index'
 
 function Info ({
   testData,
@@ -34,6 +33,10 @@ function Info ({
   tenthTestData
 }) {
   const [openTab, setOpenTab] = useState(2)
+
+  console.log('Medicine data >>>>>>>>>', med_data)
+  console.log('Genetics data >>>>>>>>>', gene_data)
+  console.log('Anatomy data >>>>>>>>>', anat_data)
 
   return (
     <div
@@ -80,7 +83,6 @@ function Info ({
                   href='tabItem'
                 >
                   <Icon name='directions_walk' size='lg' />
-                  Anatomy
                 </TabItem>
                 <TabItem
                   onClick={e => {
@@ -92,7 +94,6 @@ function Info ({
                   href='tabItem'
                 >
                   <Icon name='medication' size='lg' />
-                  Medicine
                 </TabItem>
                 <TabItem
                   onClick={e => {
@@ -104,7 +105,6 @@ function Info ({
                   href='tabItem'
                 >
                   <Icon name='biotech' size='lg' />
-                  Genes
                 </TabItem>
               </div>
             </TabList>
@@ -362,13 +362,13 @@ function Info ({
                   space-y-4
                   '
                   >
-                    {gene_data &&
-                      gene_data.map(gene => (
+                    {anat_data &&
+                      anat_data.map(anat => (
                         <InfoData
-                          name={gene.name}
-                          description={gene.description}
-                          geneSymbol={gene.geneSymbol}
-                          published={gene.published}
+                          name={anat.name}
+                          description={anat.description}
+                          human_system={anat.humanSystem}
+                          published={anat.published}
                         />
                       ))}
                   </div>
