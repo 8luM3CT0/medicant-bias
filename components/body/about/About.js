@@ -144,6 +144,12 @@ function About () {
         lg:max-h-full
         md:max-h-[290px]
         max-h-[210px]
+        lg:scrollbar-hide
+        lg:overflow-hidden
+        overflow-y-scroll
+        scrollbar-thin
+        scrollbar-thumb-indigo-500
+        scrollbar-track-indigo-200  
         rounded-lg
         max-w-lg 
         place-self-center
