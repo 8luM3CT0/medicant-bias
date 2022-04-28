@@ -5,7 +5,6 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Input,
   Button,
   Icon,
   Tab,
@@ -16,35 +15,27 @@ import {
   InfoHeader,
   InfoData
 } from '../components/'
-import { useViewportScroll, motion, useTransform } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
 //back-end
 import { useState } from 'react'
 import { med_data, gene_data, anat_data } from '../data/index'
+import Axios from 'axios'
+import { data } from 'autoprefixer'
 
-function Info ({
-  testData,
-  secondTestData,
-  thirdTestData,
-  fourthTestData,
-  fifthTestData,
-  sixthTestData,
-  seventhTestData,
-  eigthTestData,
-  ninthTestData,
-  tenthTestData
-}) {
+function Info ({ testData, secondTestData }) {
   const [openTab, setOpenTab] = useState(2)
-  const { scrollY } = useViewportScroll()
-  const first_y = useTransform(scrollY, [0, 300], [0, 200])
-  const second_y = useTransform(scrollY, [0, 300], [0, -100])
+  const [searchWord, setSearchWord] = useState('')
+  const [data, setData] = useState('')
+  console.log('Second test data >>>>>>>>>>>>>>>', secondTestData?.[0])
 
-  const [ref, inView, entry] = useInView({
-    threshold: 0.5,
-    triggerOnce: false
-  })
+  function getMeaning () {
+    Axios.get(
+      `https://www.dictionaryapi.com/api/v3/references/medical/json/${searchWord}?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd`
+    ).then(res => {
+      setData(res.data[0])
+    })
 
-  console.log('Second test data >>>>>>>>>>>>>>>', secondTestData)
+    setSearchWord('')
+  }
 
   return (
     <div
@@ -145,6 +136,8 @@ function Info ({
                   >
                     <input
                       type='text'
+                      value={searchWord}
+                      onChange={e => setSearchWord(e.target.value)}
                       placeholder='Search something related....'
                       className='
                      w-full
@@ -161,6 +154,7 @@ function Info ({
                       '
                     />
                     <Button
+                      onClick={getMeaning}
                       color='gray'
                       buttonType='link'
                       iconOnly={true}
@@ -190,6 +184,52 @@ function Info ({
                       medicine and other areas of health.
                     </p>
                   </span>
+                  {data && (
+                    <div
+                      className='
+                    max-w-2xl
+                    rounded-lg
+                    grid
+                    place-items-center
+                    mx-auto 
+                    max-h-[210px]
+                    h-[190px] 
+                    bg-blue-600 
+                    hover:bg-blue-400 
+                    transform
+                    transition
+                    duration-300
+                    overflow-y-scroll
+                    scrollbar-thin
+                    scrollbar-track-slate-50
+                    scrollbar-thumb-slate-700
+                    '
+                    >
+                      <h1
+                        className='
+                      text-2xl 
+                      font-robot-slab 
+                      font-normal 
+                      text-sky-200 
+                      p-5'
+                      >
+                        {data?.hwi?.hw}
+                      </h1>
+                      <p
+                        className='
+                      text-lg 
+                      font-google-sans 
+                      font-light 
+                      text-gray-100
+                      max-w-xl
+                      w-[220px]
+
+                      '
+                      >
+                        {data?.shortdef?.[0]}
+                      </p>
+                    </div>
+                  )}
                   <div
                     className='
                     bg-blue-800
@@ -247,6 +287,8 @@ function Info ({
                     <input
                       type='text'
                       placeholder='Search something related....'
+                      value={searchWord}
+                      onChange={e => setSearchWord(e.target.value)}
                       className='
                      w-full
                      flex-grow
@@ -262,6 +304,7 @@ function Info ({
                       '
                     />
                     <Button
+                      onClick={getMeaning}
                       color='gray'
                       buttonType='link'
                       iconOnly={true}
@@ -348,6 +391,8 @@ function Info ({
                     <input
                       type='text'
                       placeholder='Search something related....'
+                      value={searchWord}
+                      onChange={e => setSearchWord(e.target.value)}
                       className='
                      w-full
                      flex-grow
@@ -363,6 +408,7 @@ function Info ({
                       '
                     />
                     <Button
+                      onClick={getMeaning}
                       color='gray'
                       buttonType='link'
                       iconOnly={true}
