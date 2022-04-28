@@ -40,6 +40,7 @@ function InfoData ({
       transition
       duration-300
       ease-in-out
+      hover:scale-105
       '
       >
         <p className='text-base font-robot-slab text-blue-300 font-normal'>

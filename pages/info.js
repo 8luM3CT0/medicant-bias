@@ -16,6 +16,8 @@ import {
   InfoHeader,
   InfoData
 } from '../components/'
+import { useViewportScroll, motion, useTransform } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 //back-end
 import { useState } from 'react'
 import { med_data, gene_data, anat_data } from '../data/index'
@@ -33,6 +35,14 @@ function Info ({
   tenthTestData
 }) {
   const [openTab, setOpenTab] = useState(2)
+  const { scrollY } = useViewportScroll()
+  const first_y = useTransform(scrollY, [0, 300], [0, 200])
+  const second_y = useTransform(scrollY, [0, 300], [0, -100])
+
+  const [ref, inView, entry] = useInView({
+    threshold: 0.5,
+    triggerOnce: false
+  })
 
   console.log('Second test data >>>>>>>>>>>>>>>', secondTestData)
 
@@ -182,7 +192,7 @@ function Info ({
                   </span>
                   <div
                     className='
-                    bg-blue-300
+                    bg-blue-800
                   lg:h-[590px] 
                   h-[410px] 
                   overflow-y-scroll 
@@ -283,7 +293,7 @@ function Info ({
                   </span>
                   <div
                     className='
-                    bg-blue-300
+                    bg-cyan-800
                   lg:h-[590px] 
                   h-[410px] 
                   overflow-y-scroll
@@ -384,7 +394,7 @@ function Info ({
                   </span>
                   <div
                     className='
-                    bg-blue-300
+                    bg-rose-800
                   lg:h-[590px] 
                   h-[410px] 
                   overflow-y-scroll 
