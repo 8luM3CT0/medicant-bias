@@ -21,13 +21,19 @@ import { med_data, gene_data, anat_data } from '../data/index'
 import Axios from 'axios'
 import { data } from 'autoprefixer'
 
-function Info ({ testData, secondTestData }) {
+function Info ({ testData, secondTestData, drugData }) {
   const [openTab, setOpenTab] = useState(2)
+  //search state for human anatomy
   const [searchWord, setSearchWord] = useState('')
+  //search state for medicine
+  const [searchMed, setSearchMed] = useState('')
+  //for the human anatomy
   const [data, setData] = useState('')
-  console.log('Second test data >>>>>>>>>>>>>>>', secondTestData?.[0])
+  //for the medicine
+  const [medData, setMedData] = useState('')
+  //for the genetics
 
-  function getMeaning () {
+  function getBodyPart () {
     Axios.get(
       `https://www.dictionaryapi.com/api/v3/references/medical/json/${searchWord}?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd`
     ).then(res => {
@@ -35,6 +41,15 @@ function Info ({ testData, secondTestData }) {
     })
 
     setSearchWord('')
+  }
+
+  function getMed () {
+    Axios.get(
+      `https://rxnav.nlm.nih.gov/REST/drugs.json?name=${searchMed}`
+    ).then(res => {
+      setData(res.data?.drugGroup?.conceptGroup?.[1]?.conceptProperties)
+    })
+    setSearchMed('')
   }
 
   return (
@@ -154,7 +169,7 @@ function Info ({ testData, secondTestData }) {
                       '
                     />
                     <Button
-                      onClick={getMeaning}
+                      onClick={getBodyPart}
                       color='gray'
                       buttonType='link'
                       iconOnly={true}
@@ -287,8 +302,8 @@ function Info ({ testData, secondTestData }) {
                     <input
                       type='text'
                       placeholder='Search something related....'
-                      value={searchWord}
-                      onChange={e => setSearchWord(e.target.value)}
+                      value={searchMed}
+                      onChange={e => setSearchMed(e.target.value)}
                       className='
                      w-full
                      flex-grow
@@ -304,8 +319,8 @@ function Info ({ testData, secondTestData }) {
                       '
                     />
                     <Button
-                      onClick={getMeaning}
                       color='gray'
+                      onClick={getMed}
                       buttonType='link'
                       iconOnly={true}
                       rounded={true}
@@ -334,6 +349,38 @@ function Info ({ testData, secondTestData }) {
                       exclude surgery).
                     </p>
                   </span>
+                  {data && (
+                    <div
+                      className='
+                    max-w-2xl
+                    rounded-lg
+                    grid
+                    place-items-center
+                    mx-auto 
+                    max-h-[210px]
+                    h-[190px] 
+                    bg-cyan-600 
+                    hover:bg-cyan-400 
+                    transform
+                    transition
+                    duration-300
+                    overflow-y-scroll
+                    scrollbar-thin
+                    scrollbar-track-slate-50
+                    scrollbar-thumb-slate-700'
+                    >
+                      <h1
+                        className='
+                      text-2xl 
+                      font-robot-slab 
+                      font-normal 
+                      text-sky-200 
+                      p-5'
+                      >
+                        {data?.[0]?.name}
+                      </h1>
+                    </div>
+                  )}
                   <div
                     className='
                     bg-cyan-800
@@ -408,7 +455,6 @@ function Info ({ testData, secondTestData }) {
                       '
                     />
                     <Button
-                      onClick={getMeaning}
                       color='gray'
                       buttonType='link'
                       iconOnly={true}
@@ -486,10 +532,15 @@ export async function getServerSideProps () {
     'https://www.dictionaryapi.com/api/v3/references/medical/json/nervous_system?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
   ).then(res => res.json())
 
+  const drugInfo = await fetch(
+    'https://rxnav.nlm.nih.gov/REST/drugs.json?name=advil'
+  ).then(res => res.json())
+
   return {
     props: {
       testData: homeInfo,
-      secondTestData: medInfo
+      secondTestData: medInfo,
+      drugData: drugInfo
     }
   }
 }
