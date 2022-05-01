@@ -8,6 +8,7 @@ import {
   Icon,
   News
 } from '../../'
+import { motion, AnimatePresence } from 'framer-motion'
 //back-end
 import { useState } from 'react'
 

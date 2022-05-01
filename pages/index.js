@@ -15,7 +15,7 @@ import {
 } from '../components'
 //back-end
 import { useState } from 'react'
-import { sample_data } from '../data/sample_data'
+import { sample_data } from '../data/'
 import { news } from './api/news/news'
 
 export default function Home ({ usHealth, testData }) {

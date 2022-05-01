@@ -33,12 +33,12 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
     p-7
     space-y-4
     cursor-pointer
-    hover:opacity-80
+    hover:opacity-90
+    hover:scale-105
     transform
     transition
     duration-300
-    ease-in-out
-    '
+    ease-in-out    '
       >
         <p className='text-base font-robot-slab text-blue-300 font-normal'>
           Term of the day:
