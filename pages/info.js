@@ -299,7 +299,8 @@ function Info ({
                     bg-blue-800
                   lg:h-[690px]
                   md:h-[590px] 
-                  h-[410px] 
+                  h-[410px]
+                  pb-40 
                   overflow-y-scroll 
                   scrollbar-thin
                   scrollbar-track-slate-300
@@ -313,15 +314,56 @@ function Info ({
                   rounded-lg
                   '
                   >
-                    {anat_data &&
-                      anat_data.map(gene => (
-                        <InfoData
-                          name={gene.name}
-                          description={gene.description}
-                          geneSymbol={gene.geneSymbol}
-                          published={gene.published}
-                        />
-                      ))}
+                    {heartData && (
+                      <InfoData
+                        name={heartData?.[0]?.hwi?.hw}
+                        description={heartData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+                    {lungsData && (
+                      <InfoData
+                        name={lungsData?.[0]?.hwi?.hw}
+                        description={lungsData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+                    {scrotumData && (
+                      <InfoData
+                        name={scrotumData?.[0]?.hwi?.hw}
+                        description={scrotumData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+
+                    {secondTestData && (
+                      <InfoData
+                        name={secondTestData?.[0]?.hwi?.hw}
+                        description={secondTestData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+                    {heartData && (
+                      <InfoData
+                        name={heartData?.[0]?.hwi?.hw}
+                        description={heartData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+                    {lungsData && (
+                      <InfoData
+                        name={lungsData?.[0]?.hwi?.hw}
+                        description={lungsData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+                    {scrotumData && (
+                      <InfoData
+                        name={scrotumData?.[0]?.hwi?.hw}
+                        description={scrotumData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
+
+                    {secondTestData && (
+                      <InfoData
+                        name={secondTestData?.[0]?.hwi?.hw}
+                        description={secondTestData?.[0]?.shortdef?.[0]}
+                      />
+                    )}
                   </div>
                 </div>
               </TabPane>
