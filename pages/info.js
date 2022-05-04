@@ -57,9 +57,9 @@ function Info ({
   //medicine
   function getMed () {
     Axios.get(
-      `https://rxnav.nlm.nih.gov/REST/drugs.json?name=${searchMed}`
+      `https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=${searchMed}&matchType=Begins&size=100&from=0`
     ).then(res => {
-      setData(res.data?.drugGroup?.conceptGroup?.[1]?.conceptProperties)
+      setData(res.data?.results?.[0])
     })
     setSearchMed('')
   }
@@ -67,19 +67,14 @@ function Info ({
   //genetics
   function getGeneticsTerm () {
     Axios.get(
-      `https://medlineplus.gov/download/genetics/condition/${searchGenes}.json`
+      `https://medlineplus.gov/download/genetics/condition/${searchGenes}`
     ).then(res => {
       setData(res.data)
     })
     setSearchWord('')
   }
 
-  console.log(
-    'The three requests pulled from the medical dictionary api',
-    heartData,
-    lungsData,
-    scrotumData
-  )
+  console.log('Data from genetics api >>>>', testData)
 
   return (
     <div
@@ -470,8 +465,22 @@ function Info ({
                       text-sky-200 
                       p-5'
                       >
-                        {data?.[0]?.name}
+                        {data?.name}
                       </h1>
+
+                      <p
+                        className='
+                      text-lg 
+                      font-google-sans 
+                      font-light 
+                      text-gray-100
+                      max-w-xl
+                      w-[220px]
+
+                      '
+                      >
+                        {data?.definition?.text}
+                      </p>
                     </div>
                   )}
                   <div
@@ -480,7 +489,8 @@ function Info ({
                     rounded-lg
                   lg:h-[690px]
                   md:h-[590px] 
-                  h-[410px]  
+                  h-[410px]
+                  pb-40 
                   overflow-y-scroll
                   scrollbar-thin
                   scrollbar-track-sky-300
@@ -631,7 +641,8 @@ function Info ({
                     bg-rose-800 
                   lg:h-[690px]
                   md:h-[590px] 
-                  h-[410px]  
+                  h-[410px]
+                  pb-40 
                   overflow-y-scroll 
                   scrollbar-thin
                   scrollbar-track-red-300
@@ -734,7 +745,8 @@ function Info ({
                     bg-green-800 
                   lg:h-[690px]
                   md:h-[590px] 
-                  h-[410px]  
+                  h-[410px]
+                  pb-40   
                   overflow-y-scroll 
                   scrollbar-thin
                   scrollbar-track-green-300
@@ -771,7 +783,7 @@ export default Info
 
 export async function getServerSideProps () {
   const homeInfo = await fetch(
-    'https://medlineplus.gov/download/genetics/condition/cyclic-vomiting-syndrome.json'
+    'https://medlineplus.gov/download/genetics/condition/alzheimer-disease.json'
   ).then(res => res.json())
 
   const [lungsInfo, heartInfo, scrotumInfo] = await Promise.all([
@@ -797,7 +809,7 @@ export async function getServerSideProps () {
   ).then(res => res.json())
 
   const drugInfo = await fetch(
-    'https://rxnav.nlm.nih.gov/REST/drugs.json?name=advil'
+    'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=ibuprofen&matchType=Begins&size=100&from=0'
   ).then(res => res.json())
 
   return {
