@@ -20,11 +20,9 @@ import { news } from './api/news/news'
 
 export default function Home ({ usHealth, testData }) {
   //console.log(usHealth?.['text-list'])
-  /*console.log(
-    testData?.['related-gene-list']?.[0]?.['related-gene']?.['gene-symbol']
-  )
-*/
-  console.log(usHealth?.articles)
+  console.log(testData)
+
+  //console.log(usHealth?.articles)
   return (
     <>
       <div

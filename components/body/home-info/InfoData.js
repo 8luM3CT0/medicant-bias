@@ -21,8 +21,8 @@ function InfoData ({
         onClick={e => setShowMore(true)}
         className='
       bg-gradient-to-br
-      from-sky-800
-      to-blue-700
+      from-sky-400
+      to-blue-500
       rounded-lg
       h-[280px] 
       max-h-[340px]
@@ -55,26 +55,27 @@ function InfoData ({
         active={showMore}
         toggler={() => setShowMore(false)}
       >
-        <ModalHeader toggler={() => setShowMore(false)}>
-          <h5
-            className='
+        <div className='grid place-items-start px-3 py-2 bg-cyan-700 rouded-lg space-y-2'>
+          <ModalHeader toggler={() => setShowMore(false)}>
+            <h5
+              className='
             text-sm 
             font-robot-slab 
             font-normal 
-            text-sky-600
+            text-sky-200
             px-6
             '
-          >
-            Published on: {published}
-          </h5>
-        </ModalHeader>
-        <ModalBody>
-          <div className='p-[70px] grid place-items-start space-y-4 max-w-md'>
-            <h1 className='text-2xl font-semibold font-google-sans text-blue-600 '>
-              {name}
-            </h1>
-            <div
-              className='
+            >
+              Published on: {published}
+            </h5>
+          </ModalHeader>
+          <ModalBody>
+            <div className='p-8 grid place-items-start space-y-4 max-w-md'>
+              <h1 className='text-2xl font-semibold font-google-sans text-indigo-100 border-b-2 border-gray-300'>
+                {name}
+              </h1>
+              <div
+                className='
               lg:h-[460px] 
               px-4
               py-3
@@ -82,52 +83,55 @@ function InfoData ({
               max-h-[280px] 
               overflow-y-scroll 
               scrollbar-hide 
-              bg-gray-600'
-            >
-              <p
-                className='
+              bg-gray-600
+              rounded-lg
+              '
+              >
+                <p
+                  className='
                 text-xl
                 font-google-sans 
                 leading-relaxed 
                 text-gray-50
                 lg:font-light
                 font-semibold'
-              >
-                {description}
-              </p>
+                >
+                  {description}
+                </p>
+              </div>
+              {geneSymbol ? (
+                <p className='text-base font-normal font-robot-slab text-cyan-200 border-b-2 border-cyan-300'>
+                  Gene symbol: {geneSymbol}
+                </p>
+              ) : drug_class ? (
+                <p className='text-base font-normal font-robot-slab text-cyan-200 border-b-2 border-cyan-300'>
+                  Drug class: {drug_class}
+                </p>
+              ) : human_system ? (
+                <p className='text-base font-normal font-robot-slab text-cyan-200 border-b-2 border-cyan-300'>
+                  Anatomy classification: {human_system}
+                </p>
+              ) : (
+                ' '
+              )}
             </div>
-            {geneSymbol ? (
-              <p className='text-base font-normal font-robot-slab text-blue-700'>
-                Gene symbol: {geneSymbol}
-              </p>
-            ) : drug_class ? (
-              <p className='text-base font-normal font-robot-slab text-blue-700'>
-                Drug class: {drug_class}
-              </p>
-            ) : human_system ? (
-              <p className='text-base font-normal font-robot-slab text-blue-700'>
-                Anatomy classification: {human_system}
-              </p>
-            ) : (
-              ' '
-            )}
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <Button
-            onClick={e => setShowMore(false)}
-            color='red'
-            buttonType='link'
-            iconOnly={false}
-            block={false}
-            rounded={false}
-            ripple='light'
-            className='capitalize font-google-sans font-light hover:font-normal'
-          >
-            <Icon name='cancel' />
-            Close
-          </Button>
-        </ModalFooter>
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              onClick={e => setShowMore(false)}
+              color='red'
+              buttonType='filled'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+              className='capitalize font-google-sans font-light hover:font-normal'
+            >
+              <Icon name='cancel' />
+              Close
+            </Button>
+          </ModalFooter>
+        </div>
       </Modal>
     </>
   )

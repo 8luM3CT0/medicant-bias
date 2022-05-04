@@ -21,7 +21,14 @@ import { med_data, gene_data, anat_data } from '../data/index'
 import Axios from 'axios'
 import { data } from 'autoprefixer'
 
-function Info ({ testData, secondTestData, drugData }) {
+function Info ({
+  testData,
+  secondTestData,
+  drugData,
+  heartData,
+  lungsData,
+  scrotumData
+}) {
   const [openTab, setOpenTab] = useState(2)
   //search state for human anatomy
   const [searchWord, setSearchWord] = useState('')
@@ -62,14 +69,17 @@ function Info ({ testData, secondTestData, drugData }) {
     Axios.get(
       `https://medlineplus.gov/download/genetics/condition/${searchGenes}.json`
     ).then(res => {
-      setGeneticsData(res.data)
+      setData(res.data)
     })
     setSearchWord('')
   }
 
-  console.log('Test data here >>>>>>>>', testData)
-
-  console.log('the genetics term is here >>>>>>>>', getGeneticsTerm)
+  console.log(
+    'The three requests pulled from the medical dictionary api',
+    heartData,
+    lungsData,
+    scrotumData
+  )
 
   return (
     <div
@@ -528,7 +538,7 @@ function Info ({ testData, secondTestData, drugData }) {
                       as a result of changes in DNA sequence
                     </p>
                   </span>
-                  {geneticsData && (
+                  {data && (
                     <div
                       className='
                     max-w-2xl
@@ -557,7 +567,7 @@ function Info ({ testData, secondTestData, drugData }) {
                       text-sky-200 
                       p-5'
                       >
-                        {geneticsData?.hwi?.hw}
+                        {data?.name}
                       </h1>
                       <p
                         className='
@@ -570,7 +580,7 @@ function Info ({ testData, secondTestData, drugData }) {
 
                       '
                       >
-                        {geneticsData?.shortdef?.[0]}
+                        definition
                       </p>
                     </div>
                   )}
@@ -722,6 +732,24 @@ export async function getServerSideProps () {
     'https://medlineplus.gov/download/genetics/condition/cyclic-vomiting-syndrome.json'
   ).then(res => res.json())
 
+  const [lungsInfo, heartInfo, scrotumInfo] = await Promise.all([
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/lungs?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/heart?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/scrotum?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    )
+  ])
+
+  const [lungs, heart, scrotum] = await Promise.all([
+    lungsInfo.json(),
+    heartInfo.json(),
+    scrotumInfo.json()
+  ])
+
   const medInfo = await fetch(
     'https://www.dictionaryapi.com/api/v3/references/medical/json/nervous_system?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
   ).then(res => res.json())
@@ -734,7 +762,10 @@ export async function getServerSideProps () {
     props: {
       testData: homeInfo,
       secondTestData: medInfo,
-      drugData: drugInfo
+      drugData: drugInfo,
+      lungsData: lungs,
+      heartData: heart,
+      scrotumData: scrotum
     }
   }
 }
