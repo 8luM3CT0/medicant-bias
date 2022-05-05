@@ -64,16 +64,6 @@ function Info ({
     setSearchMed('')
   }
 
-  //genetics
-  function getGeneticsTerm () {
-    Axios.get(
-      `https://medlineplus.gov/download/genetics/condition/${searchGenes}`
-    ).then(res => {
-      setData(res.data)
-    })
-    setSearchWord('')
-  }
-
   console.log('Data from genetics api >>>>', testData)
 
   return (
@@ -130,6 +120,9 @@ function Info ({
                   href='tabItem'
                 >
                   <Icon name='directions_walk' size='lg' />
+                  <p className='font-robot-slab text-base font-normal'>
+                    Anatomy
+                  </p>
                 </TabItem>
                 <TabItem
                   onClick={e => {
@@ -141,6 +134,9 @@ function Info ({
                   href='tabItem'
                 >
                   <Icon name='medication' size='lg' />
+                  <p className='font-robot-slab text-base font-normal'>
+                    Prescription
+                  </p>
                 </TabItem>
                 <TabItem
                   onClick={e => {
@@ -151,18 +147,10 @@ function Info ({
                   active={openTab === 3 ? true : false}
                   href='tabItem'
                 >
-                  <Icon name='biotech' size='lg' />
-                </TabItem>
-                <TabItem
-                  onClick={e => {
-                    e.preventDefault()
-                    setOpenTab(4)
-                  }}
-                  ripple='light'
-                  active={openTab === 4 ? true : false}
-                  href='tabItem'
-                >
                   <Icon name='psychology' size='lg' />
+                  <p className='font-robot-slab text-base font-normal'>
+                    Psychology
+                  </p>
                 </TabItem>
               </div>
             </TabList>
@@ -516,158 +504,6 @@ function Info ({
                 </div>
               </TabPane>
               <TabPane active={openTab === 3 ? true : false}>
-                <div
-                  className='
-              h-screen 
-              bg-sky-100 
-              overflow-y-scroll 
-              scrollbar-thin 
-              scrollbar-track-slate-200 
-              scrollbar-thumb-slate-600
-              py-4
-              px-5
-              space-y-7
-              '
-                >
-                  <div
-                    className='
-                  flex
-                  items-center
-                  max-w-xl 
-                  mx-auto 
-                  px-8 
-                  py-3 
-                  bg-sky-300 
-                  rounded-3xl'
-                  >
-                    <input
-                      type='text'
-                      placeholder='Search something related....'
-                      value={searchWord}
-                      onChange={e => setSearchWord(e.target.value)}
-                      className='
-                     w-full
-                     flex-grow
-                      text-white
-                      font-robot-slab
-                      px-6 
-                      bg-transparent
-                      border-0 
-                      outline-none 
-                      text-lg
-                      placeholder-gray-50
-                      py-3
-                      '
-                    />
-                    <Button
-                      onClick={getGeneticsTerm}
-                      color='gray'
-                      buttonType='link'
-                      iconOnly={true}
-                      rounded={true}
-                      block={false}
-                      ripple='light'
-                    >
-                      <Icon name='search' />
-                    </Button>
-                  </div>
-                  <span
-                    className='
-                  max-w-lg 
-                  w-full 
-                  text-center 
-                  font-google-sans 
-                  mx-auto 
-                  space-y-3 
-                  my-4'
-                  >
-                    <h1 className='text-lg font-normal text-gray-500 my-3'>
-                      Genetics
-                    </h1>
-                    <p className='font-light text-gray-600 max-w-lg mx-auto'>
-                      The scientific study of genes and heredity—of how certain
-                      qualities or traits are passed from parents to offspring
-                      as a result of changes in DNA sequence
-                    </p>
-                  </span>
-                  {data && (
-                    <div
-                      className='
-                    max-w-2xl
-                    rounded-lg
-                    grid
-                    place-items-center
-                    mx-auto 
-                    max-h-[210px]
-                    h-[190px] 
-                    bg-red-600 
-                    hover:bg-red-400 
-                    transform
-                    transition
-                    duration-300
-                    overflow-y-scroll
-                    scrollbar-thin
-                    scrollbar-track-slate-50
-                    scrollbar-thumb-slate-700
-                    '
-                    >
-                      <h1
-                        className='
-                      text-2xl 
-                      font-robot-slab 
-                      font-normal 
-                      text-sky-200 
-                      p-5'
-                      >
-                        {data?.name}
-                      </h1>
-                      <p
-                        className='
-                      text-lg 
-                      font-google-sans 
-                      font-light 
-                      text-gray-100
-                      max-w-xl
-                      w-[220px]
-
-                      '
-                      >
-                        definition
-                      </p>
-                    </div>
-                  )}
-                  <div
-                    className='
-                    bg-rose-800 
-                  lg:h-[690px]
-                  md:h-[590px] 
-                  h-[410px]
-                  pb-40 
-                  overflow-y-scroll 
-                  scrollbar-thin
-                  scrollbar-track-red-300
-                  scrollbar-thumb-red-600
-                  place-items-center
-                  grid
-                  lg:grid-cols-3
-                  md:grid-cols-2
-                  grid-cols-1
-                  space-y-4
-                  '
-                  >
-                    {gene_data &&
-                      gene_data.map(anat => (
-                        <InfoData
-                          name={anat.name}
-                          description={anat.description}
-                          human_system={anat.humanSystem}
-                          published={anat.published}
-                        />
-                      ))}
-                  </div>
-                </div>
-              </TabPane>
-              <TabPane active={openTab === 4 ? true : false}>
                 <div
                   className='
               h-screen 
