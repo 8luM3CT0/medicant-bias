@@ -38,10 +38,6 @@ function Info ({
   const [searchGenes, setSearchGenes] = useState('')
   //for the human anatomy
   const [data, setData] = useState('')
-  //for the medicine
-  const [medData, setMedData] = useState('')
-  //for the genetics
-  const [geneticsData, setGeneticsData] = useState('')
 
   //human anatomy
   function getBodyPart () {
@@ -120,9 +116,7 @@ function Info ({
                   href='tabItem'
                 >
                   <Icon name='directions_walk' size='lg' />
-                  <p className='font-robot-slab text-base font-normal'>
-                    Anatomy
-                  </p>
+                  <p className='font-robot-slab text-base font-normal'>Human</p>
                 </TabItem>
                 <TabItem
                   onClick={e => {
@@ -136,20 +130,6 @@ function Info ({
                   <Icon name='medication' size='lg' />
                   <p className='font-robot-slab text-base font-normal'>
                     Prescription
-                  </p>
-                </TabItem>
-                <TabItem
-                  onClick={e => {
-                    e.preventDefault()
-                    setOpenTab(3)
-                  }}
-                  ripple='light'
-                  active={openTab === 3 ? true : false}
-                  href='tabItem'
-                >
-                  <Icon name='psychology' size='lg' />
-                  <p className='font-robot-slab text-base font-normal'>
-                    Psychology
                   </p>
                 </TabItem>
               </div>
@@ -223,12 +203,16 @@ function Info ({
                   my-4'
                   >
                     <h1 className='text-lg font-normal text-gray-500 my-3'>
-                      Human anatomy
+                      Human
                     </h1>
                     <p className='font-light text-gray-600 max-w-lg mx-auto'>
-                      the study of the structures of the human body. An
-                      understanding of anatomy is key to the practice of
-                      medicine and other areas of health.
+                      the most abundant and widespread species of primate,
+                      characterized by bipedalism and large, complex brains.
+                      This has enabled the development of advanced tools,
+                      culture, and language. Humans are highly social and tend
+                      to live in complex social structures composed of many
+                      cooperating and competing groups, from families and
+                      kinship networks to political states.
                     </p>
                   </span>
                   {data && (
@@ -498,110 +482,6 @@ function Info ({
                           description={med.description}
                           drug_class={med.drug_class}
                           published={med.published}
-                        />
-                      ))}
-                  </div>
-                </div>
-              </TabPane>
-              <TabPane active={openTab === 3 ? true : false}>
-                <div
-                  className='
-              h-screen 
-              bg-sky-100 
-              overflow-y-scroll 
-              scrollbar-thin 
-              scrollbar-track-slate-200 
-              scrollbar-thumb-slate-600
-              py-4
-              px-5
-              space-y-7
-              '
-                >
-                  <div
-                    className='
-                  flex
-                  items-center
-                  max-w-xl 
-                  mx-auto 
-                  px-8 
-                  py-3 
-                  bg-sky-300 
-                  rounded-3xl'
-                  >
-                    <input
-                      type='text'
-                      placeholder='Search something related....'
-                      value={searchWord}
-                      onChange={e => setSearchWord(e.target.value)}
-                      className='
-                     w-full
-                     flex-grow
-                      text-white
-                      font-robot-slab
-                      px-6 
-                      bg-transparent
-                      border-0 
-                      outline-none 
-                      text-lg
-                      placeholder-gray-50
-                      py-3
-                      '
-                    />
-                    <Button
-                      color='gray'
-                      buttonType='link'
-                      iconOnly={true}
-                      rounded={true}
-                      block={false}
-                      ripple='light'
-                    >
-                      <Icon name='search' />
-                    </Button>
-                  </div>
-                  <span
-                    className='
-                  max-w-lg 
-                  w-full 
-                  text-center 
-                  font-google-sans 
-                  mx-auto 
-                  space-y-3 
-                  my-4'
-                  >
-                    <h1 className='text-lg font-normal text-gray-500 my-3'>
-                      Psychology
-                    </h1>
-                    <p className='font-light text-gray-600 max-w-lg mx-auto'>
-                      the scientific study of the human mind and its functions,
-                      especially those affecting behavior in a given context.
-                    </p>
-                  </span>
-                  <div
-                    className='
-                    bg-green-800 
-                  lg:h-[690px]
-                  md:h-[590px] 
-                  h-[410px]
-                  pb-40   
-                  overflow-y-scroll 
-                  scrollbar-thin
-                  scrollbar-track-green-300
-                  scrollbar-thumb-green-600
-                  place-items-center
-                  grid
-                  lg:grid-cols-3
-                  md:grid-cols-2
-                  grid-cols-1
-                  space-y-4
-                  '
-                  >
-                    {gene_data &&
-                      gene_data.map(anat => (
-                        <InfoData
-                          name={anat.name}
-                          description={anat.description}
-                          human_system={anat.humanSystem}
-                          published={anat.published}
                         />
                       ))}
                   </div>
