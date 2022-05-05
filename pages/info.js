@@ -27,7 +27,13 @@ function Info ({
   drugData,
   heartData,
   lungsData,
-  scrotumData
+  scrotumData,
+  dpData,
+  alzData,
+  eyeData,
+  footData,
+  brainData,
+  neuronData
 }) {
   const [openTab, setOpenTab] = useState(2)
   //search state for human anatomy
@@ -306,29 +312,29 @@ function Info ({
                         description={secondTestData?.[0]?.shortdef?.[0]}
                       />
                     )}
-                    {heartData && (
+                    {dpData && (
                       <InfoData
-                        name={heartData?.[0]?.hwi?.hw}
-                        description={heartData?.[0]?.shortdef?.[0]}
+                        name={dpData?.[0]?.hwi?.hw}
+                        description={dpData?.[0]?.shortdef?.[0]}
                       />
                     )}
-                    {lungsData && (
+                    {alzData && (
                       <InfoData
-                        name={lungsData?.[0]?.hwi?.hw}
-                        description={lungsData?.[0]?.shortdef?.[0]}
+                        name={alzData?.[0]?.hwi?.hw}
+                        description={alzData?.[0]?.shortdef?.[0]}
                       />
                     )}
-                    {scrotumData && (
+                    {eyeData && (
                       <InfoData
-                        name={scrotumData?.[0]?.hwi?.hw}
-                        description={scrotumData?.[0]?.shortdef?.[0]}
+                        name={eyeData?.[0]?.hwi?.hw}
+                        description={eyeData?.[0]?.shortdef?.[0]}
                       />
                     )}
 
-                    {secondTestData && (
+                    {neuronData && (
                       <InfoData
-                        name={secondTestData?.[0]?.hwi?.hw}
-                        description={secondTestData?.[0]?.shortdef?.[0]}
+                        name={neuronData?.[0]?.hwi?.hw}
+                        description={neuronData?.[0]?.shortdef?.[0]}
                       />
                     )}
                   </div>
@@ -502,7 +508,17 @@ export async function getServerSideProps () {
     'https://medlineplus.gov/download/genetics/condition/alzheimer-disease.json'
   ).then(res => res.json())
 
-  const [lungsInfo, heartInfo, scrotumInfo] = await Promise.all([
+  const [
+    lungsInfo,
+    heartInfo,
+    scrotumInfo,
+    dpInfo,
+    alzInfo,
+    eyeInfo,
+    footInfo,
+    brainInfo,
+    neuronInfo
+  ] = await Promise.all([
     fetch(
       'https://www.dictionaryapi.com/api/v3/references/medical/json/lungs?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
     ),
@@ -511,13 +527,47 @@ export async function getServerSideProps () {
     ),
     fetch(
       'https://www.dictionaryapi.com/api/v3/references/medical/json/scrotum?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/major_depressive_disorder?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/alzheimer_disease?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/eyes?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/foot?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/nervous_system?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    ),
+    fetch(
+      'https://www.dictionaryapi.com/api/v3/references/medical/json/neuron?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
     )
   ])
 
-  const [lungs, heart, scrotum] = await Promise.all([
+  const [
+    lungs,
+    heart,
+    scrotum,
+    dp,
+    alz,
+    eye,
+    foot,
+    brain,
+    neuron
+  ] = await Promise.all([
     lungsInfo.json(),
     heartInfo.json(),
-    scrotumInfo.json()
+    scrotumInfo.json(),
+    dpInfo.json(),
+    alzInfo.json(),
+    eyeInfo.json(),
+    footInfo.json(),
+    brainInfo.json(),
+    neuronInfo.json()
   ])
 
   const medInfo = await fetch(
@@ -535,7 +585,13 @@ export async function getServerSideProps () {
       drugData: drugInfo,
       lungsData: lungs,
       heartData: heart,
-      scrotumData: scrotum
+      scrotumData: scrotum,
+      dpData: dp,
+      alzData: alz,
+      eyeData: eye,
+      footData: foot,
+      brainData: brain,
+      neuronData: neuron
     }
   }
 }
