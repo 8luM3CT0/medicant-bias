@@ -43,7 +43,7 @@ function InfoData ({
       hover:scale-105
       '
       >
-        <p className='text-base font-robot-slab text-blue-300 font-normal'>
+        <p className='text-base font-robot-slab text-blue-300 font-normal place-self-start'>
           Term of the day:
         </p>
         <h1 className='text-xl font-mono text-blue-100 font-semibold'>
@@ -57,17 +57,19 @@ function InfoData ({
       >
         <div className='grid place-items-start px-3 py-2 bg-cyan-700 rouded-lg space-y-2'>
           <ModalHeader toggler={() => setShowMore(false)}>
-            <h5
-              className='
+            {published && (
+              <h5
+                className='
             text-sm 
             font-robot-slab 
             font-normal 
             text-sky-200
             px-6
             '
-            >
-              Published on: {published}
-            </h5>
+              >
+                Published on: {published}
+              </h5>
+            )}
           </ModalHeader>
           <ModalBody>
             <div className='p-8 grid place-items-start space-y-4 max-w-md'>

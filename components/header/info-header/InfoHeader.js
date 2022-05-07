@@ -71,6 +71,7 @@ function InfoHeader () {
             <h2 className='text-xl'>Home</h2>
           </Button>
           <Button
+            onClick={() => router.push('/news')}
             color='blue'
             buttonType='link'
             size='regular'
@@ -154,6 +155,7 @@ function InfoHeader () {
               <h2 className='text-xl'>Home</h2>
             </Button>
             <Button
+              onClick={() => router.push('/news')}
               color='blue'
               buttonType='link'
               iconOnly={false}

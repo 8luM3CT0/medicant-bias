@@ -1,65 +1,68 @@
 //front-end
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Icon
-} from '../../'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Icon } from '../..'
 //back-end
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-function MainHeader () {
+function NewsHeader () {
   const [showRoutes, setShowRoutes] = useState(false)
   const router = useRouter()
 
   return (
     <>
-      <div
+      <header
         className='
-    bg-gradient-to-r
-    from-gray-900
-    to-red-600
-    flex 
-    items-center 
-    justify-evenly 
-    px-4 
-    py-3'
+      bg-gradient-to-r
+      from-gray-900
+      to-red-600
+      flex 
+      items-center 
+      justify-evenly 
+      px-4 
+      py-3
+      '
       >
-        {/**left */}
-        <div className='flex items-center space-x-4'>
+        <Button
+          onClick={e => setShowRoutes(true)}
+          color='blue'
+          buttonType='link'
+          size='lg'
+          iconOnly={true}
+          rounded={false}
+          block={false}
+          ripple='light'
+          className='lg:hidden'
+        >
+          <Icon name='menu' />
+        </Button>
+        <Button
+          color='blue'
+          buttonType='link'
+          size='regular'
+          rounded={false}
+          iconOnly={false}
+          block={false}
+          ripple='light'
+          className='font-google-sans font-normal capitalize'
+        >
+          <Icon name='newspaper' />
+          <h2 className='text-xl'>News</h2>
+        </Button>
+        <div className='routesDiv'>
           <Button
-            onClick={e => setShowRoutes(true)}
+            onClick={() => router.push('/')}
             color='blue'
             buttonType='link'
-            size='lg'
-            iconOnly={true}
+            size='regular'
             rounded={false}
+            iconOnly={false}
             block={false}
             ripple='light'
-            className='lg:hidden'
+            className='grid font-google-sans font-normal capitalize'
           >
-            <Icon name='menu' />
+            <Icon name='home' />
+            <h2 className='text-xl'>Home</h2>
           </Button>
-          <Button
-            color='blue'
-            buttonType='link'
-            size='lg'
-            iconOnly={false}
-            rounded={false}
-            block={false}
-            ripple='dark'
-            className='capitalize font-google-sans font-normal space-x-3'
-          >
-            <Icon name='health_and_safety' />
-            <h2 className='appName'>MedInfo</h2>
-            {/**Subject to change in the future */}
-          </Button>
-        </div>
-        {/**center (not present in the mobile screen) */}
-        <div className='routesDiv'>
           <Button
             onClick={() => router.push('/info')}
             color='blue'
@@ -75,20 +78,6 @@ function MainHeader () {
             <h2 className='text-xl'>Info</h2>
           </Button>
           <Button
-            onClick={() => router.push('/news')}
-            color='blue'
-            buttonType='link'
-            size='regular'
-            rounded={false}
-            iconOnly={false}
-            block={false}
-            ripple='light'
-            className='grid font-google-sans font-normal capitalize'
-          >
-            <Icon name='newspaper' />
-            <h2 className='text-xl'>News</h2>
-          </Button>
-          <Button
             color='blue'
             buttonType='link'
             size='regular'
@@ -102,7 +91,6 @@ function MainHeader () {
             <h2 className='text-xl'>Test</h2>
           </Button>
         </div>
-        {/**right */}
         <Button
           color='blue'
           buttonType='link'
@@ -115,18 +103,18 @@ function MainHeader () {
           <Icon name='contacts' />
           <h2 className='contact'>Contact</h2>
         </Button>
-      </div>
+      </header>
       <Modal active={showRoutes} size='lg' toggler={() => setShowRoutes(false)}>
         <ModalHeader toggler={() => setShowRoutes(false)}>
           <h2
             className='
-          font-mono 
-          font-semibold 
-          text-blue-600 
-          text-base
-          shadow-lg
-          shadow-gray-700
-          '
+            font-mono 
+            font-semibold 
+            text-blue-600 
+            text-base
+            shadow-lg
+            shadow-gray-700
+            '
           >
             Routes to other pages
           </h2>
@@ -134,15 +122,15 @@ function MainHeader () {
         <ModalBody>
           <div
             className='
-          grid 
-          place-items-start
-          space-y-4 
-          p-[80px] 
-          shadow-md 
-          shadow-sky-500'
+            grid 
+            place-items-start
+            space-y-4 
+            p-[80px] 
+            shadow-md 
+            shadow-sky-500'
           >
             <Button
-              onClick={() => router.push('/info')}
+              onClick={() => router.push('/')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -150,14 +138,14 @@ function MainHeader () {
               rounded={false}
               ripple='light'
               className='
-              capitalize 
-              font-google-sans 
-              font-normal 
-              space-x-3
-              hover:font-semibold'
+                capitalize 
+                font-google-sans 
+                font-normal 
+                space-x-3
+                hover:font-semibold'
             >
-              <Icon name='book_online' />
-              <h2 className='text-xl'>Info</h2>
+              <Icon name='home' />
+              <h2 className='text-xl'>Home</h2>
             </Button>
             <Button
               onClick={() => router.push('/news')}
@@ -168,14 +156,14 @@ function MainHeader () {
               rounded={false}
               ripple='light'
               className='
-              capitalize 
-              font-google-sans 
-              font-normal 
-              space-x-3
-              hover:font-semibold'
+                capitalize 
+                font-google-sans 
+                font-normal 
+                space-x-3
+                hover:font-semibold'
             >
-              <Icon name='newspaper' />
-              <h2 className='text-xl'>News</h2>
+              <Icon name='book_online' />
+              <h2 className='text-xl'>Info</h2>
             </Button>
 
             <Button
@@ -186,11 +174,11 @@ function MainHeader () {
               rounded={false}
               ripple='light'
               className='
-              capitalize 
-              font-google-sans 
-              font-normal 
-              space-x-3
-              hover:font-semibold'
+                capitalize 
+                font-google-sans 
+                font-normal 
+                space-x-3
+                hover:font-semibold'
             >
               <Icon name='quiz' />
               <h2 className='text-xl'>Test</h2>
@@ -213,4 +201,4 @@ function MainHeader () {
   )
 }
 
-export default MainHeader
+export default NewsHeader
