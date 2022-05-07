@@ -21,7 +21,6 @@ import { news } from './api/news/news'
 export default function Home ({ usHealth, testData }) {
   //console.log(usHealth?.['text-list'])
   console.log(testData)
-
   //console.log(usHealth?.articles)
   return (
     <>
@@ -88,14 +87,8 @@ export default function Home ({ usHealth, testData }) {
           >
             {testData && (
               <HomeInfo
-                name={testData?.name}
-                published={testData?.published}
-                description={testData?.['text-list']?.[0]?.text?.html}
-                geneSymbol={
-                  testData?.['related-gene-list']?.[0]?.['related-gene']?.[
-                    'gene-symbol'
-                  ]
-                }
+                name={testData?.[0]?.hwi?.hw}
+                description={testData?.[0]?.shortdef?.[0]}
               />
             )}
             {/*sample_data &&
@@ -158,7 +151,7 @@ export async function getServerSideProps () {
   ).then(res => res.json())
 
   const homeInfo = await fetch(
-    'https://medlineplus.gov/download/genetics/condition/cyclic-vomiting-syndrome.json'
+    'https://www.dictionaryapi.com/api/v3/references/medical/json/medulla_oblongata?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
   ).then(res => res.json())
 
   return {

@@ -22,9 +22,7 @@ import Axios from 'axios'
 import { data } from 'autoprefixer'
 
 function Info ({
-  testData,
   secondTestData,
-  drugData,
   heartData,
   lungsData,
   scrotumData,
@@ -33,9 +31,18 @@ function Info ({
   eyeData,
   footData,
   brainData,
-  neuronData
+  neuronData,
+  ibuprofen,
+  alprazolam,
+  methlyphenidate,
+  acetaminophen,
+  escitalopram,
+  sertraline,
+  citalopram,
+  eszopiclone,
+  fluvoxamine
 }) {
-  const [openTab, setOpenTab] = useState(2)
+  const [openTab, setOpenTab] = useState(1)
   //search state for human anatomy
   const [searchWord, setSearchWord] = useState('')
   //search state for medicine
@@ -66,7 +73,7 @@ function Info ({
     setSearchMed('')
   }
 
-  console.log('Data from genetics api >>>>', testData)
+  console.log('Displaying data for ibuprofen >>>>>>', ibuprofen?.results)
 
   return (
     <div
@@ -481,7 +488,7 @@ function Info ({
                   space-y-4
                   '
                   >
-                    {med_data &&
+                    {/*med_data &&
                       med_data.map(med => (
                         <InfoData
                           name={med.name}
@@ -489,7 +496,79 @@ function Info ({
                           drug_class={med.drug_class}
                           published={med.published}
                         />
-                      ))}
+                      ))*/}
+                    {ibuprofen && (
+                      <InfoData
+                        name={ibuprofen?.results?.[0]?.name}
+                        description={ibuprofen?.results?.[0]?.definition?.text}
+                      />
+                    )}
+
+                    {alprazolam && (
+                      <InfoData
+                        name={alprazolam?.results?.[0]?.name}
+                        description={alprazolam?.results?.[0]?.definition?.text}
+                      />
+                    )}
+
+                    {methlyphenidate && (
+                      <InfoData
+                        name={methlyphenidate?.results?.[0]?.name}
+                        description={
+                          methlyphenidate?.results?.[0]?.definition?.text
+                        }
+                      />
+                    )}
+
+                    {acetaminophen && (
+                      <InfoData
+                        name={acetaminophen?.results?.[0]?.name}
+                        description={
+                          acetaminophen?.results?.[0]?.definition?.text
+                        }
+                      />
+                    )}
+
+                    {escitalopram && (
+                      <InfoData
+                        name={escitalopram?.results?.[0]?.name}
+                        description={
+                          escitalopram?.results?.[0]?.definition?.text
+                        }
+                      />
+                    )}
+
+                    {sertraline && (
+                      <InfoData
+                        name={sertraline?.results?.[0]?.name}
+                        description={sertraline?.results?.[0]?.definition?.text}
+                      />
+                    )}
+
+                    {citalopram && (
+                      <InfoData
+                        name={citalopram?.results?.[0]?.name}
+                        description={citalopram?.results?.[0]?.definition?.text}
+                      />
+                    )}
+
+                    {eszopiclone && (
+                      <InfoData
+                        name={eszopiclone?.results?.[0]?.name}
+                        description={
+                          eszopiclone?.results?.[0]?.definition?.text
+                        }
+                      />
+                    )}
+
+                    {fluvoxamine && (
+                      <InfoData
+                        name={fluvoxamine?.results?.[0]?.name}
+                        description={
+                          fluvoxamine?.results?.[0]?.definition?.text
+                        }
+                      />
+                    )}
                   </div>
                 </div>
               </TabPane>
@@ -504,10 +583,6 @@ function Info ({
 export default Info
 
 export async function getServerSideProps () {
-  const homeInfo = await fetch(
-    'https://medlineplus.gov/download/genetics/condition/alzheimer-disease.json'
-  ).then(res => res.json())
-
   const [
     lungsInfo,
     heartInfo,
@@ -548,6 +623,7 @@ export async function getServerSideProps () {
     )
   ])
 
+  //anatomy and human stuff json
   const [
     lungs,
     heart,
@@ -570,19 +646,72 @@ export async function getServerSideProps () {
     neuronInfo.json()
   ])
 
-  const medInfo = await fetch(
-    'https://www.dictionaryapi.com/api/v3/references/medical/json/nervous_system?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
-  ).then(res => res.json())
+  //generics data
+  const [
+    ibuInfo,
+    alpInfo,
+    methylInfo,
+    acetInfo,
+    escitInfo,
+    sertInfo,
+    citaInfo,
+    eszoInfo,
+    fluvoInfo
+  ] = await Promise.all([
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=ibuprofen&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=alprazolam&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=methylphenidate&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=acetaminophen&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=escitalopram&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=sertraline&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=citalopram&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=eszopiclone&matchType=Begins&size=100&from=0'
+    ),
+    fetch(
+      'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=fluvoxamine&matchType=Begins&size=100&from=0'
+    )
+  ])
 
-  const drugInfo = await fetch(
-    'https://webapis.cancer.gov/drugdictionary/v1/Drugs/search?query=ibuprofen&matchType=Begins&size=100&from=0'
-  ).then(res => res.json())
+  //generics
+  const [
+    ibuprofen,
+    alprazolam,
+    methlyphenidate,
+    acetaminophen,
+    escitalopram,
+    sertraline,
+    citalopram,
+    eszopiclone,
+    fluvoxamine
+  ] = await Promise.all([
+    ibuInfo.json(),
+    alpInfo.json(),
+    methylInfo.json(),
+    acetInfo.json(),
+    escitInfo.json(),
+    sertInfo.json(),
+    citaInfo.json(),
+    eszoInfo.json(),
+    fluvoInfo.json()
+  ])
 
   return {
     props: {
-      testData: homeInfo,
-      secondTestData: medInfo,
-      drugData: drugInfo,
       lungsData: lungs,
       heartData: heart,
       scrotumData: scrotum,
@@ -591,7 +720,16 @@ export async function getServerSideProps () {
       eyeData: eye,
       footData: foot,
       brainData: brain,
-      neuronData: neuron
+      neuronData: neuron,
+      ibuprofen,
+      alprazolam,
+      methlyphenidate,
+      acetaminophen,
+      escitalopram,
+      sertraline,
+      citalopram,
+      eszopiclone,
+      fluvoxamine
     }
   }
 }

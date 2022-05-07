@@ -52,27 +52,29 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
         active={showMore}
         toggler={() => setShowMore(false)}
       >
-        <ModalHeader toggler={() => setShowMore(false)}>
-          <h5
-            className='
+        <div className='grid place-items-start px-3 py-2 rounded-lg space--y-2'>
+          <ModalHeader toggler={() => setShowMore(false)}>
+            <h5
+              className='
           text-sm 
           font-robot-slab 
           font-normal 
           text-sky-600
           px-6
           '
-          >
-            Published on: {published}
-          </h5>
-        </ModalHeader>
-        <ModalBody>
-          <div className='p-[70px] grid place-items-start space-y-4 max-w-md'>
-            <h1 className='text-2xl font-semibold font-google-sans text-blue-600 '>
-              {name}
-            </h1>
-            <div
-              className='
+            >
+              Published on: {published}
+            </h5>
+          </ModalHeader>
+          <ModalBody>
+            <div className='p-[70px] grid place-items-start space-y-4 max-w-md'>
+              <h1 className='text-2xl font-semibold font-google-sans text-blue-600 '>
+                {name}
+              </h1>
+              <div
+                className='
             lg:h-[460px] 
+            h-[230px]
             px-4
             py-3
             lg:max-h-[490px]
@@ -80,39 +82,42 @@ function HomeInfo ({ id, name, description, published, geneSymbol }) {
             overflow-y-scroll 
             scrollbar-hide 
             bg-gray-600'
-            >
-              <p
-                className='
+              >
+                <p
+                  className='
               text-xl
               font-google-sans 
               leading-relaxed 
               text-gray-50
               lg:font-light
               font-semibold'
-              >
-                {description}
-              </p>
+                >
+                  {description}
+                </p>
+              </div>
+              {geneSymbol && (
+                <p className='text-base font-normal font-robot-slab text-blue-700'>
+                  Gene symbol: {geneSymbol}
+                </p>
+              )}
             </div>
-            <p className='text-base font-normal font-robot-slab text-blue-700'>
-              Gene symbol: {geneSymbol}
-            </p>
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <Button
-            onClick={e => setShowMore(false)}
-            color='red'
-            buttonType='link'
-            iconOnly={false}
-            block={false}
-            rounded={false}
-            ripple='light'
-            className='capitalize font-google-sans font-light hover:font-normal'
-          >
-            <Icon name='cancel' />
-            Close
-          </Button>
-        </ModalFooter>
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              onClick={e => setShowMore(false)}
+              color='red'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+              className='capitalize font-google-sans font-light hover:font-normal'
+            >
+              <Icon name='cancel' />
+              Close
+            </Button>
+          </ModalFooter>
+        </div>
       </Modal>
     </>
   )
