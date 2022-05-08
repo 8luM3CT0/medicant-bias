@@ -7,7 +7,8 @@ import {
   ModalFooter,
   Button,
   Icon,
-  NewsHeader
+  NewsHeader,
+  TopNews
 } from '../components/'
 //back-end
 import { useState } from 'react'
@@ -47,17 +48,26 @@ function HomeNews ({ medNews }) {
           scrollbar-thumb-slate-300 
           lg:max-h-[420px]
           lg:h-[395px] 
-          max-h-[210px]
-          h-[185px] 
+          max-h-[280px]
+          h-[275px] 
           max-w-full
           mx-auto 
           px-4
           bg-blue-100
           py-2
           rounded-lg
+          space-x-7
+          flex
+          items-center
           '
           >
-            top div
+            {medNews.articles.map(news => (
+              <TopNews
+                urlToImage={news?.urlToImage}
+                author={news?.author}
+                title={news?.title}
+              />
+            ))}
           </div>
         </main>
         <footer
@@ -113,7 +123,7 @@ export default HomeNews
 
 export async function getServerSideProps () {
   const medNews = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&apiKey=a8943ee5424143488f9fb134793be2fc&category=health`
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.newsapi_key}&category=health`
   ).then(res => res.json())
 
   return {
