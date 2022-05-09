@@ -575,40 +575,40 @@ function Info ({
             </TabContent>
           </Tab>
         </div>
-        <footer className='z-50 bottom-0 sticky bg-gray-600 px-8 py-4 justify-between  flex items-center'>
-          <Button
-            color='lightBlue'
-            buttonType='link'
-            iconOnly={false}
-            block={false}
-            rounded={false}
-            className='
+      </main>
+      <footer className='z-50 bottom-0 sticky bg-gray-600 px-8 py-4 justify-between  flex items-center'>
+        <Button
+          color='lightBlue'
+          buttonType='link'
+          iconOnly={false}
+          block={false}
+          rounded={false}
+          className='
           capitalize
           hover:underline 
           font-google-sans 
           font-normal'
-          >
-            <h1 className='text-xl '>Looking for services ? Click here.</h1>
-          </Button>
-          <Button
-            color='lightBlue'
-            buttonType='link'
-            iconOnly={false}
-            block={false}
-            rounded={false}
-            className='
+        >
+          <h1 className='text-xl '>Looking for services ? Click here.</h1>
+        </Button>
+        <Button
+          color='lightBlue'
+          buttonType='link'
+          iconOnly={false}
+          block={false}
+          rounded={false}
+          className='
             flex
             items-center
             space-x-4
           capitalize
           font-google-sans 
           font-normal'
-          >
-            <Icon name='terminal' />
-            <h1 className='developerTitle'>Developer</h1>
-          </Button>
-        </footer>
-      </main>
+        >
+          <Icon name='terminal' />
+          <h1 className='developerTitle'>Developer</h1>
+        </Button>
+      </footer>
     </div>
   )
 }

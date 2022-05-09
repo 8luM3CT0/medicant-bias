@@ -7,6 +7,12 @@ import {
   ModalFooter,
   Button,
   Icon,
+  Tab,
+  TabList,
+  TabItem,
+  TabContent,
+  TabPane,
+  InfoHeader,
   NewsHeader,
   TopNews
 } from '../components/'
@@ -14,8 +20,10 @@ import {
 import { useState } from 'react'
 import { news } from './api/news/news'
 
-function HomeNews ({ medNews }) {
-  console.log('medNews be here >>>>>>>', medNews?.articles)
+function HomeNews ({ medNews, newsDataMed }) {
+  const [openTab, setOpenTab] = useState(1)
+
+  console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
 
   return (
     <>
@@ -32,11 +40,14 @@ function HomeNews ({ medNews }) {
         <main
           className='
         h-screen 
+        space-y-3
         bg-gray-200 
         opacity-80
-        overflow-hidden
+        overflow-y-scroll
+        scrollbar-hide
         max-w-6xl
         mx-auto
+        pb-[210px]
         px-3
         '
         >
@@ -55,6 +66,7 @@ function HomeNews ({ medNews }) {
           px-4
           bg-blue-100
           py-2
+          mb-12
           rounded-lg
           space-x-7
           flex
@@ -69,6 +81,108 @@ function HomeNews ({ medNews }) {
               />
             ))}
           </div>
+          <Tab>
+            <TabList color='cyan'>
+              <div
+                className='
+              mx-auto 
+              flex 
+              items-center 
+              overflow-x-scroll 
+              scrollbar-thin 
+              scrollbar-thumb-blue-800 
+              scrollbar-track-sky-500'
+              >
+                <TabItem
+                  onClick={e => {
+                    e.preventDefault()
+                    setOpenTab(1)
+                  }}
+                  ripple='light'
+                  active={openTab === 1 ? true : false}
+                  href='tabItem'
+                >
+                  <Icon name='health_and_safety' size='lg' />
+                  Health
+                </TabItem>
+                <TabItem
+                  onClick={e => {
+                    e.preventDefault()
+                    setOpenTab(2)
+                  }}
+                  ripple='light'
+                  active={openTab === 2 ? true : false}
+                  href='tabItem'
+                >
+                  <Icon name='menu_book' size='lg' />
+                  Food
+                </TabItem>
+                <TabItem
+                  onClick={e => {
+                    e.preventDefault()
+                    setOpenTab(3)
+                  }}
+                  ripple='light'
+                  active={openTab === 3 ? true : false}
+                  href='tabItem'
+                >
+                  <Icon name='science' size='lg' />
+                  Science
+                </TabItem>
+              </div>
+            </TabList>
+
+            <TabContent>
+              <TabPane active={openTab === 1 ? true : false}>
+                <div
+                  className='
+                lg:h-[790px]
+                h-[390px]
+                mx-auto
+                max-w-full
+                bg-blue-200
+                rounded-lg
+                overflow-y-scroll
+                scrollbar-thin
+                scrollbar-thumb-sky-600
+                scrollbar-track-sky-200  
+                '
+                ></div>
+              </TabPane>
+              <TabPane active={openTab === 2 ? true : false}>
+                <div
+                  className='
+                lg:h-[790px]
+                h-[390px]
+                mx-auto
+                max-w-full
+                bg-blue-200
+                rounded-lg
+                overflow-y-scroll
+                scrollbar-thin
+                scrollbar-thumb-sky-600
+                scrollbar-track-sky-200  
+                '
+                ></div>
+              </TabPane>
+              <TabPane active={openTab === 3 ? true : false}>
+                <div
+                  className='
+                lg:h-[790px]
+                h-[390px]
+                mx-auto
+                max-w-full
+                bg-blue-200
+                rounded-lg
+                overflow-y-scroll
+                scrollbar-thin
+                scrollbar-thumb-sky-600
+                scrollbar-track-sky-200  
+                '
+                ></div>
+              </TabPane>
+            </TabContent>
+          </Tab>
         </main>
         <footer
           className='
@@ -126,9 +240,14 @@ export async function getServerSideProps () {
     `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.newsapi_key}&category=health`
   ).then(res => res.json())
 
+  const newsDataMed = await fetch(
+    `https://newsdata.io/api/1/news?apikey=${process.env.newsdata_key}&category=health&country=us`
+  ).then(res => res.json())
+
   return {
     props: {
-      medNews
+      medNews,
+      newsDataMed
     }
   }
 }
