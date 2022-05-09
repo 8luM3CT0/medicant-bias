@@ -21,11 +21,12 @@ import {
 import { useState } from 'react'
 import { news } from './api/news/news'
 
-function HomeNews ({ medNews, newsDataMed, scienceNews }) {
+function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
   const [openTab, setOpenTab] = useState(1)
 
-  console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
-
+  //console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
+  //console.log('Science data be here >>>>>', scienceNews?.articles)
+  console.log('Food news data be here >>>>>>>>>>>>>', foodNews)
   return (
     <>
       <div
@@ -137,7 +138,7 @@ function HomeNews ({ medNews, newsDataMed, scienceNews }) {
               <TabPane active={openTab === 1 ? true : false}>
                 <div
                   className='
-                lg:h-[790px]
+                  lg:h-[790px]
                 h-[390px]
                 mx-auto
                 max-w-full
@@ -147,13 +148,24 @@ function HomeNews ({ medNews, newsDataMed, scienceNews }) {
                 scrollbar-thin
                 scrollbar-thumb-sky-600
                 scrollbar-track-sky-200  
+                space-y-4
+                place-items-center
+                grid
                 '
-                ></div>
+                >
+                  {newsDataMed.results.map(news => (
+                    <NewsContent
+                      urlToImage={news?.image_url}
+                      author={news?.creator}
+                      title={news?.title}
+                      content={news?.description}
+                    />
+                  ))}
+                </div>
               </TabPane>
               <TabPane active={openTab === 2 ? true : false}>
                 <div
-                  className='
-                lg:h-[790px]
+                  className='lg:h-[790px]
                 h-[390px]
                 mx-auto
                 max-w-full
@@ -163,8 +175,20 @@ function HomeNews ({ medNews, newsDataMed, scienceNews }) {
                 scrollbar-thin
                 scrollbar-thumb-sky-600
                 scrollbar-track-sky-200  
+                space-y-4
+                place-items-center
+                grid  
                 '
-                ></div>
+                >
+                  {foodNews.results.map(news => (
+                    <NewsContent
+                      urlToImage={news?.image_url}
+                      author={news?.creator}
+                      title={news?.title}
+                      content={news?.description}
+                    />
+                  ))}
+                </div>
               </TabPane>
               <TabPane active={openTab === 3 ? true : false}>
                 <div
@@ -261,11 +285,16 @@ export async function getServerSideProps () {
     `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.newsapi_key}&category=science&country=us`
   ).then(res => res.json())
 
+  const foodNews = await fetch(
+    `https://newsdata.io/api/1/news?apikey=${process.env.newsdata_key}&category=food&country=us`
+  ).then(res => res.json())
+
   return {
     props: {
       medNews,
       newsDataMed,
-      scienceNews
+      scienceNews,
+      foodNews
     }
   }
 }
