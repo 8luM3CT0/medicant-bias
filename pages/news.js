@@ -14,16 +14,18 @@ import {
   TabPane,
   InfoHeader,
   NewsHeader,
-  TopNews
+  TopNews,
+  NewsContent
 } from '../components/'
 //back-end
 import { useState } from 'react'
 import { news } from './api/news/news'
 
-function HomeNews ({ medNews, newsDataMed }) {
+function HomeNews ({ medNews, newsDataMed, scienceNews }) {
   const [openTab, setOpenTab] = useState(1)
 
   console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
+  console.log('Science news data in json >>>>>>>>>>', scienceNews?.articles)
 
   return (
     <>
@@ -178,8 +180,20 @@ function HomeNews ({ medNews, newsDataMed }) {
                 scrollbar-thin
                 scrollbar-thumb-sky-600
                 scrollbar-track-sky-200  
+                space-y-4
+                place-items-center
+                grid
                 '
-                ></div>
+                >
+                  {scienceNews.articles.map(news => (
+                    <NewsContent
+                      urlToImage={news?.urlToImage}
+                      author={news?.author}
+                      title={news?.title}
+                      content={news?.description}
+                    />
+                  ))}
+                </div>
               </TabPane>
             </TabContent>
           </Tab>
@@ -244,10 +258,15 @@ export async function getServerSideProps () {
     `https://newsdata.io/api/1/news?apikey=${process.env.newsdata_key}&category=health&country=us`
   ).then(res => res.json())
 
+  const scienceNews = await fetch(
+    `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.newsapi_key}&category=science&country=us`
+  ).then(res => res.json())
+
   return {
     props: {
       medNews,
-      newsDataMed
+      newsDataMed,
+      scienceNews
     }
   }
 }

@@ -37,4 +37,13 @@
     text-xl
   }
 
+  .newsContentText{
+    @apply
+    px-2 
+    lg:max-w-[380px] 
+    lg:max-h-[340px] 
+    lg:inline-flex 
+    hidden
+  }
+
 }
