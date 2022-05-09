@@ -25,7 +25,6 @@ function HomeNews ({ medNews, newsDataMed, scienceNews }) {
   const [openTab, setOpenTab] = useState(1)
 
   console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
-  console.log('Science news data in json >>>>>>>>>>', scienceNews?.articles)
 
   return (
     <>

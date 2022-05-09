@@ -65,14 +65,12 @@ function NewsContent ({
     '
         />
       )}
-      <div className='grid items-center space-y-2'>
-        <h2 className='font-semibold text-lg text-sky-100 max-w-[190px] line-clamp-2'>
-          {title}
-        </h2>
+      <div className='grid place-items-center space-y-2'>
+        <h2 className='newsContentTitle'>{title}</h2>
         {author ? (
-          <h3 className='font-normal text-base text-sky-200'>By {author}</h3>
+          <h3 className='newsContentAuthor'>By {author}</h3>
         ) : (
-          <h3 className='font-normal text-base text-sky-200'>N/A author</h3>
+          <h3 className='newsContentAuthor'>By N/A </h3>
         )}
       </div>
       <div className='newsContentText'>

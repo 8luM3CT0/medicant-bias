@@ -37,6 +37,25 @@
     text-xl
   }
 
+  .newsContentTitle{
+    @apply
+    md:inline-flex
+    hidden
+    font-semibold 
+    text-lg 
+    text-sky-100 
+    max-w-[190px]
+  }
+
+  .newsContentAuthor{
+    @apply
+    md:inline-flex
+    hidden
+    font-normal 
+    text-base 
+    text-sky-200
+  }
+
   .newsContentText{
     @apply
     px-2 
