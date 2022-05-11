@@ -145,11 +145,12 @@ function TopNews ({
     '
               />
             )}
-            <div
-              className='
-            lg:max-h-[490px] 
+            {content && (
+              <div
+                className='
+            lg:max-h-[390px] 
             max-w-[350px]
-            lg:h-[450px]
+            lg:h-[360px]
             max-h-[200px]
             h-[195px]
             overflow-y-scroll
@@ -160,11 +161,12 @@ function TopNews ({
             scrollbar-track-sky-200
             scrollbar-thumb-gray-800
             '
-            >
-              <h2 className='font-robot-slab text-lg text-sky-200 font-normal'>
-                {content}
-              </h2>
-            </div>
+              >
+                <h2 className='font-robot-slab text-lg text-sky-200 font-normal'>
+                  {content}
+                </h2>
+              </div>
+            )}
             <div
               className='
               grid 
@@ -177,7 +179,21 @@ function TopNews ({
               '
             >
               <h2 className='text-lg font-normal text-sky-200'>Source:</h2>
-              <a className='text-base font-light text-sky-400'>{source}</a>
+              <a
+                href={source}
+                className='
+              text-base 
+              font-light 
+              text-sky-400 
+              hover:text-sky-200
+              transform
+              transition
+              duration-300
+              ease-in-out
+              '
+              >
+                {source}
+              </a>
             </div>
           </ModalBody>
         </div>
