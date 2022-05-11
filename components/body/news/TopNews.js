@@ -190,6 +190,8 @@ function TopNews ({
               transition
               duration-300
               ease-in-out
+              max-w-[230px]
+              truncate
               '
               >
                 {source}
