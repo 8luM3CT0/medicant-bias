@@ -92,7 +92,7 @@ function Info ({
       <InfoHeader />
       <main
         className='
-      max-w-6xl 
+      max-w-7xl 
       h-screen
       place-items-center
       space-y-4

@@ -27,6 +27,7 @@ function NewsContent ({
         onClick={e => setOpenNews(true)}
         className='
     lg:max-w-[890px]
+    w-[810px]
     px-3 
     py-4
     bg-gray-600
@@ -44,15 +45,23 @@ function NewsContent ({
     rounded-xl
     '
       >
+        <div className='grid place-items-center space-y-2 shadow-lg bg-gray-800 rounded-lg p-3'>
+          <h2 className='newsContentTitle'>{title}</h2>
+          {author ? (
+            <h3 className='newsContentAuthor'>By {author}</h3>
+          ) : (
+            <h3 className='newsContentAuthor'>By N/A </h3>
+          )}
+        </div>
         {urlToImage ? (
           <img
             src={urlToImage}
             alt=''
             className='
-    lg:max-h-[370px] 
-    lg:max-w-[320px]
+    lg:max-h-[470px] 
+    lg:max-w-[520px]
     lg:h-[240px]
-    lg:w-[350px]
+    lg:w-[400px]
     h-[210px]
     w-[310px] 
     rounded-lg
@@ -63,27 +72,16 @@ function NewsContent ({
             src='https://www.heps.or.ug/sites/default/files/images/2022/05/healh%20news%202.jpg'
             alt=''
             className='
-    lg:max-h-[370px] 
-    lg:max-w-[300px] 
-    max-h-[180px] 
-    max-w-[230px]
+            lg:max-h-[470px] 
+    lg:max-w-[520px]
+    lg:h-[240px]
+    lg:w-[400px]
+    h-[210px]
+    w-[310px] 
     rounded-lg
     '
           />
         )}
-        <div className='grid place-items-center space-y-2'>
-          <h2 className='newsContentTitle'>{title}</h2>
-          {author ? (
-            <h3 className='newsContentAuthor'>By {author}</h3>
-          ) : (
-            <h3 className='newsContentAuthor'>By N/A </h3>
-          )}
-        </div>
-        <div className='newsContentText'>
-          <p className='text-cyan-600 font-google-sans font-normal'>
-            {content}
-          </p>
-        </div>
       </div>
       <Modal active={openNews} size='lg' toggler={() => setOpenNews(false)}>
         <ModalHeader toggler={() => setOpenNews(false)}>
@@ -106,8 +104,10 @@ function NewsContent ({
         lg:items-center 
         grid 
         place-items-start 
-        lg:max-w-[690px] 
-        lg:max-h-[490px] 
+        lg:max-w-[790px] 
+        lg:max-h-[690px]
+        lg:w-[770px]
+        lg:h-[420px] 
         max-w-[310px] 
         max-h-[460px]
         bg-sky-600
@@ -153,7 +153,8 @@ function NewsContent ({
           <div
             className='
           lg:max-w-[590px] 
-          lg:max-h-[240px] 
+          lg:max-h-[440px]
+          lg:h-[320px] 
           max-w-[290px] 
           max-h-[170px] 
           rounded-xl 

@@ -51,7 +51,7 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
         opacity-80
         overflow-y-scroll
         scrollbar-hide
-        max-w-6xl
+        max-w-7xl
         mx-auto
         pb-[210px]
         px-3

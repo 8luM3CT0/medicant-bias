@@ -41,10 +41,11 @@
     @apply
     md:inline-flex
     hidden
-    font-semibold 
-    text-lg 
+    font-semibold
+    font-robot-slab 
+    text-xl 
     text-sky-100 
-    max-w-[190px]
+    max-w-[390px]
   }
 
   .newsContentAuthor{
@@ -52,8 +53,10 @@
     md:inline-flex
     hidden
     font-normal 
-    text-base 
+    font-robot-slab
+    text-lg
     text-sky-200
+    max-w-[210px]
   }
 
   .newsContentText{
