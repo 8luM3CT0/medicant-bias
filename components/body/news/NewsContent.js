@@ -30,7 +30,7 @@ function NewsContent ({
     px-3 
     py-4
     bg-gray-600
-    lg:max-h-[490px]
+    lg:max-h-[690px]
     lg:h-[410px]
     max-h-[280px]
     h-[260px]
@@ -106,10 +106,10 @@ function NewsContent ({
         lg:items-center 
         grid 
         place-items-start 
-        lg:max-w-[590px] 
-        lg:max-h-[310px] 
-        max-w-[240px] 
-        max-h-[300px]
+        lg:max-w-[690px] 
+        lg:max-h-[490px] 
+        max-w-[310px] 
+        max-h-[460px]
         bg-sky-600
         p-4
         rounded-xl
@@ -126,8 +126,11 @@ function NewsContent ({
     lg:h-[240px]
     lg:w-[350px]
     h-[170px]
-    w-[310px] 
+    w-[270px] 
     rounded-lg
+    my-4
+    mx-4
+    px-2
     '
             />
           ) : (
@@ -140,11 +143,31 @@ function NewsContent ({
     lg:h-[240px]
     lg:w-[350px]
     h-[170px]
-    w-[310px] 
+    w-[270px] 
     rounded-lg
+    my-4
+    mx-4
     '
             />
           )}
+          <div
+            className='
+          lg:max-w-[590px] 
+          lg:max-h-[240px] 
+          max-w-[290px] 
+          max-h-[170px] 
+          rounded-xl 
+          bg-gray-600 
+          overflow-y-scroll
+          scrollbar-thin
+          scrollbar-track-zinc-300
+          scrollbar-thumb-slate-800
+          '
+          >
+            <p className='text-lg font-normal font-robot-slab text-blue-200 lg:mx-4 mx-0'>
+              {content}
+            </p>
+          </div>
         </div>
         <ModalFooter>
           <Button
@@ -158,7 +181,7 @@ function NewsContent ({
             className='capitalize font-robot-slab font-normal'
           >
             <Icon name='close' />
-            <p className='text-lg'>Close</p>
+            <p className='text-base'>Close</p>
           </Button>
         </ModalFooter>
       </Modal>

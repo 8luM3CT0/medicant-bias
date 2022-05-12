@@ -1,5 +1,5 @@
 //front-end
-import { Head } from 'next/head'
+import Head from 'next/head'
 import {
   Modal,
   ModalHeader,
@@ -39,6 +39,9 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
     bg-center 
     bg-no-repeat'
       >
+        <Head>
+          <title>News info</title>
+        </Head>
         <NewsHeader />
         <main
           className='
