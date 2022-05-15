@@ -87,19 +87,24 @@ function NewsContent ({
         <ModalHeader toggler={() => setOpenNews(false)}>
           <p
             className='
-          w-[200px] 
+          lg:w-[650px]
+          w-[300px] 
           bg-sky-500 
           rounded-lg 
           p-3
+          text-sm
           capitalize 
           font-robot-slab 
-          font-normal'
+          font-bold
+          text-gray-50
+          '
           >
-            News
+            {title}
           </p>
         </ModalHeader>
-        <div
-          className='
+        <ModalBody>
+          <div
+            className='
         lg:flex 
         lg:items-center 
         grid 
@@ -115,12 +120,12 @@ function NewsContent ({
         rounded-xl
         my-4
         '
-        >
-          {urlToImage ? (
-            <img
-              src={urlToImage}
-              alt=''
-              className='
+          >
+            {urlToImage ? (
+              <img
+                src={urlToImage}
+                alt=''
+                className='
     lg:max-h-[420px] 
     lg:max-w-[370px]
     lg:h-[240px]
@@ -132,12 +137,12 @@ function NewsContent ({
     mx-4
     px-2
     '
-            />
-          ) : (
-            <img
-              src='https://www.heps.or.ug/sites/default/files/images/2022/05/healh%20news%202.jpg'
-              alt=''
-              className='
+              />
+            ) : (
+              <img
+                src='https://www.heps.or.ug/sites/default/files/images/2022/05/healh%20news%202.jpg'
+                alt=''
+                className='
               lg:max-h-[420px] 
     lg:max-w-[370px]
     lg:h-[240px]
@@ -148,10 +153,10 @@ function NewsContent ({
     my-4
     mx-4
     '
-            />
-          )}
-          <div
-            className='
+              />
+            )}
+            <div
+              className='
           lg:max-w-[590px] 
           lg:max-h-[440px]
           lg:h-[320px] 
@@ -164,12 +169,124 @@ function NewsContent ({
           scrollbar-track-zinc-300
           scrollbar-thumb-slate-800
           '
-          >
-            <p className='text-lg font-normal font-robot-slab text-blue-200 lg:mx-4 mx-0'>
-              {content}
-            </p>
+            >
+              {description ? (
+                <p className='text-lg font-normal font-robot-slab text-blue-200 lg:mx-4 mx-0'>
+                  {description}
+                </p>
+              ) : content ? (
+                <p className='text-lg font-normal font-robot-slab text-blue-200 lg:mx-4 mx-0'>
+                  {content}
+                </p>
+              ) : (
+                <p className='text-lg font-normal font-robot-slab text-blue-200 lg:mx-4 mx-0'>
+                  Content is unavailable. Try checking the link below for the
+                  full description
+                </p>
+              )}
+            </div>
           </div>
-        </div>
+          <div
+            className='
+            flex
+            items-center
+            p-3 
+            m-3 
+            lg:max-w-[490px]
+            lg:max-h-[260px]
+            max-w-[305px]
+            max-h-[150px]'
+          >
+            {author ? (
+              <h4
+                className='
+                font-robot-slab 
+                text-lg 
+                font-normal 
+                text-blue-200 
+                hover:border-b-2
+                hover:text-blue-400
+                tranform 
+                transition
+                duration-300
+                ease-in-out
+                w-[240px]
+                bg-gray-600
+                p-3
+                mx-3
+                rounded-lg
+                '
+              >
+                By {author}
+              </h4>
+            ) : (
+              <h4
+                className='
+
+                font-robot-slab 
+                text-lg 
+                font-normal 
+                text-blue-200 
+                hover:border-b-2
+                hover:text-blue-400
+                tranform 
+                transition
+                duration-300
+                ease-in-out
+                w-[240px]
+                bg-gray-600
+                p-3
+                mx-3
+                rounded-lg
+                '
+              >
+                By N/A
+              </h4>
+            )}
+            {url ? (
+              <a
+                href={url}
+                className='
+              font-normal 
+              text-base 
+              font-robot-slab 
+              text-blue-200 
+              p-3
+              rounded-lg
+              w-[240px]
+              truncate
+              mx-3
+              bg-gray-600
+              hover:bg-sky-600
+              hover:text-gray-200
+              transform 
+              transition
+              duration-300
+              ease-in-out
+              '
+              >
+                {url}
+              </a>
+            ) : (
+              <h4
+                className='
+              font-normal 
+              text-base 
+              font-robot-slab 
+              text-blue-200 
+              p-3
+              rounded-lg
+              w-[240px]
+              truncate
+              mx-3
+              bg-gray-600
+              '
+              >
+                URL not available
+              </h4>
+            )}
+          </div>
+        </ModalBody>
         <ModalFooter>
           <Button
             onClick={e => setOpenNews(false)}

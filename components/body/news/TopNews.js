@@ -88,8 +88,8 @@ function TopNews ({
       >
         <div className='px-8 py-3 mb-4 bg-gray-600 rounded-lg'>
           <ModalHeader toggler={() => setOpenNews(false)}>
-            <p className='font-robot-slab lg:text-4xl text-xl font-normal text-sky-100'>
-              News
+            <p className='font-robot-slab lg:text-4xl text-xl font-normal text-sky-100 w-[290px]'>
+              {title}
             </p>
           </ModalHeader>
         </div>
@@ -145,7 +145,7 @@ function TopNews ({
     '
               />
             )}
-            {content && (
+            {content ? (
               <div
                 className='
             lg:max-h-[390px] 
@@ -166,6 +166,27 @@ function TopNews ({
                   {content}
                 </h2>
               </div>
+            ) : (
+              <div
+                className='
+            lg:max-h-[390px] 
+            max-w-[350px]
+            lg:h-[360px]
+            max-h-[200px]
+            h-[195px]
+            overflow-y-scroll
+            scrollbar-thin
+            bg-slate-800
+            p-4
+            rounded-lg
+            scrollbar-track-sky-200
+            scrollbar-thumb-gray-800
+            '
+              >
+                <h2 className='font-robot-slab text-lg text-sky-200 font-normal'>
+                  Content is unavailable. Try checking for the link below.
+                </h2>
+              </div>
             )}
             <div
               className='
@@ -184,6 +205,9 @@ function TopNews ({
                 className='
               text-base 
               font-light 
+              bg-gray-800
+              p-3
+              rounded-lg
               text-sky-400 
               hover:text-sky-200
               transform

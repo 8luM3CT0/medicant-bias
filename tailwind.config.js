@@ -20,7 +20,9 @@ module.exports = {
         'bb-mountain':
           'url(https://www.bigbearmountainresort.com/-/media/widen/big-bear-mountain-resort/scenic/winter/2021-bb-ls-parkinglots-drone-jpg.ashx?h=1350&w=2400&hash=73F0A5457CB1AAB4146758943DA36862)',
           'lake-tahoe':
-          'url(https://californiacrossings.com/wp-content/uploads/2021/01/california-lake-tahoe-winter-emerald-bay-2.jpg)'
+          'url(https://californiacrossings.com/wp-content/uploads/2021/01/california-lake-tahoe-winter-emerald-bay-2.jpg)',
+          'yosemite': 
+          'url(https://ktla.com/wp-content/uploads/sites/4/2021/02/yosemite.jpeg)'
       }) 
     },
   },

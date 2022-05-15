@@ -151,7 +151,7 @@ export async function getServerSideProps () {
   ).then(res => res.json())
 
   const homeInfo = await fetch(
-    'https://www.dictionaryapi.com/api/v3/references/medical/json/medulla_oblongata?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
+    'https://www.dictionaryapi.com/api/v3/references/medical/json/hyoid_bone?key=c5c748e0-0226-4b4a-9746-5afc3c3edecd'
   ).then(res => res.json())
 
   return {

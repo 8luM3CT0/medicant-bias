@@ -25,9 +25,9 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
   const [openTab, setOpenTab] = useState(1)
 
   //console.log('Med news articles >>>>>>>>>>>', medNews?.articles)
-  console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
+  ///console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
   //console.log('Science data be here >>>>>', scienceNews?.articles)
-  //console.log('Food news data be here >>>>>>>>>>>>>', foodNews)
+  console.log('Food news data be here >>>>>>>>>>>>>', foodNews?.results)
   return (
     <>
       <div
@@ -165,6 +165,7 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
                       author={news?.creator}
                       title={news?.title}
                       content={news?.description}
+                      url={news?.link}
                     />
                   ))}
                 </div>
@@ -192,6 +193,7 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
                       author={news?.creator}
                       title={news?.title}
                       content={news?.description}
+                      url={news?.link}
                     />
                   ))}
                 </div>
@@ -219,7 +221,8 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
                       urlToImage={news?.urlToImage}
                       author={news?.author}
                       title={news?.title}
-                      content={news?.description}
+                      content={news?.content}
+                      url={news?.url}
                     />
                   ))}
                 </div>
