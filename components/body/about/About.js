@@ -70,7 +70,7 @@ function About () {
         '
           >
             <h2 className='font-robot-slab font-normal text-gray-200 leading-8 text-xl'>
-              MedInfo is a website that has three functions: it is firstly an
+              HealthKnow is a website that has three functions: it is firstly an
               encylopedia filled with terminologies, facts and data regarding to
               a particular search term, a place where an individual or a group
               can test their knowledge of a particular medical field and
@@ -142,8 +142,6 @@ function About () {
             className='
         grid 
         lg:max-h-full
-        md:max-h-[290px]
-        max-h-[210px]
         lg:scrollbar-hide
         lg:overflow-hidden
         overflow-y-scroll
@@ -176,7 +174,6 @@ function About () {
           className='
       grid 
       space-y-6
-      h-[320px]
       overflow-y-scroll
       scrollbar-thin
       scrollbar-thumb-indigo-500

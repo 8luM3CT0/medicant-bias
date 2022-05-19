@@ -54,7 +54,7 @@ function MainHeader () {
             className='capitalize font-google-sans font-normal space-x-3'
           >
             <Icon name='health_and_safety' />
-            <h2 className='appName'>MedInfo</h2>
+            <h2 className='appName'>HealthKnow</h2>
             {/**Subject to change in the future */}
           </Button>
         </div>

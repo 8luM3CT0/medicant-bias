@@ -11,6 +11,7 @@ import {
 } from '../components/'
 //back-end
 import { useState } from 'react'
+import { nursing, medtech } from './api/questions/'
 
 function TestComp () {
   return (

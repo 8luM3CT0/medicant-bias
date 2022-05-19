@@ -27,7 +27,7 @@ function HomeNews ({ medNews, newsDataMed, scienceNews, foodNews }) {
   //console.log('Med news articles >>>>>>>>>>>', medNews?.articles)
   ///console.log('NewsData med json return >>>>>>>>>', newsDataMed?.results)
   //console.log('Science data be here >>>>>', scienceNews?.articles)
-  console.log('Food news data be here >>>>>>>>>>>>>', foodNews?.results)
+  console.log('Food news data be here >>>>>>>>>>>>>', foodNews)
   return (
     <>
       <div
