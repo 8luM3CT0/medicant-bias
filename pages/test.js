@@ -10,6 +10,7 @@ import {
   QuizHeader,
   QuizCard
 } from '../components/'
+import * as THREE from 'three'
 //back-end
 import { useState } from 'react'
 import { nursing } from './api/questions/nursing/nursing'
@@ -18,6 +19,11 @@ import { medtech } from './api/questions/med-tech/medtech'
 function TestComp () {
   console.log('med tech questionnaire >>>>>>>', medtech)
   console.log('nursing questionnaire >>>>>>>', nursing)
+
+  //testing three.js
+
+  //end of testing
+
   return (
     <>
       <div
@@ -44,87 +50,40 @@ function TestComp () {
     scrollbar-hide
     pb-[240px]'
         >
-          <div className='max-w-6xl mx-auto grid'>
-            <h1
+          <div
+            className='
+          max-w-6xl 
+          mx-auto 
+          lg:flex 
+          lg:items-center 
+          grid 
+          place-items-center
+          bg-slate-600
+          px-7
+          py-4
+          my-4
+          rounded-lg
+          space-x-4
+          '
+          >
+            {/**Slogan or short text */}
+            <h2
               className='
-            place-self-start 
-            px-6 
-            py-5 
-            font-robot-condensed 
-            font-semibold 
-            text-blue-400
-            text-2xl
+            text-blue-50 
+            font-robot-slab 
+            italic 
+            text-2xl 
+            font-normal 
+            max-w-[290px]
+            p-3
             '
             >
-              The quiz section
-            </h1>
-            {/**quiz cards */}
-            <div
-              className='
-            max-w-6xl
-            max-h-[310px]
-            overflow-y-scroll
-            scrollbar-thin
-            scrollbar-thumb-slate-600
-            scrollbar-track-slate-200
-            mx-auto
-            lg:flex
-            lg:items-center
-            grid
-            grid-cols-2 
-            p-4
-            bg-sky-200
-            '
-            >
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-            </div>
+              Test your knowledge by taking some of our quizzes below, all based
+              off on the standard assessments given to professionals of the
+              given work
+            </h2>
+            {/**JPG of person taking a quiz */}
+            <div className='lg:max-w-[440px] max-w-[300px]'></div>
           </div>
         </main>
         <footer
@@ -177,3 +136,45 @@ function TestComp () {
 }
 
 export default TestComp
+
+/**
+ * 
+ * <div
+              className='
+            max-w-6xl
+            lg:max-h-[350px]
+            max-h-[290px]
+            overflow-y-scroll
+            overflow-x-scroll
+            scrollbar-thin
+            scrollbar-thumb-slate-600
+            scrollbar-track-slate-200
+            mx-auto
+            lg:flex
+            lg:items-center
+            grid
+            grid-cols-2 
+            p-4
+            bg-sky-200
+            space-x-12
+            justify-evenly
+            '
+            >
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {nursing &&
+                nursing.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+            </div>
+ */
