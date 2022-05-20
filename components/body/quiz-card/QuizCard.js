@@ -20,19 +20,23 @@ function QuizCard ({ id, title, meaning }) {
       <div
         onClick={e => setShowCard(true)}
         className='
-      lg:max-h-[420px]
-      lg:h-[400px] 
-      lg:max-w-[620px]
-      lg:w-[600px]
+      lg:max-h-[320px]
+      lg:h-[300px] 
+      lg:max-w-[520px]
+      lg:w-[500px]
       max-w-[300px]
-      max-h-[180px]
+      w-[280px]
+      max-h-[210px]
+      h-[200px]
       bg-gray-800
       grid
       place-items-center
+      cursor-pointer
       hover:bg-gray-600
       hover:scale-105
       duration-300
       ease-in-out
+      m-4
       '
       >
         <h2 className='font-robot-slab text-xl font-normal text-blue-200'>
@@ -56,7 +60,7 @@ function QuizCard ({ id, title, meaning }) {
         <ModalBody>
           <div
             className='
-          p-6 
+          p-20
           grid 
           place-items-start 
           space-y-4 
@@ -69,7 +73,11 @@ function QuizCard ({ id, title, meaning }) {
               font-normal 
               text-blue-200 
               place-self-start 
-              px-2'
+              px-2
+              text-2xl
+              underline
+              italic
+              '
             >
               {title}
             </h2>

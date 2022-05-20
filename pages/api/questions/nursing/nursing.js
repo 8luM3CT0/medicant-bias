@@ -15,7 +15,25 @@ export const nursing = [
             ]
         },
         {
-            question: '',
+            question: ' A client is admitted to the emergency room with renal calculi and is complaining of moderate to severe flank pain and nausea. The client’s temperature is 100.8 degrees Fahrenheit. The priority nursing goal for this client is: ',
+            answerOptions: [
+                {answer: 'Control nausea'},
+                {answer: 'Manage pain', isCorrect: true},
+                {answer: 'Prevent unirary tract infection'},
+                {answer: 'Maintain fluid & electrolyte balance'}
+            ]
+        },
+        {
+            question: 'What would the nurse expect to see while assessing the growth of children during their school-age years?',
+            answerOptions: [
+                {answer: 'Little change in body appearance from year to year'},
+                {answer: 'Yearly weight gain of about 5.5 pounds per year'},
+                {answer: 'Progressive height increase of 4 inches each year'},
+                {answer: 'Decreasing amounts of body fat & muscle mass'}
+            ]
+        },
+        {
+            question: '?',
             answerOptions: [
                 {answer: ''},
                 {answer: ''},
@@ -25,7 +43,7 @@ export const nursing = [
             ]
         },
         {
-            question: '',
+            question: '?',
             answerOptions: [
                 {answer: ''},
                 {answer: ''},
@@ -35,7 +53,7 @@ export const nursing = [
             ]
         },
         {
-            question: '',
+            question: '?',
             answerOptions: [
                 {answer: ''},
                 {answer: ''},
@@ -45,27 +63,7 @@ export const nursing = [
             ]
         },
         {
-            question: '',
-            answerOptions: [
-                {answer: ''},
-                {answer: ''},
-                {answer: '', isCorrect: true},
-                {answer: ''},
-                {answer: ''}
-            ]
-        },
-        {
-            question: '',
-            answerOptions: [
-                {answer: ''},
-                {answer: ''},
-                {answer: '', isCorrect: true},
-                {answer: ''},
-                {answer: ''}
-            ]
-        },
-        {
-            question: '',
+            question: '?',
             answerOptions: [
                 {answer: ''},
                 {answer: ''},

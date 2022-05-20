@@ -7,13 +7,17 @@ import {
   ModalFooter,
   Button,
   Icon,
-  QuizHeader
+  QuizHeader,
+  QuizCard
 } from '../components/'
 //back-end
 import { useState } from 'react'
-import { nursing, medtech } from './api/questions/'
+import { nursing } from './api/questions/nursing/nursing'
+import { medtech } from './api/questions/med-tech/medtech'
 
 function TestComp () {
+  console.log('med tech questionnaire >>>>>>>', medtech)
+  console.log('nursing questionnaire >>>>>>>', nursing)
   return (
     <>
       <div
@@ -39,7 +43,60 @@ function TestComp () {
     overflow-y-scroll
     scrollbar-hide
     pb-[240px]'
-        ></main>
+        >
+          <div className='max-w-full mx-auto grid'>
+            <h1
+              className='
+            place-self-start 
+            px-6 
+            py-5 
+            font-robot-condensed 
+            font-semibold 
+            text-blue-400
+            text-2xl
+            '
+            >
+              The quiz section
+            </h1>
+            {/**quiz cards */}
+            <div
+              className='
+            max-w-6xl
+            mx-auto 
+            lg:col-span-3 
+            md:col-span-2 
+            col-span-1
+            p-4
+            bg-sky-200
+            '
+            >
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+            </div>
+          </div>
+        </main>
         <footer
           className='
         z-50 
