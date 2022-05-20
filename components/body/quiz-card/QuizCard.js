@@ -24,8 +24,8 @@ function QuizCard ({ id, title, meaning }) {
       lg:h-[300px] 
       lg:max-w-[520px]
       lg:w-[500px]
-      max-w-[300px]
-      w-[280px]
+      max-w-[310px]
+      w-[305px]
       max-h-[210px]
       h-[200px]
       bg-gray-800

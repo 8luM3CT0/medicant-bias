@@ -44,7 +44,7 @@ function TestComp () {
     scrollbar-hide
     pb-[240px]'
         >
-          <div className='max-w-full mx-auto grid'>
+          <div className='max-w-6xl mx-auto grid'>
             <h1
               className='
             place-self-start 
@@ -62,14 +62,44 @@ function TestComp () {
             <div
               className='
             max-w-6xl
-            mx-auto 
-            lg:col-span-3 
-            md:col-span-2 
-            col-span-1
+            max-h-[310px]
+            overflow-y-scroll
+            scrollbar-thin
+            scrollbar-thumb-slate-600
+            scrollbar-track-slate-200
+            mx-auto
+            lg:flex
+            lg:items-center
+            grid
+            grid-cols-2 
             p-4
             bg-sky-200
             '
             >
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
               {medtech &&
                 medtech.map(testData => (
                   <QuizCard
