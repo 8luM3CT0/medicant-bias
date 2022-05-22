@@ -576,7 +576,7 @@ function Info ({
           </Tab>
         </div>
       </main>
-      <footer className='z-50 bottom-0 sticky bg-gray-600 px-8 py-4 justify-between  flex items-center'>
+      <footer className='mobileDisplay'>
         <Button
           color='lightBlue'
           buttonType='link'

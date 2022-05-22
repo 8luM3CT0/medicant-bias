@@ -4,6 +4,20 @@
 
 @layer components{
 
+  .mobileDisplay{
+    @apply
+    md:flex
+    hidden
+    z-50 
+    bottom-0 
+    sticky 
+    bg-gray-600 
+    px-8 
+    py-4 
+    justify-between 
+    items-center
+  }
+
     .appName{
       @apply
       xl:text-2xl

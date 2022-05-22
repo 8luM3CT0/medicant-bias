@@ -64,6 +64,12 @@ function TestComp () {
           my-4
           rounded-lg
           space-x-4
+          shadow-2xl
+          hover:scale-105
+          transform
+          transition
+          duration-300
+          ease-in-out
           '
           >
             {/**Slogan or short text */}
@@ -88,15 +94,7 @@ function TestComp () {
         </main>
         <footer
           className='
-        z-50 
-        bottom-0 
-        sticky 
-        bg-gray-600 
-        px-8 
-        py-4 
-        justify-between 
-        flex 
-        items-center'
+        mobileDisplay'
         >
           <Button
             color='lightBlue'
