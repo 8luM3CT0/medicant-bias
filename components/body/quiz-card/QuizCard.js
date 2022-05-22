@@ -33,10 +33,15 @@ function QuizCard ({ id, title, meaning }) {
       place-items-center
       cursor-pointer
       hover:bg-gray-600
+      hover:shadow-inner
       hover:scale-105
       duration-300
       ease-in-out
       m-4
+      px-[120px]
+      py-5
+      rounded-xl
+      shadow-xl
       '
       >
         <h2 className='font-robot-slab text-xl font-normal text-blue-200'>

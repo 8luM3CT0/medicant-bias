@@ -59,13 +59,13 @@ function TestComp () {
           grid 
           place-items-center
           bg-slate-600
+          hover:bg-gray-800
           px-7
           py-4
           my-4
           rounded-lg
           space-x-4
           shadow-2xl
-          hover:scale-105
           transform
           transition
           duration-300
@@ -90,6 +90,142 @@ function TestComp () {
             </h2>
             {/**JPG of person taking a quiz */}
             <div className='lg:max-w-[440px] max-w-[300px]'></div>
+          </div>
+          <div className='grid max-w-full space-y-4 px-3'>
+            <h1
+              className='
+          place-self-start 
+          p-2
+          px-4
+          text-2xl 
+          font-robot-slab 
+          font-normal 
+          text-sky-600 
+          underline
+          shadow-xl
+          '
+            >
+              Category: MedTech
+            </h1>
+            <div
+              className='
+          lg:max-h-[420px]
+          max-w-6xl
+          mx-auto
+          lg:h-[415px]
+          bg-blue-200
+          rounded-lg
+          p-7
+          flex
+          items-center
+          space-x-8
+          overflow-x-scroll
+          scrollbar-thin
+          scrollbar-thumb-slate-700
+          scrollbar-track-slate-300
+          '
+            >
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {medtech &&
+                medtech.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+            </div>
+          </div>
+          <div className='px-3 grid space-y-4 max-w-full'>
+            <h1
+              className='
+          place-self-start 
+          p-2
+          px-4
+          text-2xl 
+          font-robot-slab 
+          font-normal 
+          text-sky-600 
+          underline
+          shadow-xl
+          '
+            >
+              Category: Nursing
+            </h1>
+            <div
+              className='
+          lg:max-h-[420px]
+          max-w-6xl
+          mx-auto
+          lg:h-[415px]
+          bg-blue-200
+          rounded-lg
+          p-7
+          flex
+          items-center
+          space-x-8
+          overflow-x-scroll
+          scrollbar-thin
+          scrollbar-thumb-slate-700
+          scrollbar-track-slate-300
+          '
+            >
+              {nursing &&
+                nursing.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {nursing &&
+                nursing.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {nursing &&
+                nursing.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {nursing &&
+                nursing.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+            </div>
           </div>
         </main>
         <footer
@@ -134,45 +270,3 @@ function TestComp () {
 }
 
 export default TestComp
-
-/**
- * 
- * <div
-              className='
-            max-w-6xl
-            lg:max-h-[350px]
-            max-h-[290px]
-            overflow-y-scroll
-            overflow-x-scroll
-            scrollbar-thin
-            scrollbar-thumb-slate-600
-            scrollbar-track-slate-200
-            mx-auto
-            lg:flex
-            lg:items-center
-            grid
-            grid-cols-2 
-            p-4
-            bg-sky-200
-            space-x-12
-            justify-evenly
-            '
-            >
-              {medtech &&
-                medtech.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-              {nursing &&
-                nursing.map(testData => (
-                  <QuizCard
-                    id={testData?.questionnaireType}
-                    title={testData?.questionnaireType}
-                    meaning={testData?.meaning}
-                  />
-                ))}
-            </div>
- */
