@@ -1,21 +1,30 @@
-import React, { useRef } from 'react'
+import React, { useRef, Suspense } from 'react'
 import { Canvas, useLoader, useFrame } from '@react-three/fiber'
-import { oc as OrbitControls } from 'three-orbit-controls'
 import Mesh from './Mesh'
+import Box from './Box'
+import PointLight from './PointLight'
+import Controls from './Controls'
+import Drag from './Drag'
 
 function ThreeDim () {
   return (
-    <div
-      style={{
-        height: innerHeight
-      }}
-    >
-      <Canvas>
-        <OrbitControls />
-        <directionalLight intensity={0.5} />
-        <ambientLight intensity={0.5} />
-        <spotLight position={[10, 15, 10]} angle={0.9} />
-        <Mesh />
+    <div>
+      <Canvas
+        shadows={true}
+        className='bg-gray-800'
+        camera={{
+          position: [-6, 7, 7]
+        }}
+      >
+        <ambientLight color={'white'} intensity={0.3} />
+        <PointLight position={[0, 3, 0]} />
+        <Drag>
+          <Suspense fallback={null}>
+            <Box rotateX={3} rotateY={0.2} />
+          </Suspense>
+        </Drag>
+        <Controls />
+        <Mesh position={[0, -1, 0]} />
       </Canvas>
     </div>
   )

@@ -8,7 +8,8 @@ import {
   Button,
   Icon,
   QuizHeader,
-  QuizCard
+  QuizCard,
+  ThreeD
 } from '../components/'
 import * as THREE from 'three'
 //back-end
@@ -54,6 +55,7 @@ function TestComp () {
             className='
           max-w-6xl 
           mx-auto 
+          lg:justify-evenly
           lg:flex 
           lg:items-center 
           grid 
@@ -88,8 +90,10 @@ function TestComp () {
               off on the standard assessments given to professionals of the
               given work
             </h2>
-            {/**JPG of person taking a quiz */}
-            <div className='lg:max-w-[440px] max-w-[300px]'></div>
+            {/**animation */}
+            <div className='lg:max-w-[440px] max-w-[300px]'>
+              <ThreeD />
+            </div>
           </div>
           <div className='grid max-w-full space-y-4 px-3'>
             <h1

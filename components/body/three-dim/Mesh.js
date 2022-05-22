@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Mesh () {
+function Mesh (props) {
   return (
-    <mesh rotation={[0, 0, 0]}>
-      <sphereGeometry attach='geometry' args={(1, 16, 16)} />
-      <meshStandardMaterial attach='material' color='blue' />
+    <mesh {...props} receiveShadow={true}>
+      <boxBufferGeometry args={[20, 1, 10]} />
+      <meshPhysicalMaterial color='white' />
     </mesh>
   )
 }
