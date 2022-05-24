@@ -7,7 +7,7 @@ function Box (props) {
   return (
     <mesh {...props} receiveShadow={true} castShadow={true}>
       <boxBufferGeometry />
-      <meshPhysicalMaterial color={'white'} />
+      <meshPhysicalMaterial color={'blue'} />
     </mesh>
   )
 }

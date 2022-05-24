@@ -9,9 +9,9 @@ import {
   Icon,
   QuizHeader,
   QuizCard,
-  ThreeD
+  ThreeD,
+  DogTest
 } from '../components/'
-import * as THREE from 'three'
 //back-end
 import { useState } from 'react'
 import { nursing } from './api/questions/nursing/nursing'
@@ -91,8 +91,8 @@ function TestComp () {
               given work
             </h2>
             {/**animation */}
-            <div className='lg:max-w-[440px] max-w-[300px]'>
-              <ThreeD />
+            <div className='lg:max-w-[490px] max-w-[300px]'>
+              <DogTest />
             </div>
           </div>
           <div className='grid max-w-full space-y-4 px-3'>
