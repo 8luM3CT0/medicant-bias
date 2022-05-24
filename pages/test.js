@@ -91,11 +91,11 @@ function TestComp () {
               given work
             </h2>
             {/**animation */}
-            <div className='lg:max-w-[490px] max-w-[300px]'>
+            <div className='lg:max-w-[490px] max-w-[300px] opacity-100'>
               <DogTest />
             </div>
           </div>
-          <div className='grid max-w-full space-y-4 px-3'>
+          <div className='grid lg:max-w-full max-w-[310px] space-y-4 px-3'>
             <h1
               className='
           place-self-start 
@@ -114,7 +114,8 @@ function TestComp () {
             <div
               className='
           lg:max-h-[420px]
-          max-w-6xl
+          lg:max-w-6xl
+          max-w-[300px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
@@ -163,7 +164,7 @@ function TestComp () {
                 ))}
             </div>
           </div>
-          <div className='px-3 grid space-y-4 max-w-full'>
+          <div className='px-3 grid space-y-4 lg:max-w-full max-w-[310px]'>
             <h1
               className='
           place-self-start 
@@ -182,7 +183,8 @@ function TestComp () {
             <div
               className='
           lg:max-h-[420px]
-          max-w-6xl
+          lg:max-w-6xl
+          max-w-[300px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
