@@ -115,7 +115,7 @@ function TestComp () {
               className='
           lg:max-h-[420px]
           lg:max-w-6xl
-          max-w-[300px]
+          max-w-[310px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
@@ -184,7 +184,7 @@ function TestComp () {
               className='
           lg:max-h-[420px]
           lg:max-w-6xl
-          max-w-[300px]
+          max-w-[310px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
