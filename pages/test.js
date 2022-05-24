@@ -16,6 +16,7 @@ import {
 import { useState } from 'react'
 import { nursing } from './api/questions/nursing/nursing'
 import { medtech } from './api/questions/med-tech/medtech'
+import { webdev } from './api/questions/nursing/webdev'
 
 function TestComp () {
   console.log('med tech questionnaire >>>>>>>', medtech)
@@ -225,6 +226,75 @@ function TestComp () {
                 ))}
               {nursing &&
                 nursing.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+            </div>
+          </div>
+          <div className='px-3 grid space-y-4 lg:max-w-full max-w-[310px]'>
+            <h1
+              className='
+          place-self-start 
+          p-2
+          px-4
+          text-2xl 
+          font-robot-slab 
+          font-normal 
+          text-sky-600 
+          underline
+          shadow-xl
+          '
+            >
+              Category: Web development
+            </h1>
+            <div
+              className='
+          lg:max-h-[420px]
+          lg:max-w-6xl
+          max-w-[310px]
+          mx-auto
+          lg:h-[415px]
+          bg-blue-200
+          rounded-lg
+          p-7
+          flex
+          items-center
+          space-x-8
+          overflow-x-scroll
+          scrollbar-thin
+          scrollbar-thumb-slate-700
+          scrollbar-track-slate-300
+          '
+            >
+              {webdev &&
+                webdev.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {webdev &&
+                webdev.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {webdev &&
+                webdev.map(testData => (
+                  <QuizCard
+                    id={testData?.questionnaireType}
+                    title={testData?.questionnaireType}
+                    meaning={testData?.meaning}
+                  />
+                ))}
+              {webdev &&
+                webdev.map(testData => (
                   <QuizCard
                     id={testData?.questionnaireType}
                     title={testData?.questionnaireType}
