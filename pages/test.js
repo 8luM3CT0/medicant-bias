@@ -16,16 +16,9 @@ import {
 import { useState } from 'react'
 import { nursing } from './api/questions/nursing/nursing'
 import { medtech } from './api/questions/med-tech/medtech'
-import { webdev } from './api/questions/nursing/webdev'
+import { psychology } from './api/questions/psychology/psychology'
 
 function TestComp () {
-  console.log('med tech questionnaire >>>>>>>', medtech)
-  console.log('nursing questionnaire >>>>>>>', nursing)
-
-  //testing three.js
-
-  //end of testing
-
   return (
     <>
       <div
@@ -116,7 +109,7 @@ function TestComp () {
               className='
           lg:max-h-[420px]
           lg:max-w-6xl
-          max-w-[310px]
+          max-w-[340px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
@@ -185,7 +178,7 @@ function TestComp () {
               className='
           lg:max-h-[420px]
           lg:max-w-6xl
-          max-w-[310px]
+          max-w-[340px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
@@ -248,13 +241,13 @@ function TestComp () {
           shadow-xl
           '
             >
-              Category: Web development
+              Category: Psycholgy
             </h1>
             <div
               className='
           lg:max-h-[420px]
           lg:max-w-6xl
-          max-w-[310px]
+          max-w-[340px]
           mx-auto
           lg:h-[415px]
           bg-blue-200
@@ -269,32 +262,32 @@ function TestComp () {
           scrollbar-track-slate-300
           '
             >
-              {webdev &&
-                webdev.map(testData => (
+              {psychology &&
+                psychology.map(testData => (
                   <QuizCard
                     id={testData?.questionnaireType}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
                 ))}
-              {webdev &&
-                webdev.map(testData => (
+              {psychology &&
+                psychology.map(testData => (
                   <QuizCard
                     id={testData?.questionnaireType}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
                 ))}
-              {webdev &&
-                webdev.map(testData => (
+              {psychology &&
+                psychology.map(testData => (
                   <QuizCard
                     id={testData?.questionnaireType}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
                 ))}
-              {webdev &&
-                webdev.map(testData => (
+              {psychology &&
+                psychology.map(testData => (
                   <QuizCard
                     id={testData?.questionnaireType}
                     title={testData?.questionnaireType}

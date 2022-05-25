@@ -1,7 +1,7 @@
-export const webdev = [
+export const psychology = [
     {
-    questionnaireType: 'Web development',
-    meaning: 'the work involved in developing a website for the Internet or an intranet.',
+    questionnaireType: 'Psychology',
+    meaning: 'the scientific study of the human mind and its functions, especially those affecting behavior in a given context.',
   questions: [{
     "question": "What type of framework is Next.js?",
     "answerOptions": [
