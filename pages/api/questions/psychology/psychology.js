@@ -1,6 +1,6 @@
 export const psychology = [
     {
-    questionnaireType: 'Psychology',
+    questionnaireType: 'psychology',
     meaning: 'the scientific study of the human mind and its functions, especially those affecting behavior in a given context.',
   questions: [{
     "question": "What type of framework is Next.js?",

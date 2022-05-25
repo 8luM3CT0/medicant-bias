@@ -107,7 +107,7 @@ function QuizCard ({ id, title, meaning }) {
             <h4>Close</h4>
           </Button>
           <Button
-            onClick={e => setShowCard(false)}
+            onClick={() => router.push(`/testPages/${id}`)}
             color='green'
             buttonType='filled'
             size='regular'

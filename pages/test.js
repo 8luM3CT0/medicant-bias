@@ -14,11 +14,13 @@ import {
 } from '../components/'
 //back-end
 import { useState } from 'react'
-import { nursing } from './api/questions/nursing/nursing'
-import { medtech } from './api/questions/med-tech/medtech'
-import { psychology } from './api/questions/psychology/psychology'
-
+//import { nursing } from './api/questions/nursing/nursing'
+//import { medtech } from './api/questions/med-tech/medtech'
+//import { psychology } from './api/questions/psychology/psychology'
+import { medtech, nursing, psychology } from './api/questions/index'
 function TestComp () {
+  console.log('Alt data pick: ', psychology)
+
   return (
     <>
       <div
@@ -127,7 +129,7 @@ function TestComp () {
               {medtech &&
                 medtech.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/medTech/medtechtest'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -135,7 +137,7 @@ function TestComp () {
               {medtech &&
                 medtech.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/medTech/medtechtest'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -143,7 +145,7 @@ function TestComp () {
               {medtech &&
                 medtech.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/medTech/medtechtest'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -151,7 +153,7 @@ function TestComp () {
               {medtech &&
                 medtech.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/medTech/medtechtest'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
