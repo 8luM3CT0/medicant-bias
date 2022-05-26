@@ -17,6 +17,9 @@ import { medtech } from '../../api/questions/index'
 
 function MedTechTest () {
   const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [selectedOptions, setSelectedOptions] = useState([])
+  const [score, setScore] = useState(0)
+  const [showScore, setShowScore] = useState(0)
 
   console.log('Questions test', medtech?.[0]?.questions)
 
@@ -28,6 +31,28 @@ function MedTechTest () {
   const handleNext = () => {
     const nextQuest = currentQuestion + 1
     nextQuest < medtech?.[0]?.questions.length && setCurrentQuestion(nextQuest)
+  }
+
+  const handleAnswer = answer => {
+    setSelectedOptions([
+      (selectedOptions[currentQuestion] = { answerByTester: answer })
+    ])
+    setSelectedOptions([...selectedOptions])
+    console.log('Answer selected', selectedOptions)
+  }
+
+  const handleScores = () => {
+    let newScore = 0
+    for (let i = 0; i < medtech?.[0]?.questions.length; i++) {
+      medtech?.[0]?.questions[i].answerOptions.map(
+        answer =>
+          answer.isCorrect &&
+          answer.answer === selectedOptions[i]?.answerByTester &&
+          (newScore += 1)
+      )
+    }
+    setScore(newScore)
+    setShowScore(true)
   }
 
   return (
@@ -119,6 +144,7 @@ function MedTechTest () {
                   data => (
                     <div
                       key={data?.answer}
+                      onClick={e => handleAnswer(data?.answer)}
                       className='
                 flex
                 items-center
@@ -140,7 +166,17 @@ function MedTechTest () {
                 ease-in-out
                 '
                     >
-                      <input type='radio' className='w-6 h-6 bg-slate-800' />
+                      <input
+                        type='radio'
+                        name={data?.answer}
+                        value={data?.answer}
+                        onChange={e => handleAnswer(data?.answer)}
+                        checked={
+                          data?.answer ===
+                          selectedOptions[currentQuestion]?.answerByTester
+                        }
+                        className='w-6 h-6 bg-slate-800'
+                      />
                       <p className='mx-5 text-white'>{data?.answer}</p>
                     </div>
                   )
