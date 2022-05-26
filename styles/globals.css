@@ -82,4 +82,32 @@
     hidden
   }
 
+  input[type="radio"]:after {
+    @apply
+    w-[24px]
+    h-[24px]
+    rounded-lg
+    cursor-pointer
+    relative
+    bg-stone-800
+    inline-block
+    invisible  
+    border
+    border-sky-200
+  }
+
+  input[type="radio"]:checked:after {
+    @apply
+    w-[24px]
+    h-[24px]
+    rounded-lg
+    cursor-pointer
+    relative
+    bg-indigo-600
+    inline-block
+    visible 
+    border
+    border-sky-200
+  }
+
 }

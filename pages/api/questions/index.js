@@ -51,6 +51,14 @@ export const medtech = [{
         question: '',
         answerOptions: [
             {answer: ''},
+            {answer: '', isCorrect: true},
+            {answer: ''},
+            {answer: ''}
+        ]
+    },
+    {
+        question: '',
+        answerOptions: [
             {answer: ''},
             {answer: '', isCorrect: true},
             {answer: ''},
@@ -61,7 +69,6 @@ export const medtech = [{
         question: '',
         answerOptions: [
             {answer: ''},
-            {answer: ''},
             {answer: '', isCorrect: true},
             {answer: ''},
             {answer: ''}
@@ -70,17 +77,6 @@ export const medtech = [{
     {
         question: '',
         answerOptions: [
-            {answer: ''},
-            {answer: ''},
-            {answer: '', isCorrect: true},
-            {answer: ''},
-            {answer: ''}
-        ]
-    },
-    {
-        question: '',
-        answerOptions: [
-            {answer: ''},
             {answer: ''},
             {answer: '', isCorrect: true},
             {answer: ''},

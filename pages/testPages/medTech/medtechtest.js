@@ -16,7 +16,19 @@ import { useState } from 'react'
 import { medtech } from '../../api/questions/index'
 
 function MedTechTest () {
-  console.log('Questions test', medtech?.[0]?.questions?.[0]?.answerOptions)
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+
+  console.log('Questions test', medtech?.[0]?.questions)
+
+  const handlePrevious = () => {
+    const previousQuest = currentQuestion - 1
+    previousQuest >= 0 && setCurrentQuestion(previousQuest)
+  }
+
+  const handleNext = () => {
+    const nextQuest = currentQuestion + 1
+    nextQuest < medtech?.[0]?.questions.length && setCurrentQuestion(nextQuest)
+  }
 
   return (
     <>
@@ -88,7 +100,7 @@ function MedTechTest () {
               underline
               '
               >
-                Q. 1 of 5
+                Q. {currentQuestion + 1} of {medtech?.[0]?.questions.length}
               </h4>
               <div
                 className='
@@ -98,15 +110,16 @@ function MedTechTest () {
               font-google-sans 
               font-light'
               >
-                {medtech?.[0]?.questions?.[0]?.question}
+                {medtech?.[0]?.questions?.[currentQuestion]?.question}
               </div>
             </div>
             <div className='flex flex-col w-full my-3'>
               {medtech?.[0]?.questions?.[0]?.answerOptions &&
-                medtech?.[0]?.questions?.[0]?.answerOptions.map(data => (
-                  <div
-                    key={data?.answer}
-                    className='
+                medtech?.[0]?.questions?.[currentQuestion]?.answerOptions.map(
+                  data => (
+                    <div
+                      key={data?.answer}
+                      className='
                 flex
                 items-center
                 w-full
@@ -119,12 +132,52 @@ function MedTechTest () {
                 bg-slate-600
                 border-sky-600
                 rounded-3xl
+                hover:bg-cyan-600
+                hover:scale-105
+                transform
+                transition
+                duration-[200ms]
+                ease-in-out
                 '
-                  >
-                    <input type='radio' className='w-6 h-6 bg-slate-800' />
-                    <p className='mx-5 text-white'>{data?.answer}</p>
-                  </div>
-                ))}
+                    >
+                      <input type='radio' className='w-6 h-6 bg-slate-800' />
+                      <p className='mx-5 text-white'>{data?.answer}</p>
+                    </div>
+                  )
+                )}
+              <div
+                className='
+                flex 
+                justify-between 
+                w-full 
+                my-3 
+                text-sky-50'
+              >
+                <Button
+                  onClick={handlePrevious}
+                  color='indigo'
+                  buttonType='text'
+                  iconOnly={false}
+                  rounded={false}
+                  block={false}
+                  ripple='light'
+                  className='font-google-sans capitalize'
+                >
+                  <Icon name='arrow_back_ios' />
+                </Button>
+                <Button
+                  onClick={handleNext}
+                  color='cyan'
+                  buttonType='text'
+                  iconOnly={false}
+                  rounded={false}
+                  block={false}
+                  ripple='light'
+                  className='font-google-sans capitalize'
+                >
+                  <Icon name='arrow_forward_ios' />
+                </Button>
+              </div>
             </div>
           </div>
         </main>
