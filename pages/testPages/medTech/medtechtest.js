@@ -42,6 +42,10 @@ function MedTechTest () {
             bg-gradient-to-b
             from-gray-800
             to-sky-600
+            overflow-y-scroll
+            scrollbar-thin
+            scrollbar-track-slate-600
+            scrollbar-thumb-sky-300
             rounded-lg
             opacity-80
             '
