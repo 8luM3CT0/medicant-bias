@@ -7,7 +7,7 @@ import {
   ModalFooter,
   Button,
   Icon
-} from '../../'
+} from '../../..'
 //back-end
 import { useState } from 'react'
 import { useRouter } from 'next/router'
@@ -40,7 +40,7 @@ function TestHeader ({ title }) {
           block={false}
           ripple='light'
         >
-          <Icon name='arrow_backward_ios' />
+          <Icon name='arrow_back_ios' />
         </Button>
         <Button
           color='blue'

@@ -10,7 +10,8 @@ import {
   QuizHeader,
   QuizCard,
   ThreeD,
-  DogTest
+  DogTest,
+  SamoyedTest
 } from '../components/'
 //back-end
 import { useState } from 'react'

@@ -13,26 +13,27 @@ import {
 } from '../../../components'
 //back-end
 import { useState } from 'react'
-import { psychology } from '../../api/questions/index'
+import { medtech } from '../../api/questions/index'
 
 function MedTechTest () {
-  console.log('Questions test', psychology)
+  console.log('Questions test', medtech?.[0]?.questions?.[0]?.answerOptions)
 
   return (
     <>
       <div
         className='
+        bg-bb-lake 
+    overflow-hidden 
     h-screen 
-    bg-gray-800 
-    overflow-hidden'
+    bg-cover 
+    bg-center 
+    bg-no-repeat'
       >
         <Head>
           <title>Exam here</title>
         </Head>
-        {psychology &&
-          psychology.map(data => (
-            <TestHeader title={data?.questionnaireType} />
-          ))}
+        {medtech &&
+          medtech.map(data => <TestHeader title={data?.questionnaireType} />)}
         <main
           className='
             max-w-6xl 
@@ -55,6 +56,72 @@ function MedTechTest () {
           '
           >
             <DogTest />
+          </div>
+          <div
+            className='
+          bg-slate-700 
+          p-14 
+          mx-3 
+          rounded-xl 
+          grid 
+          place-items-start'
+          >
+            <div
+              className='
+            flex 
+            flex-col 
+            place-items-start 
+            px-3 
+            w-full'
+            >
+              <h4
+                className='
+              my-7 
+              text-xl 
+              text-sky-300 
+              font-normal 
+              font-google-sans
+              underline
+              '
+              >
+                Q. 1 of 5
+              </h4>
+              <div
+                className='
+              mt-4 
+              text-2xl 
+              text-blue-100 
+              font-google-sans 
+              font-light'
+              >
+                {medtech?.[0]?.questions?.[0]?.question}
+              </div>
+            </div>
+            <div className='flex flex-col w-full my-3'>
+              {medtech?.[0]?.questions?.[0]?.answerOptions &&
+                medtech?.[0]?.questions?.[0]?.answerOptions.map(data => (
+                  <div
+                    key={data?.answer}
+                    className='
+                flex
+                items-center
+                w-full
+                py-4
+                px-5
+                m-2
+                space-x-2
+                border-2
+                cursor-pointer
+                bg-slate-600
+                border-sky-600
+                rounded-3xl
+                '
+                  >
+                    <input type='radio' className='w-6 h-6 bg-slate-800' />
+                    <p className='mx-5 text-white'>{data?.answer}</p>
+                  </div>
+                ))}
+            </div>
           </div>
         </main>
         <footer

@@ -22,7 +22,9 @@ module.exports = {
           'lake-tahoe':
           'url(https://californiacrossings.com/wp-content/uploads/2021/01/california-lake-tahoe-winter-emerald-bay-2.jpg)',
           'yosemite': 
-          'url(https://ktla.com/wp-content/uploads/sites/4/2021/02/yosemite.jpeg)'
+          'url(https://ktla.com/wp-content/uploads/sites/4/2021/02/yosemite.jpeg)',
+          'bb-lake':
+          'url(https://www.visitcalifornia.com/sites/visitcalifornia.com/files/styles/welcome_image/public/VC_BigBearLakeWinter_Hero_BigBearMtn_Supplied_H4Y4191_1280x640_0.jpg)'
       }) 
     },
   },
