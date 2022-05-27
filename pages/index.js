@@ -20,7 +20,7 @@ import { news } from './api/news/news'
 
 export default function Home ({ usHealth, testData }) {
   //console.log(usHealth?.['text-list'])
-  console.log(testData)
+  //console.log(testData)
   //console.log(usHealth?.articles)
   return (
     <>

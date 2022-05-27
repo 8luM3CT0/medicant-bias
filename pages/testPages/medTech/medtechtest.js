@@ -107,16 +107,30 @@ function MedTechTest () {
           grid 
           place-items-start'
           >
-            <div
-              className='
+            {/**Start of the test div */}
+            {showScore ? (
+              <h1
+                className='
+              text-3xl 
+              font-semibold 
+              font-robot-slab 
+              text-center 
+              text-sky-50'
+              >
+                A score of {score} out of {medtech?.[0]?.questions.length}
+              </h1>
+            ) : (
+              <>
+                <div
+                  className='
             flex 
             flex-col 
             place-items-start 
             px-3 
             w-full'
-            >
-              <h4
-                className='
+                >
+                  <h4
+                    className='
               my-7 
               text-xl 
               text-sky-300 
@@ -124,28 +138,29 @@ function MedTechTest () {
               font-google-sans
               underline
               '
-              >
-                Q. {currentQuestion + 1} of {medtech?.[0]?.questions.length}
-              </h4>
-              <div
-                className='
+                  >
+                    Q. {currentQuestion + 1} of {medtech?.[0]?.questions.length}
+                  </h4>
+                  <div
+                    className='
               mt-4 
               text-2xl 
               text-blue-100 
               font-google-sans 
               font-light'
-              >
-                {medtech?.[0]?.questions?.[currentQuestion]?.question}
-              </div>
-            </div>
-            <div className='flex flex-col w-full my-3'>
-              {medtech?.[0]?.questions?.[0]?.answerOptions &&
-                medtech?.[0]?.questions?.[currentQuestion]?.answerOptions.map(
-                  data => (
-                    <div
-                      key={data?.answer}
-                      onClick={e => handleAnswer(data?.answer)}
-                      className='
+                  >
+                    {medtech?.[0]?.questions?.[currentQuestion]?.question}
+                  </div>
+                </div>
+                <div className='flex flex-col w-full my-3'>
+                  {medtech?.[0]?.questions?.[0]?.answerOptions &&
+                    medtech?.[0]?.questions?.[
+                      currentQuestion
+                    ]?.answerOptions.map(data => (
+                      <div
+                        key={data?.answer}
+                        onClick={e => handleAnswer(data?.answer)}
+                        className='
                 flex
                 items-center
                 w-full
@@ -165,56 +180,67 @@ function MedTechTest () {
                 duration-[200ms]
                 ease-in-out
                 '
-                    >
-                      <input
-                        type='radio'
-                        name={data?.answer}
-                        value={data?.answer}
-                        onChange={e => handleAnswer(data?.answer)}
-                        checked={
-                          data?.answer ===
-                          selectedOptions[currentQuestion]?.answerByTester
-                        }
-                        className='w-6 h-6 bg-slate-800'
-                      />
-                      <p className='mx-5 text-white'>{data?.answer}</p>
-                    </div>
-                  )
-                )}
-              <div
-                className='
+                      >
+                        <input
+                          type='radio'
+                          name={data?.answer}
+                          value={data?.answer}
+                          onChange={e => handleAnswer(data?.answer)}
+                          checked={
+                            data?.answer ===
+                            selectedOptions[currentQuestion]?.answerByTester
+                          }
+                          className='w-6 h-6 bg-slate-800'
+                        />
+                        <p className='mx-5 text-white'>{data?.answer}</p>
+                      </div>
+                    ))}
+                  <div
+                    className='
                 flex 
                 justify-between 
                 w-full 
                 my-3 
                 text-sky-50'
-              >
-                <Button
-                  onClick={handlePrevious}
-                  color='indigo'
-                  buttonType='text'
-                  iconOnly={false}
-                  rounded={false}
-                  block={false}
-                  ripple='light'
-                  className='font-google-sans capitalize'
-                >
-                  <Icon name='arrow_back_ios' />
-                </Button>
-                <Button
-                  onClick={handleNext}
-                  color='cyan'
-                  buttonType='text'
-                  iconOnly={false}
-                  rounded={false}
-                  block={false}
-                  ripple='light'
-                  className='font-google-sans capitalize'
-                >
-                  <Icon name='arrow_forward_ios' />
-                </Button>
-              </div>
-            </div>
+                  >
+                    <Button
+                      onClick={handlePrevious}
+                      color='indigo'
+                      buttonType='text'
+                      iconOnly={false}
+                      rounded={false}
+                      block={false}
+                      ripple='light'
+                      className='font-google-sans capitalize'
+                    >
+                      <Icon name='arrow_back_ios' />
+                    </Button>
+                    <Button
+                      onClick={
+                        currentQuestion + 1 === medtech?.[0]?.questions.length
+                          ? handleScores
+                          : handleNext
+                      }
+                      color='cyan'
+                      buttonType='text'
+                      iconOnly={false}
+                      rounded={false}
+                      block={false}
+                      ripple='light'
+                      className='font-google-sans capitalize'
+                    >
+                      {currentQuestion + 1 ===
+                      medtech?.[0]?.questions.length ? (
+                        <Icon name='done' />
+                      ) : (
+                        <Icon name='arrow_forward_ios' />
+                      )}
+                    </Button>
+                  </div>
+                  {/**End of the test div */}
+                </div>
+              </>
+            )}
           </div>
         </main>
         <footer
