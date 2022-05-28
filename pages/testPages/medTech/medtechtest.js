@@ -67,10 +67,12 @@ function MedTechTest () {
     bg-no-repeat'
       >
         <Head>
-          <title>Exam here</title>
+          <title>MedTech short exam</title>
         </Head>
         {medtech &&
-          medtech.map(data => <TestHeader title={data?.questionnaireType} />)}
+          medtech.map(data => (
+            <TestHeader title={data?.questionnaireType} iconName='biotech' />
+          ))}
         <main
           className='
             max-w-6xl 

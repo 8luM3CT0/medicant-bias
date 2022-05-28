@@ -199,7 +199,7 @@ function TestComp () {
               {nursing &&
                 nursing.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/nursing/nursing_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -207,7 +207,7 @@ function TestComp () {
               {nursing &&
                 nursing.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/nursing/nursing_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -215,7 +215,7 @@ function TestComp () {
               {nursing &&
                 nursing.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/nursing/nursing_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -223,7 +223,7 @@ function TestComp () {
               {nursing &&
                 nursing.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/nursing/nursing_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />

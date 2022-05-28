@@ -12,7 +12,7 @@ import {
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 
-function TestHeader ({ title }) {
+function TestHeader ({ title, iconName }) {
   const [showRoutes, setShowRoutes] = useState(false)
   const router = useRouter()
 
@@ -52,7 +52,7 @@ function TestHeader ({ title }) {
           ripple='light'
           className='font-google-sans font-normal capitalize'
         >
-          <Icon name='biotech' />
+          <Icon name={iconName} />
           <h2 className='text-xl'>{title}</h2>
         </Button>
         <Button
