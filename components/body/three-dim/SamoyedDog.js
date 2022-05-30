@@ -75,7 +75,7 @@ function SamoyedDog () {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/samoyed_dog_animated.fbx', {
+      loadGLTFModel(scene, '/octopus.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
