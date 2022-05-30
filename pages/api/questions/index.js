@@ -1,3 +1,5 @@
+{/**MEDTECH */}
+
 export const medtech = [{
     
     questionnaireType: 'medtech',
@@ -146,6 +148,9 @@ export const medtech = [{
 ]
 }
 ]
+
+
+{/**NURSING */}
 
 export const nursing = [
     {
@@ -336,45 +341,75 @@ export const nursing = [
     }
 ]
 
+{/**PSYCHOLOGY */}
+
 export const psychology = [
     {
     questionnaireType: 'psychology',
     meaning: 'the scientific study of the human mind and its functions, especially those affecting behavior in a given context.',
   questions: [{
-    "question": "What type of framework is Next.js?",
+    "question": "Freud believed that adult problems stem from:",
     "answerOptions": [
-      { "answer": "Frontend" },
-      { "answer": "Backend" },
-      { "answer": "FullStack", "isCorrect": true },
-      { "answer": "None of the above" }
+      { "answer": "Are the result of poor behavior" },
+      { "answer": "Can be traced back to critical stage during childhood", isCorrect: true },
+      { "answer": "Result in bad dreams"},
+      { "answer": "Result in Freudian slip" }
     ]
   },
   {
-    "question": "When was Next.js released?",
+    "question": "Gestalt theory emphasizes:",
     "answerOptions": [
-      { "answer": "20 September 2019" },
-      { "answer": "14 January 2017" },
-      { "answer": "25 October 2016", "isCorrect": true },
-      { "answer": "28 March 2018" }
+      { "answer": "Our tendency to see pattern", isCorrect: true },
+      { "answer": "The atoms of thought" },
+      { "answer": "A flow of consciousness"},
+      { "answer": "Environmental stimuli" }
     ]
   },
   {
-    "question": "Which CSS Framework are we using?",
+    "question": "Psychophysics is the study of ?",
     "answerOptions": [
-      { "answer": "Bootstrap" },
-      { "answer": "TailwindCSS", "isCorrect": true },
-      { "answer": "Chakra UI" },
-      { "answer": "Bulma CSS" }
+      { "answer": "Movement perception" },
+      { "answer": "Perceptual illness"},
+      { "answer": "Depth perception" },
+      { "answer": "The psychological perception of physical stimuli", isCorrect: true }
     ]
   },
   {
-    "question": "Which class in Tailwind is used to set flex direction of column?",
+    "question": "According to Master & Johnson, the correct sequence of human sexual response?",
     "answerOptions": [
-      { "answer": "col" },
-      { "answer": "col-flex" },
-      { "answer": "flex-col", "isCorrect": true },
-      { "answer": "None of the above" }
+      { "answer": "Excitement, Arousal, Orgasm, Resolution" },
+      { "answer": "Arousal, Excitement, Orgasm, Resolution" },
+      { "answer": "Excitement, Plateau, Orgasm, Resolution", isCorrect: true },
+      { "answer": "Excitement, Orgasm, Plateau, Resolution" }
     ]
-  }]
+  },
+  {
+    "question": "Lesions of the ventromedial nuclei in the hypothalamus produce:",
+    "answerOptions": [
+      { "answer": "Anorexia" },
+      { "answer": "Obesity", isCorrect: true },
+      { "answer": "Hypoinsulinemia" },
+      { "answer": "Low level of Leptin" }
+    ]
+  },
+  {
+    "question": "Which memory is the result of instrument/motor learning process ?",
+    "answerOptions": [
+      { "answer": "Sensory" },
+      { "answer": "Episodic" },
+      { "answer": "Semantic" },
+      { "answer": "Procedural", isCorrect: true }
+    ]
+  },
+  {
+    "question": "Inn which  lobe of the cerebral cortex does the primary olfactory lies ?",
+    "answerOptions": [
+      { "answer": "Occipital" },
+      { "answer": "Parietal" },
+      { "answer": "Frontal" },
+      { "answer": "Temporal", isCorrect: true }
+    ]
+  }
+]
 }
 ]

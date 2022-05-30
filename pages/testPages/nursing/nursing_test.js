@@ -100,6 +100,17 @@ function NursingTest () {
           '
         >
           <DogTest />
+        </div>
+        <div
+          className='
+          bg-slate-700 
+          p-14 
+          mx-3 
+          rounded-xl 
+          grid 
+          place-items-start
+          '
+        >
           {/**Start of the test div */}
           {showScore ? (
             <h1
