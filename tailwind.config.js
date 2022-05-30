@@ -26,7 +26,9 @@ module.exports = {
           'bb-lake':
           'url(https://www.visitcalifornia.com/sites/visitcalifornia.com/files/styles/welcome_image/public/VC_BigBearLakeWinter_Hero_BigBearMtn_Supplied_H4Y4191_1280x640_0.jpg)',
           'bb-hudson':
-          'url(https://www.iskiny.com/sites/default/files/styles/1600x450/public/2019-11/210468399.jpeg?itok=oxwo2IO1)'
+          'url(https://www.iskiny.com/sites/default/files/styles/1600x450/public/2019-11/210468399.jpeg?itok=oxwo2IO1)',
+          'bb-glacier':
+          'url(https://i2.wp.com/eternalarrival.com/wp-content/uploads/2021/01/sunrise-winter-in-glacier-np-shutterstock_1286339806-1.jpg?fit=1000%2C667&ssl=1)'
       }) 
     },
   },

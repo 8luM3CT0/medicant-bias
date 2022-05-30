@@ -268,7 +268,7 @@ function TestComp () {
               {psychology &&
                 psychology.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/psych/psych_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -276,7 +276,7 @@ function TestComp () {
               {psychology &&
                 psychology.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/psych/psych_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
@@ -284,7 +284,7 @@ function TestComp () {
               {psychology &&
                 psychology.map(testData => (
                   <QuizCard
-                    id={testData?.questionnaireType}
+                    id={'/psych/psych_test'}
                     title={testData?.questionnaireType}
                     meaning={testData?.meaning}
                   />
